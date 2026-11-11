@@ -276,9 +276,32 @@
   const rememberLanguage =
     clientConfig.rememberLanguage !== false;
 
-  let enabledLanguages = [];
+      let enabledLanguages = [];
 
-  if (Array.isArray(clientConfig.enabledLanguages)) {
+  const savedLanguages = rememberLanguage
+    ? localStorage.getItem("eulliyans_demo_enabled_languages")
+    : null;
+
+  if (savedLanguages) {
+    try {
+      const parsedLanguages = JSON.parse(savedLanguages);
+
+      if (Array.isArray(parsedLanguages)) {
+        enabledLanguages = parsedLanguages.filter(
+          (language, index, list) =>
+            availableLanguages.includes(language) &&
+            list.indexOf(language) === index
+        );
+      }
+    } catch (error) {
+      console.warn("Saved language settings could not be loaded.");
+    }
+  }
+
+  if (
+    enabledLanguages.length === 0 &&
+    Array.isArray(clientConfig.enabledLanguages)
+  ) {
     enabledLanguages = clientConfig.enabledLanguages.filter(
       (language, index, list) =>
         availableLanguages.includes(language) &&
@@ -344,7 +367,14 @@
       return;
     }
 
-    enabledLanguages = selected;
+        enabledLanguages = selected;
+
+    if (rememberLanguage) {
+      localStorage.setItem(
+        "eulliyans_demo_enabled_languages",
+        JSON.stringify(enabledLanguages)
+      );
+    }
 
     rebuildLanguageSelect();
 
