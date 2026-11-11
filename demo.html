@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073d38">
+  <title>EULLIYAN Universal Language System</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      background: #f3f8f7;
+      color: #173b37;
+      font-family: Arial, sans-serif;
+      transition: 0.3s;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 850px;
+      margin: 30px auto;
+    }
+
+    .header {
+      background: #073d38;
+      color: white;
+      text-align: center;
+      padding: 30px 18px;
+      border-radius: 18px;
+    }
+
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 27px;
+    }
+
+    .header p {
+      margin: 0;
+      color: #baf5e9;
+    }
+
+    .panel {
+      background: white;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 4px 18px #0000000d;
+    }
+
+    h2 {
+      color: #075b52;
+      margin-top: 0;
+    }
+
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #b7d5cf;
+      border-radius: 9px;
+      font-size: 16px;
+      background: white;
+      color: #173b37;
+    }
+
+    .language-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .language-options label {
+      padding: 12px;
+      border: 1px solid #c8ded9;
+      border-radius: 9px;
+      cursor: pointer;
+    }
+
+    .language-options input {
+      margin-right: 7px;
+    }
+
+    .info {
+      background: #e7f5f1;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+
+    .demo-text {
+      line-height: 1.9;
+      font-size: 17px;
+    }
+
+    button {
+      width: 100%;
+      border: 0;
+      padding: 14px;
+      margin-top: 15px;
+      border-radius: 9px;
+      background: #075b52;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #073d38;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: #53716c;
+      font-size: 13px;
+    }
+
+    [dir="rtl"] {
+      text-align: right;
+    }
+
+    [dir="rtl"] .language-options label {
+      text-align: right;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 12px;
+      }
+
+      .header h1 {
+        font-size: 22px;
+      }
+
+      .panel {
+        padding: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <h1>EULLIYAN'S</h1>
+      <p>Universal Multilingual Engine</p>
+    </header>
+
+    <section class="panel">
+      <h2 data-i18n="common.language">Language</h2>
+
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="bn">বাংলা</option>
+        <option value="ar">العربية</option>
+        <option value="hi">हिन्दी</option>
+        <option value="ur">اردو</option>
+      </select>
+
+      <div class="info">
+        <strong>Language:</strong>
+        <span id="currentLanguage">English</span>
+        <br>
+        <strong>Direction:</strong>
+        <span id="currentDirection">LTR</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Website Language Settings</h2>
+      <p>Select which languages this website will use.</p>
+
+      <div class="language-options">
+        <label><input type="checkbox" value="en" checked> English</label>
+        <label><input type="checkbox" value="bn" checked> বাংলা</label>
+        <label><input type="checkbox" value="ar" checked> العربية</label>
+        <label><input type="checkbox" value="hi" checked> हिन्दी</label>
+        <label><input type="checkbox" value="ur" checked> اردو</label>
+      </div>
+
+      <button id="applyLanguages">Apply Selected Languages</button>
+
+      <div class="info" id="selectedInfo">
+        5 languages enabled
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="common.welcome">Welcome</h2>
+
+      <div class="demo-text">
+        <p data-i18n="messages.welcome">
+          Welcome to our website!
+        </p>
+
+        <p>
+          <strong data-i18n="common.about">About</strong>:
+          <span data-i18n="navigation.about">About Us</span>
+        </p>
+
+        <p>
+          <strong data-i18n="common.projects">Projects</strong>:
+          <span data-i18n="navigation.projects">Our Projects</span>
+        </p>
+
+        <p>
+          <strong data-i18n="common.contact">Contact</strong>:
+          <span data-i18n="navigation.contact">Contact Us</span>
+        </p>
+
+        <p>
+          <strong data-i18n="common.loading">Loading...</strong>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      EULLIYAN'S Universal Language System · Version 1.0.0
+    </footer>
+
+  </main>
+
+  <script src="eulliyans-language.js"></script>
+
+  <script src="languages/en.js"></script>
+  <script src="languages/bn.js"></script>
+  <script src="languages/ar.js"></script>
+  <script src="languages/hi.js"></script>
+  <script src="languages/ur.js"></script>
+
+  <script>
+    const languageSelect =
+      document.getElementById("languageSelect");
+
+    const currentLanguage =
+      document.getElementById("currentLanguage");
+
+    const currentDirection =
+      document.getElementById("currentDirection");
+
+    const checkboxes =
+      document.querySelectorAll(
+        '.language-options input[type="checkbox"]'
+      );
+
+    const selectedInfo =
+      document.getElementById("selectedInfo");
+
+    const applyButton =
+      document.getElementById("applyLanguages");
+
+    let enabledLanguages = [
+      "en", "bn", "ar", "hi", "ur"
+    ];
+
+    const languageNames = {
+      en: "English",
+      bn: "বাংলা",
+      ar: "العربية",
+      hi: "हिन्दी",
+      ur: "اردو"
+    };
+
+    function updateLanguageInfo() {
+      const language = EULLIYANS_LANG.getLanguage();
+
+      currentLanguage.textContent =
+        languageNames[language];
+
+      currentDirection.textContent =
+        document.documentElement.dir.toUpperCase();
+
+      languageSelect.value = language;
+    }
+
+    function applyLanguageSettings() {
+      const selected = [];
+
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          selected.push(checkbox.value);
+        }
+      });
+
+      if (selected.length === 0) {
+        alert("Please select at least one language.");
+        return;
+      }
+
+      enabledLanguages = selected;
+
+      checkboxes.forEach(checkbox => {
+        checkbox.disabled = false;
+      });
+
+      languageSelect.innerHTML = "";
+
+      enabledLanguages.forEach(language => {
+        const option = document.createElement("option");
+        option.value = language;
+        option.textContent = languageNames[language];
+        languageSelect.appendChild(option);
+      });
+
+      if (!enabledLanguages.includes(
+        EULLIYANS_LANG.getLanguage()
+      )) {
+        EULLIYANS_LANG.setLanguage(
+          enabledLanguages[0]
+        );
+      }
+
+      languageSelect.value =
+        EULLIYANS_LANG.getLanguage();
+
+      selectedInfo.textContent =
+        enabledLanguages.length + " languages enabled";
+
+      updateLanguageInfo();
+    }
+
+    languageSelect.addEventListener("change", function () {
+      EULLIYANS_LANG.setLanguage(this.value);
+      updateLanguageInfo();
+    });
+
+    applyButton.addEventListener(
+      "click",
+      applyLanguageSettings
+    );
+
+    document.addEventListener(
+      "eulliyans:languageChanged",
+      updateLanguageInfo
+    );
+
+    EULLIYANS_LANG.init({
+      defaultLanguage: "en",
+      fallbackLanguage: "en",
+      storageKey: "eulliyans_demo_language"
+    });
+
+    applyLanguageSettings();
+    updateLanguageInfo();
+  </script>
+
+</body>
+</html>
