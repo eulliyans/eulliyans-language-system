@@ -14,9 +14,12 @@ window.EULLIYANS_CLIENT_CONFIG = {
 
   // Enabled languages
   enabledLanguages: [
-    "en",
-    "bn"
-  ],
+  "en",
+  "bn",
+  "ar",
+  "hi",
+  "ur"
+],
 
   // Language selection
   showLanguageSelector: true,
