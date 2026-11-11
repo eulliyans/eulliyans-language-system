@@ -240,120 +240,187 @@
   <script src="client-config.js"></script>
   
   <script>
-    const languageSelect =
-      document.getElementById("languageSelect");
+  const clientConfig = window.EULLIYANS_CLIENT_CONFIG || {};
 
-    const currentLanguage =
-      document.getElementById("currentLanguage");
+  const languageSelect =
+    document.getElementById("languageSelect");
 
-    const currentDirection =
-      document.getElementById("currentDirection");
+  const currentLanguage =
+    document.getElementById("currentLanguage");
 
-    const checkboxes =
-      document.querySelectorAll(
-        '.language-options input[type="checkbox"]'
+  const currentDirection =
+    document.getElementById("currentDirection");
+
+  const checkboxes =
+    document.querySelectorAll(
+      '.language-options input[type="checkbox"]'
+    );
+
+  const selectedInfo =
+    document.getElementById("selectedInfo");
+
+  const applyButton =
+    document.getElementById("applyLanguages");
+
+  const languageNames = {
+    en: "English",
+    bn: "বাংলা",
+    ar: "العربية",
+    hi: "हिन्दी",
+    ur: "اردو"
+  };
+
+  const availableLanguages =
+    EULLIYANS_LANG.getLanguages();
+
+  const rememberLanguage =
+    clientConfig.rememberLanguage !== false;
+
+  let enabledLanguages = [];
+
+  if (Array.isArray(clientConfig.enabledLanguages)) {
+    enabledLanguages = clientConfig.enabledLanguages.filter(
+      (language, index, list) =>
+        availableLanguages.includes(language) &&
+        list.indexOf(language) === index
+    );
+  }
+
+  if (enabledLanguages.length === 0) {
+    enabledLanguages = availableLanguages.includes("en")
+      ? ["en"]
+      : availableLanguages.slice(0, 1);
+  }
+
+  const defaultLanguage =
+    enabledLanguages.includes(clientConfig.defaultLanguage)
+      ? clientConfig.defaultLanguage
+      : enabledLanguages[0];
+
+  function updateLanguageInfo() {
+    const language = EULLIYANS_LANG.getLanguage();
+
+    currentLanguage.textContent =
+      languageNames[language] || language;
+
+    currentDirection.textContent =
+      document.documentElement.dir.toUpperCase();
+
+    languageSelect.value = language;
+  }
+
+  function rebuildLanguageSelect() {
+    languageSelect.innerHTML = "";
+
+    enabledLanguages.forEach(language => {
+      const option = document.createElement("option");
+
+      option.value = language;
+      option.textContent = languageNames[language];
+
+      languageSelect.appendChild(option);
+    });
+  }
+
+  function updateSelectedInfo() {
+    selectedInfo.textContent =
+      enabledLanguages.length + " languages enabled";
+  }
+
+  function applyLanguageSettings() {
+    const selected = [];
+
+    checkboxes.forEach(checkbox => {
+      if (
+        checkbox.checked &&
+        availableLanguages.includes(checkbox.value)
+      ) {
+        selected.push(checkbox.value);
+      }
+    });
+
+    if (selected.length === 0) {
+      alert("Please select at least one language.");
+      return;
+    }
+
+    enabledLanguages = selected;
+
+    rebuildLanguageSelect();
+
+    const current = EULLIYANS_LANG.getLanguage();
+
+    if (!enabledLanguages.includes(current)) {
+      EULLIYANS_LANG.setLanguage(
+        enabledLanguages[0],
+        { persist: rememberLanguage }
       );
-
-    const selectedInfo =
-      document.getElementById("selectedInfo");
-
-    const applyButton =
-      document.getElementById("applyLanguages");
-
-    let enabledLanguages = [
-      "en", "bn", "ar", "hi", "ur"
-    ];
-
-    const languageNames = {
-      en: "English",
-      bn: "বাংলা",
-      ar: "العربية",
-      hi: "हिन्दी",
-      ur: "اردو"
-    };
-
-    function updateLanguageInfo() {
-      const language = EULLIYANS_LANG.getLanguage();
-
-      currentLanguage.textContent =
-        languageNames[language];
-
-      currentDirection.textContent =
-        document.documentElement.dir.toUpperCase();
-
-      languageSelect.value = language;
     }
 
-    function applyLanguageSettings() {
-      const selected = [];
-
-      checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          selected.push(checkbox.value);
-        }
-      });
-
-      if (selected.length === 0) {
-        alert("Please select at least one language.");
-        return;
-      }
-
-      enabledLanguages = selected;
-
-      checkboxes.forEach(checkbox => {
-        checkbox.disabled = false;
-      });
-
-      languageSelect.innerHTML = "";
-
-      enabledLanguages.forEach(language => {
-        const option = document.createElement("option");
-        option.value = language;
-        option.textContent = languageNames[language];
-        languageSelect.appendChild(option);
-      });
-
-      if (!enabledLanguages.includes(
-        EULLIYANS_LANG.getLanguage()
-      )) {
-        EULLIYANS_LANG.setLanguage(
-          enabledLanguages[0]
-        );
-      }
-
-      languageSelect.value =
-        EULLIYANS_LANG.getLanguage();
-
-      selectedInfo.textContent =
-        enabledLanguages.length + " languages enabled";
-
-      updateLanguageInfo();
-    }
-
-    languageSelect.addEventListener("change", function () {
-      EULLIYANS_LANG.setLanguage(this.value);
-      updateLanguageInfo();
-    });
-
-    applyButton.addEventListener(
-      "click",
-      applyLanguageSettings
-    );
-
-    document.addEventListener(
-      "eulliyans:languageChanged",
-      updateLanguageInfo
-    );
-
-    EULLIYANS_LANG.init({
-      defaultLanguage: "en",
-      fallbackLanguage: "en",
-      storageKey: "eulliyans_demo_language"
-    });
-
-    applyLanguageSettings();
+    updateSelectedInfo();
     updateLanguageInfo();
-  </script>
+  }
+
+  checkboxes.forEach(checkbox => {
+    checkbox.checked =
+      enabledLanguages.includes(checkbox.value);
+  });
+
+  const languagePanel =
+    languageSelect.closest(".panel");
+
+  if (clientConfig.showLanguageSelector === false) {
+    languagePanel.hidden = true;
+  }
+
+  languageSelect.addEventListener("change", function () {
+    EULLIYANS_LANG.setLanguage(
+      this.value,
+      { persist: rememberLanguage }
+    );
+
+    updateLanguageInfo();
+  });
+
+  applyButton.addEventListener(
+    "click",
+    applyLanguageSettings
+  );
+
+  document.addEventListener(
+    "eulliyans:languageChanged",
+    updateLanguageInfo
+  );
+
+  EULLIYANS_LANG.init({
+    defaultLanguage: defaultLanguage,
+    fallbackLanguage: "en",
+    storageKey: "eulliyans_demo_language"
+  });
+
+  if (!rememberLanguage) {
+    EULLIYANS_LANG.setLanguage(
+      defaultLanguage,
+      { persist: false }
+    );
+  }
+
+  rebuildLanguageSelect();
+
+  if (
+    !enabledLanguages.includes(
+      EULLIYANS_LANG.getLanguage()
+    )
+  ) {
+    EULLIYANS_LANG.setLanguage(
+      defaultLanguage,
+      { persist: rememberLanguage }
+    );
+  }
+
+  updateSelectedInfo();
+  updateLanguageInfo();
+</script>
 
 </body>
 </html>
