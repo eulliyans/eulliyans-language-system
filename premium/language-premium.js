@@ -11,30 +11,23 @@
   const engine = window.EULLIYANS_LANG;
 
   if (!engine) {
-    console.error(
-      "Language Premium: Core Engine not found."
-    );
+    console.error("Language Premium: Core Engine not found.");
     return;
   }
 
   let selector = null;
+  const premiumLanguages = [];
 
   function updateDirection(language) {
-    const languages = premiumLanguages;
-    const item = languages.find(
+    const item = premiumLanguages.find(
       entry => entry.code === language
     );
 
-    if (!item) return;
-
-    const direction =
-      item.direction ||
-      "ltr";
-
-    document.documentElement.dir = direction;
+    if (item) {
+      document.documentElement.dir =
+        item.direction || "ltr";
+    }
   }
-
-  const premiumLanguages = [];
 
   function addSelectorOption(language) {
     if (!selector) return;
@@ -46,12 +39,9 @@
     if (exists) return;
 
     const option = document.createElement("option");
-
     option.value = language.code;
     option.textContent =
-      language.nativeName ||
-      language.name ||
-      language.code;
+      language.nativeName || language.name || language.code;
 
     selector.appendChild(option);
   }
@@ -63,57 +53,48 @@
         typeof language.code !== "string" ||
         typeof language.file !== "string"
       ) {
-        reject(
-          new Error("Invalid language configuration.")
-        );
+        reject(new Error("Invalid language configuration."));
         return;
       }
 
-      const existing = premiumLanguages.find(
-        item => item.code === language.code
-      );
-
-      if (existing) {
-        reject(
-          new Error("Language already configured.")
-        );
+      if (
+        premiumLanguages.some(
+          item => item.code === language.code
+        )
+      ) {
+        reject(new Error("Language already configured."));
         return;
       }
 
-      premiumLanguages.push(language);
-
-      if (engine.hasLanguage(language.code)) {
-        addSelectorOption(language);
-        resolve(true);
-        return;
-      }
-
-      const script = document.createElement("script");
-
-      script.src = language.file;
-      script.async = true;
-
-      script.onload = function () {
+      function completeLoading() {
         if (!engine.hasLanguage(language.code)) {
           reject(
             new Error(
-              "Dictionary did not register: " +
-              language.code
+              "Dictionary did not register: " + language.code
             )
           );
           return;
         }
 
+        premiumLanguages.push(language);
         addSelectorOption(language);
         resolve(true);
-      };
+      }
+
+      if (engine.hasLanguage(language.code)) {
+        completeLoading();
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = language.file;
+      script.async = true;
+
+      script.onload = completeLoading;
 
       script.onerror = function () {
         reject(
-          new Error(
-            "Failed to load dictionary: " +
-            language.file
-          )
+          new Error("Failed to load dictionary: " + language.file)
         );
       };
 
@@ -122,11 +103,20 @@
   }
 
   function handleLanguageChange(event) {
+    if (!event.detail) return;
+
     const language = event.detail.language;
+
     updateDirection(language);
 
     if (selector) {
       selector.value = language;
+    }
+  }
+
+  function handleSelectorChange() {
+    if (selector) {
+      engine.setLanguage(selector.value);
     }
   }
 
@@ -158,11 +148,14 @@
       );
 
       if (selector) {
+        selector.removeEventListener(
+          "change",
+          handleSelectorChange
+        );
+
         selector.addEventListener(
           "change",
-          function () {
-            engine.setLanguage(selector.value);
-          }
+          handleSelectorChange
         );
       }
 
@@ -174,7 +167,7 @@
         languages.map(loadLanguage)
       );
 
-           // Restore previously saved language
+      // Restore saved language after dictionaries load
       let savedLanguage = null;
 
       try {
@@ -182,10 +175,15 @@
           options.storageKey || "eulliyans_language"
         );
       } catch (error) {
-        console.warn("Premium: Language storage unavailable.");
+        console.warn(
+          "Premium: Language storage unavailable."
+        );
       }
 
-      if (savedLanguage && engine.hasLanguage(savedLanguage)) {
+      if (
+        savedLanguage &&
+        engine.hasLanguage(savedLanguage)
+      ) {
         engine.setLanguage(savedLanguage, {
           persist: false
         });
@@ -198,6 +196,7 @@
       updateDirection(engine.getLanguage());
 
       return results;
+    },
 
     loadLanguage
 
