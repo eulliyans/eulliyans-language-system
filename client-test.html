@@ -86,6 +86,7 @@
   <section class="card">
     <h2>Live Test Results</h2>
     <div class="status" id="engine">Engine: Checking...</div>
+   <div class="status" id="version">Version: Checking...</div>
     <div class="status" id="languages">Languages: Checking...</div>
     <div class="status" id="direction">Direction: Checking...</div>
     <div class="status" id="translation">Translation: Checking...</div>
@@ -130,7 +131,7 @@
   });
 
   show("engine", "Engine: PASS");
-
+show("version", "Version: " + engine.version);
   const registered = engine.getLanguages();
 
   show(
