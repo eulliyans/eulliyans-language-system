@@ -96,7 +96,7 @@ Initialize the engine after loading the Core Engine and dictionaries.
 Use a unique storage key for each website.
 
 ### Step 6 — Add a Language Selector
-
+Make sure the language selector element exists in the page before running its initialization script.
 ```html
 <select id="languageSelector">
   <option value="en">English</option>
