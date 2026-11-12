@@ -1,4 +1,3 @@
-
 /*!
  * EULLIYAN Universal Language System
  * Core Engine
