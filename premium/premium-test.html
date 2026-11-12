@@ -1,1 +1,136 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Premium Module Test</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 650px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f4f7f8;
+      color: #222;
+    }
+
+    .test-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      font-size: 16px;
+    }
+
+    #status {
+      margin-top: 20px;
+      padding: 12px;
+      background: #eef5f0;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="test-box">
+    <h1>Premium Language Test</h1>
+
+    <p>Easy Language Expansion</p>
+
+    <label for="languageSelector">
+      Select Website Language
+    </label>
+
+    <select id="languageSelector">
+      <option value="en">English</option>
+    </select>
+
+    <div id="status">
+      Loading Premium Module...
+    </div>
+  </div>
+
+  <script src="../eulliyans-language.js"></script>
+  <script src="../languages/en.js"></script>
+
+  <script>
+    EULLIYANS_LANG.init({
+      defaultLanguage: "en",
+      fallbackLanguage: "en"
+    });
+  </script>
+
+  <script src="language-premium.js"></script>
+
+  <script>
+    async function startPremiumTest() {
+
+      const status = document.getElementById("status");
+
+      try {
+
+        const results = await EULLIYANS_PREMIUM.init({
+          selector: "#languageSelector",
+
+          languages: [
+            {
+              code: "bn",
+              name: "Bengali",
+              nativeName: "বাংলা",
+              file: "../languages/bn.js",
+              direction: "ltr"
+            },
+            {
+              code: "ar",
+              name: "Arabic",
+              nativeName: "العربية",
+              file: "../languages/ar.js",
+              direction: "rtl"
+            },
+            {
+              code: "hi",
+              name: "Hindi",
+              nativeName: "हिन्दी",
+              file: "../languages/hi.js",
+              direction: "ltr"
+            },
+            {
+              code: "ur",
+              name: "Urdu",
+              nativeName: "اردو",
+              file: "../languages/ur.js",
+              direction: "rtl"
+            }
+          ]
+        });
+
+        const failed = results.filter(
+          result => result.status === "rejected"
+        );
+
+        status.textContent = failed.length === 0
+          ? "PASS: All dictionaries loaded successfully."
+          : "WARNING: Some dictionaries failed to load.";
+
+      } catch (error) {
+
+        status.textContent =
+          "ERROR: " + error.message;
+
+      }
+    }
+
+    startPremiumTest();
+  </script>
+
+</body>
+</html>
+
