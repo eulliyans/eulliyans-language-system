@@ -74,7 +74,15 @@ The developer may deliver a completed website containing the integrated Language
 The end client receives permission to use the system only as part of that delivered website, subject to the applicable license terms.
 
 The developer must not provide the Core Engine separately as an independently resellable product.
+### Permitted Integrated Website Delivery
 
+An authorized developer may provide the Core Engine and the files required for its operation as integrated components of an approved client website.
+
+The end client may use these components only as part of that delivered website.
+
+Neither the developer nor the end client may extract, sell, redistribute, sublicense, publish, or distribute the Core Engine as a separate product without prior written permission from EULLIYAN’S.
+
+No ownership of the Core Engine is transferred to the developer or end client.
 ## 7. Customization
 
 The developer may customize translation content, configuration, and website-specific implementation.
