@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EULLIYAN'S Premium Installation Guide</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.7;
+      color: #222;
+    }
+
+    h1, h2 {
+      color: #172554;
+    }
+
+    pre {
+      background: #f1f5f9;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: monospace;
+    }
+
+    .note {
+      background: #eff6ff;
+      padding: 14px;
+      border-left: 4px solid #2563eb;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>EULLIYAN'S Premium Language System</h1>
+
+  <p>
+    Developer Installation Guide — Version 1.0.0
+  </p>
+
+  <h2>1. Required Files</h2>
+
+  <p>Copy these files into your website project:</p>
+
+  <pre><code>your-website/
+│
+├── index.html
+├── eulliyans-language.js
+│
+├── languages/
+│   ├── en.js
+│   └── fr.js
+│
+└── premium/
+    ├── language-premium.js
+    └── config.example.js</code></pre>
+
+  <h2>2. Add Language Selector</h2>
+
+  <pre><code>&lt;select id="languageSelector"&gt;
+  &lt;option value="en"&gt;English&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+  <h2>3. Add Translatable Content</h2>
+
+  <pre><code>&lt;h1 data-i18n="common.welcome"&gt;
+  Welcome
+&lt;/h1&gt;</code></pre>
+
+  <h2>4. Load the Core Engine</h2>
+
+  <pre><code>&lt;script src="eulliyans-language.js"&gt;&lt;/script&gt;
+&lt;script src="languages/en.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  EULLIYANS_LANG.init({
+    defaultLanguage: "en",
+    fallbackLanguage: "en"
+  });
+&lt;/script&gt;</code></pre>
+
+  <h2>5. Load the Premium Module</h2>
+
+  <pre><code>&lt;script src="premium/language-premium.js"&gt;&lt;/script&gt;
+&lt;script src="premium/config.example.js"&gt;&lt;/script&gt;</code></pre>
+
+  <h2>6. Add More Languages</h2>
+
+  <p>
+    Add a dictionary file and register its language in
+    <code>config.example.js</code>.
+  </p>
+
+  <pre><code>{
+  code: "fr",
+  name: "French",
+  nativeName: "Français",
+  file: "languages/fr.js",
+  direction: "ltr"
+}</code></pre>
+
+  <h2>7. Important Notes</h2>
+
+  <div class="note">
+    <p>
+      • Load the Core Engine and default dictionary first.
+    </p>
+    <p>
+      • Load the Premium Module after Core Engine initialization.
+    </p>
+    <p>
+      • Update file paths according to your website structure.
+    </p>
+    <p>
+      • Premium usage is subject to the applicable Premium License.
+    </p>
+  </div>
+
+  <p>
+    © EULLIYAN'S — All Rights Reserved.
+  </p>
+
+</body>
+</html>
