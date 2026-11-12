@@ -11,7 +11,7 @@ Contact: eulliyans02@gmail.com
 
 EULLIYAN’S Universal Language System is a reusable JavaScript language engine that helps developers add multilingual support to websites.
 
-It uses language dictionaries to translate website text, supports RTL/LTR text direction, and remembers the visitor's selected language.
+It uses language dictionaries for dictionary-based text translation, supports RTL/LTR text direction, and remembers the visitor's selected language.
 
 ### Supported Languages
 
