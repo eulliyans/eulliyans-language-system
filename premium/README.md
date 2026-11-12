@@ -21,7 +21,7 @@ your-website/
 │
 └── premium/
     └── language-premium.js
-
+```
 3. Installation
 
 Load the Core Engine first:
@@ -167,7 +167,3 @@ Contact:
 eulliyans02@gmail.com
 
 Copyright © EULLIYAN’S. All rights reserved.
-
-**Commit message:**
-`Add Premium Developer Guide`
-একবারেই filename ঠিক করে কোড বসিয়ে Commit করো। এরপর আমি GitHub-এ ফাইলটি যাচাই করে পরের কাজ দেব।
