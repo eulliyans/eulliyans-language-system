@@ -3,31 +3,33 @@
 
 **A reusable multilingual language engine for modern websites.**
 
-Version: 1.0.0  
+Version: 1.1.0  
 Owner: EULLIYAN’S  
 Contact: eulliyans02@gmail.com
 
 ## 1. Overview
 
-EULLIYAN’S Universal Language System helps website developers add multilingual support with language dictionaries, automatic text translation, RTL/LTR direction support, and saved language preferences.
+EULLIYAN’S Universal Language System is a reusable JavaScript language engine that helps developers add multilingual support to websites.
 
-Supported languages:
+It uses language dictionaries to translate website text, supports RTL/LTR text direction, and remembers the visitor's selected language.
+
+### Supported Languages
+
 - English (en) — LTR
 - Bengali (bn) — LTR
 - Arabic (ar) — RTL
 - Hindi (hi) — LTR
 - Urdu (ur) — RTL
 
-## 2. Live Demo
+## 2. Live Demos
 
-Demo: https://eulliyans.github.io/eulliyans-language-system/demo.html
-
-Client Integration Test:
-https://eulliyans.github.io/eulliyans-language-system/client-test.html
+- Main Demo: https://eulliyans.github.io/eulliyans-language-system/demo.html
+- Client Integration Test: https://eulliyans.github.io/eulliyans-language-system/client-test.html
+- Showcase: https://eulliyans.github.io/eulliyans-language-system/showcase.html
 
 ## 3. Project Files
 
-- `eulliyans-language.js` — Core language engine.
+- `eulliyans-language.js` — Core Language Engine.
 - `client-config.js` — Client website configuration.
 - `languages/en.js` — English dictionary.
 - `languages/bn.js` — Bengali dictionary.
@@ -37,17 +39,19 @@ https://eulliyans.github.io/eulliyans-language-system/client-test.html
 
 ## 4. Integration Guide
 
-### Step 1 — Add the Engine
+### Step 1 — Add the Core Engine
 
-Copy `eulliyans-language.js` into your website project.
+Add the authorized `eulliyans-language.js` Core Engine file to your website project according to your license.
 
 ### Step 2 — Add Language Dictionaries
 
-Copy the required language dictionary files and the `languages` folder into your project.
+Add the required language dictionary files and maintain the `languages` folder structure.
 
-### Step 3 — Load Scripts in Correct Order
+### Step 3 — Load Scripts in the Correct Order
 
-Add these scripts before the closing `</body>` tag. The engine must load before the dictionaries.
+Load the Core Engine before loading the language dictionaries.
+
+Add the scripts before the closing `</body>` tag:
 
 ```html
 <script src="eulliyans-language.js"></script>
@@ -62,19 +66,23 @@ Adjust file paths if your folder structure is different.
 
 ### Step 4 — Add Translation Keys
 
-Use dictionary keys with `data-i18n`:
+Use the `data-i18n` attribute to identify text that should be translated.
 
 ```html
 <h1 data-i18n="common.welcome">Welcome</h1>
-<p data-i18n="messages.welcome">Welcome to our website!</p>
+
+<p data-i18n="messages.welcome">
+  Welcome to our website!
+</p>
+
 <a data-i18n="navigation.contact">Contact Us</a>
 ```
 
-The translation keys must exist in the loaded dictionaries.
+Make sure the corresponding translation keys exist in the loaded dictionaries.
 
 ### Step 5 — Initialize the Engine
 
-After loading the engine and dictionaries, initialize it:
+Initialize the engine after loading the Core Engine and dictionaries.
 
 ```html
 <script>
@@ -117,43 +125,49 @@ The engine updates the document language and text direction when a language is s
 - English, Bengali and Hindi use LTR.
 - Arabic and Urdu use RTL.
 
-Your website CSS should also support RTL layouts where needed.
+Developers should also ensure that their website CSS supports RTL layouts where necessary.
 
 ## 6. Customization
 
-Website owners can customize:
+Website developers can configure:
+
 - Enabled languages.
 - Default language.
 - Language selector appearance.
 - Translation dictionary text.
 - Website-specific translation keys.
 
-Keep dictionary keys consistent across all enabled languages.
+Keep translation keys consistent across all enabled language dictionaries.
 
 ## 7. Testing Checklist
 
-Before publishing, verify:
+Before publishing an integrated website, verify:
 
-- Engine loads successfully.
-- All required dictionaries register.
-- Language selection changes translations.
+- Core Engine loads successfully.
+- Required language dictionaries register successfully.
+- Language selection updates website translations.
 - Arabic and Urdu use RTL.
 - Other supported languages use LTR.
-- Selected language remains after reload.
-- No missing translation keys appear.
+- Selected language remains saved after reload.
+- No required translation keys are missing.
 
-## 8. Licensing
+## 8. Licensing and Ownership
 
 EULLIYAN’S retains ownership of the Universal Language System Core Engine.
 
-Commercial use, client delivery, developer and agency licensing, and Premium features are governed by the applicable license agreement.
+Commercial use, client website integration, developer and agency licensing, and Premium features are governed by the applicable license agreement.
 
-Read the license documents:
+Read the applicable license documents:
+
 - `LICENSE-CLIENT.md`
 - `LICENSE-DEVELOPER.md`
 - `LICENSE-PREMIUM.md`
 
-Do not resell, redistribute, or publish the Core Engine as a standalone product without written authorization.
+The Core Engine must not be extracted, resold, redistributed, sublicensed, published, or distributed as a separate product without prior written authorization from EULLIYAN’S.
+
+Permitted integrated website delivery is subject to the applicable license terms.
+
+No ownership of the Core Engine is transferred.
 
 ## 9. Support and Licensing Contact
 
