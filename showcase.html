@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EULLIYAN'S Universal Language System — multilingual website technology for developers and businesses.">
+  <title>EULLIYAN'S | Universal Language System</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f8f7;
+      color: #173b37;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #073d38;
+      color: white;
+      padding: 18px 6%;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 11px;
+      color: #baf5e9;
+      letter-spacing: 2px;
+    }
+
+    select {
+      padding: 10px 14px;
+      border: 1px solid #baf5e9;
+      border-radius: 8px;
+      background: white;
+      color: #073d38;
+      font-size: 15px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #073d38, #08796c);
+      color: white;
+      text-align: center;
+      padding: 85px 20px;
+    }
+
+    .hero-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #baf5e9;
+      color: #baf5e9;
+      border-radius: 30px;
+      padding: 5px 15px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #e0f5ef;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #baf5e9;
+      color: #073d38;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 25px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      color: #075b52;
+      font-size: 29px;
+    }
+
+    .section-title p {
+      color: #607c76;
+      margin-top: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 55px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px #073d3810;
+      border: 1px solid #e0ece8;
+    }
+
+    .card h3 {
+      color: #075b52;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #607c76;
+      font-size: 14px;
+    }
+
+    .language-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 55px;
+    }
+
+    .language-item {
+      background: white;
+      border: 1px solid #d5e9e2;
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-weight: bold;
+    }
+
+    .test-panel {
+      background: #e5f4ef;
+      border: 1px solid #c6e7dc;
+      border-radius: 14px;
+      padding: 25px;
+      margin-bottom: 55px;
+      overflow-wrap: anywhere;
+    }
+
+    .test-panel p {
+      margin-top: 8px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .links a {
+      color: #075b52;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #073d38;
+      color: #d6eee8;
+      text-align: center;
+      padding: 28px 15px;
+      font-size: 13px;
+    }
+
+    [dir="rtl"] {
+      text-align: right;
+    }
+
+    [dir="rtl"] .section-title,
+    [dir="rtl"] .hero {
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 65px 18px;
+      }
+
+      main {
+        padding: 40px 15px;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      EULLIYAN'S
+      <span>UNIVERSAL LANGUAGE SYSTEM</span>
+    </div>
+
+    <select id="languageSelector" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="bn">বাংলা</option>
+      <option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ur">اردو</option>
+    </select>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="tag">MULTILINGUAL WEB TECHNOLOGY</span>
+
+    <h1>EULLIYAN'S Universal Language System</h1>
+
+    <p data-i18n="messages.welcome">
+      Welcome to our website!
+    </p>
+
+    <a href="#features" class="button" data-i18n="actions.getStarted">
+      Get Started
+    </a>
+  </div>
+</section>
+
+<main>
+
+  <section class="section-title" id="features">
+    <h2 data-i18n="common.services">Services</h2>
+    <p>One language system. Multiple possibilities.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>01. Five Languages</h3>
+      <p>English, Bengali, Arabic, Hindi and Urdu support.</p>
+    </div>
+
+    <div class="card">
+      <h3>02. RTL & LTR</h3>
+      <p>Automatic text direction for right-to-left and left-to-right languages.</p>
+    </div>
+
+    <div class="card">
+      <h3>03. Easy Integration</h3>
+      <p>Use the hosted Core Engine and language dictionaries in your website.</p>
+    </div>
+
+    <div class="card">
+      <h3>04. Saved Language</h3>
+      <p>Remember the visitor's selected language after reloading the website.</p>
+    </div>
+  </section>
+
+  <section class="section-title">
+    <h2>Supported Languages</h2>
+    <p>Five languages, two writing directions.</p>
+  </section>
+
+  <section class="language-list">
+    <div class="language-item">English · LTR</div>
+    <div class="language-item">বাংলা · LTR</div>
+    <div class="language-item">العربية · RTL</div>
+    <div class="language-item">हिन्दी · LTR</div>
+    <div class="language-item">اردو · RTL</div>
+  </section>
+
+  <section class="test-panel">
+    <h2>System Information</h2>
+    <p id="engineStatus">Checking engine...</p>
+    <p id="languageStatus">Checking languages...</p>
+    <p id="directionStatus">Checking direction...</p>
+    <p id="savedStatus">Checking saved language...</p>
+  </section>
+
+  <section class="section-title">
+    <h2>Licensing & Opportunities</h2>
+    <p>Flexible options for websites, developers and businesses.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>Basic System</h3>
+      <p>Basic language functionality for EULLIYAN'S own websites and licensed client projects.</p>
+    </div>
+
+    <div class="card">
+      <h3>Developer License</h3>
+      <p>Commercial licensing options for developers and agencies integrating the system into client websites.</p>
+    </div>
+
+    <div class="card">
+      <h3>Premium System</h3>
+      <p>Optional advanced features under a separate Premium license.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="common.about">About</h2>
+    <p>
+      EULLIYAN'S develops practical digital tools and multilingual
+      website technology for developers and businesses.
+    </p>
+
+    <div class="links">
+      <a href="demo.html">Main Demo</a>
+      <a href="client-test.html">Client Test</a>
+      <a href="README.md">Integration Guide</a>
+      <a href="LICENSE-CLIENT.md">Client License</a>
+      <a href="LICENSE-DEVELOPER.md">Developer License</a>
+      <a href="LICENSE-PREMIUM.md">Premium License</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  EULLIYAN'S · Universal Language System
+  <br>
+  <span>© EULLIYAN'S. All rights reserved.</span>
+  <br>
+  Contact: eulliyans02@gmail.com
+</footer>
+
+<script src="eulliyans-language.js"></script>
+<script src="languages/en.js"></script>
+<script src="languages/bn.js"></script>
+<script src="languages/ar.js"></script>
+<script src="languages/hi.js"></script>
+<script src="languages/ur.js"></script>
+
+<script>
+(function () {
+  const engine = window.EULLIYANS_LANG;
+  const selector = document.getElementById("languageSelector");
+
+  function showStatus(id, message) {
+    document.getElementById(id).textContent = message;
+  }
+
+  if (!engine) {
+    showStatus("engineStatus", "Engine: FAILED");
+    return;
+  }
+
+  engine.init({
+    defaultLanguage: "en",
+    fallbackLanguage: "en",
+    storageKey: "eulliyans_showcase_language"
+  });
+
+  const supported = ["en", "bn", "ar", "hi", "ur"];
+
+  function updateStatus() {
+    const current = engine.getLanguage();
+    const registered = engine.getLanguages();
+
+    selector.value = current;
+
+    showStatus("engineStatus", "Engine: PASS");
+
+    showStatus(
+      "languageStatus",
+      "Languages registered: " +
+      supported.filter(code => registered.includes(code)).length +
+      "/5"
+    );
+
+    showStatus(
+      "directionStatus",
+      "Direction: " + document.documentElement.dir.toUpperCase()
+    );
+
+    showStatus(
+      "savedStatus",
+      "Saved language: " +
+      (localStorage.getItem("eulliyans_showcase_language") || "Not saved")
+    );
+  }
+
+  selector.value = engine.getLanguage();
+
+  selector.addEventListener("change", function () {
+    engine.setLanguage(this.value);
+    updateStatus();
+  });
+
+  document.addEventListener(
+    "eulliyans:languageChanged",
+    updateStatus
+  );
+
+  updateStatus();
+})();
+</script>
+
+</body>
+</html>
