@@ -174,6 +174,23 @@
         languages.map(loadLanguage)
       );
 
+           // Restore previously saved language
+      let savedLanguage = null;
+
+      try {
+        savedLanguage = window.localStorage.getItem(
+          options.storageKey || "eulliyans_language"
+        );
+      } catch (error) {
+        console.warn("Premium: Language storage unavailable.");
+      }
+
+      if (savedLanguage && engine.hasLanguage(savedLanguage)) {
+        engine.setLanguage(savedLanguage, {
+          persist: false
+        });
+      }
+
       if (selector) {
         selector.value = engine.getLanguage();
       }
@@ -181,7 +198,6 @@
       updateDirection(engine.getLanguage());
 
       return results;
-    },
 
     loadLanguage
 
