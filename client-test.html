@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EULLIYAN'S Client Test</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f3f8f7;
+      color: #173b37;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      max-width: 650px;
+      margin: 25px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      box-shadow: 0 3px 14px #0001;
+    }
+
+    h1, h2 { color: #075b52; }
+
+    select, button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 10px;
+      border: 1px solid #b7d5cf;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #075b52;
+      color: white;
+      border: 0;
+      font-weight: bold;
+    }
+
+    .status {
+      padding: 10px;
+      margin: 8px 0;
+      background: #e7f5f1;
+      border-radius: 8px;
+    }
+
+    [dir="rtl"] { text-align: right; }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <section class="card">
+    <h1>EULLIYAN'S</h1>
+    <p>Universal Language System — Client Test</p>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="common.language">Language</h2>
+
+    <select id="language">
+      <option value="en">English</option>
+      <option value="bn">বাংলা</option>
+      <option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ur">اردو</option>
+    </select>
+
+    <p data-i18n="messages.welcome">Welcome to our website!</p>
+    <p><strong data-i18n="common.about">About</strong></p>
+    <p data-i18n="navigation.contact">Contact Us</p>
+  </section>
+
+  <section class="card">
+    <h2>Live Test Results</h2>
+    <div class="status" id="engine">Engine: Checking...</div>
+    <div class="status" id="languages">Languages: Checking...</div>
+    <div class="status" id="direction">Direction: Checking...</div>
+    <div class="status" id="translation">Translation: Checking...</div>
+    <div class="status" id="storage">Saved Language: Checking...</div>
+  </section>
+
+  <section class="card">
+    <h2>Persistence Test</h2>
+    <p>Select a language, then reload this page. The selected language should remain.</p>
+    <button onclick="location.reload()">Reload Test Page</button>
+  </section>
+
+</main>
+
+<script src="eulliyans-language.js"></script>
+<script src="languages/en.js"></script>
+<script src="languages/bn.js"></script>
+<script src="languages/ar.js"></script>
+<script src="languages/hi.js"></script>
+<script src="languages/ur.js"></script>
+
+<script>
+  const engine = window.EULLIYANS_LANG;
+
+  const select = document.getElementById("language");
+
+  const supported = ["en", "bn", "ar", "hi", "ur"];
+
+  function show(id, message) {
+    document.getElementById(id).textContent = message;
+  }
+
+  if (!engine) {
+    show("engine", "Engine: FAILED");
+    throw new Error("Language Engine not loaded");
+  }
+
+  engine.init({
+    defaultLanguage: "en",
+    fallbackLanguage: "en",
+    storageKey: "eulliyans_client_test_language"
+  });
+
+  show("engine", "Engine: PASS");
+
+  const registered = engine.getLanguages();
+
+  show(
+    "languages",
+    "Languages: " +
+    supported.filter(code => registered.includes(code)).length +
+    "/5 registered"
+  );
+
+  select.value = engine.getLanguage();
+
+  function runTest() {
+    const language = engine.getLanguage();
+    const direction = document.documentElement.dir;
+    const translated = engine.t("messages.welcome");
+
+    select.value = language;
+
+    show("direction", "Direction: " + direction.toUpperCase());
+
+    show(
+      "translation",
+      "Translation: " +
+      (translated !== "messages.welcome" ? "PASS" : "CHECK")
+    );
+
+    let saved = "Not available";
+
+    try {
+      saved = localStorage.getItem(
+        "eulliyans_client_test_language"
+      ) || "Not saved yet";
+    } catch (error) {
+      saved = "Storage unavailable";
+    }
+
+    show("storage", "Saved Language: " + saved);
+  }
+
+  select.addEventListener("change", function () {
+    engine.setLanguage(this.value);
+    runTest();
+  });
+
+  document.addEventListener("eulliyans:languageChanged", runTest);
+
+  runTest();
+</script>
+
+</body>
+</html>
