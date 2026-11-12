@@ -30,7 +30,6 @@ It uses language dictionaries to translate website text, supports RTL/LTR text d
 ## 3. Project Files
 
 - `eulliyans-language.js` — Core Language Engine.
-- `client-config.js` — Client website configuration.
 - `languages/en.js` — English dictionary.
 - `languages/bn.js` — Bengali dictionary.
 - `languages/ar.js` — Arabic dictionary.
