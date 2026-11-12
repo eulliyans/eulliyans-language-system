@@ -103,7 +103,13 @@ Without written permission from EULLIYAN’S, no license holder may:
 Third-party libraries, tools, and services remain subject to their respective licenses and terms.
 
 This framework does not override third-party rights.
+**Permitted Integrated Website Delivery**
 
+An authorized developer or license holder may deliver a completed website containing the Core Engine and the files required for its operation, solely as integrated components of that approved website.
+
+The end client may use these components only as part of the delivered website. This permission does not allow the client or developer to extract, sell, redistribute, sublicense, publish, or distribute the Core Engine as a separate product.
+
+No ownership of the Core Engine is transferred. Any broader rights require prior written permission from EULLIYAN’S.
 ## 10. Support, Maintenance and Updates
 
 Support, hosting, maintenance, updates, and future development are not automatically included.
