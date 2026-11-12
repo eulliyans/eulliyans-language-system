@@ -71,7 +71,15 @@ Premium access does not permit the license holder to:
 - Sublicense Premium functionality independently without permission.
 - Claim ownership of EULLIYAN’S technology.
 - Bypass agreed license limits or payment requirements.
+### Permitted Integrated Website Delivery
 
+An authorized developer or license holder may deliver Premium functionality and the files required for its operation as integrated components of an approved client website, only within the purchased Premium license scope.
+
+The end client may use those Premium components only as part of that delivered website and only for the duration and within the limits stated in the applicable purchase agreement.
+
+Neither the developer nor the end client may extract, sell, redistribute, sublicense, publish, or distribute the Core Engine or paid Premium components as a separate product without prior written permission from EULLIYAN’S.
+
+No ownership of the Core Engine or Premium components is transferred.
 ## 7. Pricing and Payment
 
 Premium pricing, payment schedules, renewal conditions, and applicable taxes must be stated in the relevant purchase agreement.
