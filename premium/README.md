@@ -8,6 +8,7 @@ Before using the Premium Module, make sure you have:
 - EULLIYAN'S Core Engine
 - At least one registered language dictionary
 - A language dictionary file for each additional language
+
 ## 2. Project Structure
 ```text
 your-website/
@@ -20,25 +21,17 @@ your-website/
 │   └── fr.js
 │
 └── premium/
-    └── language-premium.js
-```
+    ├── README.md
+    ├── config.example.js
+    ├── install.html
+    ├── language-premium.js
+    └── premium-test.html
+
 3. Installation
 
-Load the Core Engine first:
+For step-by-step setup instructions, see install.html⁠.
 
-<script src="eulliyans-language.js"></script>
-<script src="languages/en.js"></script>
-
-Initialize the Core Engine:
-
-EULLIYANS_LANG.init({
-  defaultLanguage: "en",
-  fallbackLanguage: "en"
-});
-
-Then load the Premium Module:
-
-<script src="premium/language-premium.js"></script>
+Use config.example.js⁠ as the starting template for Premium configuration.
 
 4. Add a Language Selector
 
