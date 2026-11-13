@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Websites | EULLIYAN'S</title>
+
+  <style>
+    :root {
+      --green: #123b2b;
+      --deep-green: #064e3b;
+      --teal: #e0f2f1;
+      --border: #80cbc4;
+      --red: #e8a0a0;
+      --accent: #b45d68;
+      --text: #111827;
+      --muted: #374151;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      padding: 15px 5%;
+      border-bottom: 4px solid var(--red);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--red);
+    }
+
+    .language {
+      position: relative;
+    }
+
+    .language-toggle {
+      background: transparent;
+      color: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 9px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .language-menu {
+      display: none;
+      position: absolute;
+      inset-inline-end: 0;
+      top: 38px;
+      z-index: 10;
+      min-width: 125px;
+      max-width: calc(100vw - 24px);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px #0002;
+    }
+
+    .language-menu.show {
+      display: block;
+    }
+
+    .language-menu button {
+      display: block;
+      width: 100%;
+      padding: 9px 12px;
+      border: none;
+      background: white;
+      color: var(--text);
+      text-align: start;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .language-menu button:hover {
+      background: var(--teal);
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 38px 22px 45px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      color: var(--green);
+      font-size: 29px;
+      margin: 5px 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .websites-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .website-card {
+      min-width: 0;
+      background: var(--teal);
+      border: 2px solid var(--border);
+      border-inline-start: 7px solid var(--deep-green);
+      border-radius: 9px;
+      padding: 18px;
+    }
+
+    .website-card h2 {
+      color: var(--green);
+      font-size: 17px;
+      margin-bottom: 5px;
+      overflow-wrap: anywhere;
+    }
+
+    .website-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .website-type {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .visit-link {
+      display: inline-block;
+      margin-top: 5px;
+      color: var(--deep-green);
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .visit-link:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 14px 10px;
+      border-top: 4px solid var(--red);
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 13px 12px;
+      }
+
+      .header-inner {
+        justify-content: center;
+      }
+
+      nav {
+        gap: 11px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      main {
+        padding: 30px 12px 35px;
+      }
+
+      .websites-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .website-card {
+        padding: 13px 10px;
+      }
+
+      .website-card h2 {
+        font-size: 14px;
+      }
+
+      .website-card p {
+        font-size: 11px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">EULLIYAN’S</a>
+
+    <nav>
+      <a href="index.html" data-i18n="navigation.home">Home</a>
+      <a href="about.html" data-i18n="navigation.about">About Us</a>
+      <a href="projects.html" data-i18n="navigation.projects">Our Projects</a>
+      <a href="websites.html" class="active" data-i18n="navigation.websites">Websites</a>
+    </nav>
+
+    <div class="language">
+      <button class="language-toggle" id="languageToggle">
+        🌐 EN⌄
+      </button>
+
+      <div class="language-menu" id="languageMenu">
+        <button data-lang="en">English</button>
+        <button data-lang="bn">বাংলা</button>
+        <button data-lang="ar">العربية</button>
+        <button data-lang="hi">हिन्दी</button>
+        <button data-lang="ur">اردو</button>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <div class="eyebrow" data-page="eyebrow">MY WEBSITES</div>
+    <h1 data-page="title">Websites I've Built</h1>
+    <p class="subtitle" data-page="subtitle">
+      Explore my websites and digital creations.
+    </p>
+  </section>
+
+  <section class="websites-grid">
+
+    <article class="website-card">
+      <span class="website-type" data-page="type1">MOSQUE WEBSITE</span>
+      <h2>PRAYER BOARD</h2>
+      <p data-page="desc1">
+        A digital mosque prayer board displaying prayer times and useful information.
+      </p>
+      <a class="visit-link"
+         href="https://eulliyans.github.io/masjid-prayer-board/"
+         target="_blank" rel="noopener"
+         data-page="visit">Visit Website →</a>
+    </article>
+
+    <article class="website-card">
+      <span class="website-type" data-page="type2">RESTAURANT WEBSITE</span>
+      <h2>FAWAZ CAFETERIA</h2>
+      <p data-page="desc2">
+        A cafeteria website with food menus and online ordering features.
+      </p>
+      <a class="visit-link"
+         href="https://eulliyans.github.io/Fawaz-Cafeteria/"
+         target="_blank" rel="noopener"
+         data-page="visit">Visit Website →</a>
+    </article>
+
+    <article class="website-card">
+      <span class="website-type" data-page="type3">FOOD MARKETPLACE</span>
+      <h2>BUFIA ZAMZAM</h2>
+      <p data-page="desc3">
+        A food and rewards marketplace connecting customers with offers.
+      </p>
+      <a class="visit-link"
+         href="https://eulliyans.github.io/Bufia-Zamzam/"
+         target="_blank" rel="noopener"
+         data-page="visit">Visit Website →</a>
+    </article>
+
+    <article class="website-card">
+      <span class="website-type" data-page="type4">TRANSPARENCY PLATFORM</span>
+      <h2>ARTHIK SWACHCHHOTA</h2>
+      <p data-page="desc4">
+        A citizen-focused platform for financial transparency.
+      </p>
+      <a class="visit-link"
+         href="https://arthikswachchhota.github.io/Artik-cwachchhota-/"
+         target="_blank" rel="noopener"
+         data-page="visit">Visit Website →</a>
+    </article>
+
+  </section>
+
+</main>
+
+<footer>
+  © EULLIYAN’S · <span data-page="tagline">Build, Create, Preserve.</span>
+</footer>
+
+<script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/en.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/bn.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ar.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
+<script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
+
+<script>
+  const engine = window.EULLIYANS_LANG;
+
+  const pageTranslations = {
+    en: {
+      eyebrow: "MY WEBSITES",
+      title: "Websites I've Built",
+      subtitle: "Explore my websites and digital creations.",
+      type1: "MOSQUE WEBSITE",
+      desc1: "A digital mosque prayer board displaying prayer times and useful information.",
+      type2: "RESTAURANT WEBSITE",
+      desc2: "A cafeteria website with food menus and online ordering features.",
+      type3: "FOOD MARKETPLACE",
+      desc3: "A food and rewards marketplace connecting customers with offers.",
+      type4: "TRANSPARENCY PLATFORM",
+      desc4: "A citizen-focused platform for financial transparency.",
+      visit: "Visit Website →",
+      tagline: "Build, Create, Preserve."
+    },
+
+    bn: {
+      eyebrow: "আমার ওয়েবসাইট",
+      title: "আমার তৈরি ওয়েবসাইট",
+      subtitle: "আমার ওয়েবসাইট ও ডিজিটাল কাজগুলো দেখুন।",
+      type1: "মসজিদ ওয়েবসাইট",
+      desc1: "নামাজের সময় ও প্রয়োজনীয় তথ্য প্রদর্শনের একটি ডিজিটাল মসজিদ বোর্ড।",
+      type2: "রেস্টুরেন্ট ওয়েবসাইট",
+      desc2: "খাবারের মেনু ও অনলাইন অর্ডার সুবিধাসহ একটি ক্যাফেটেরিয়া ওয়েবসাইট।",
+      type3: "ফুড মার্কেটপ্লেস",
+      desc3: "খাবার ও পুরস্কারের অফার নিয়ে তৈরি একটি মার্কেটপ্লেস।",
+      type4: "আর্থিক স্বচ্ছতা প্ল্যাটফর্ম",
+      desc4: "নাগরিকদের জন্য আর্থিক স্বচ্ছতা বিষয়ক একটি প্ল্যাটফর্ম।",
+      visit: "ওয়েবসাইট দেখুন →",
+      tagline: "তৈরি করি, গড়ি, সংরক্ষণ করি।"
+    },
+
+    ar: {
+      eyebrow: "مواقعي الإلكترونية",
+      title: "المواقع التي أنشأتها",
+      subtitle: "استكشف مواقعي وإبداعاتي الرقمية.",
+      type1: "موقع مسجد",
+      desc1: "لوحة رقمية للمسجد تعرض أوقات الصلاة والمعلومات المفيدة.",
+      type2: "موقع مطعم",
+      desc2: "موقع كافتيريا يعرض قوائم الطعام ويوفر الطلب عبر الإنترنت.",
+      type3: "سوق للأطعمة",
+      desc3: "سوق للأطعمة والمكافآت يقدم عروضًا للعملاء.",
+      type4: "منصة الشفافية",
+      desc4: "منصة تهدف إلى تعزيز الشفافية المالية للمواطنين.",
+      visit: "زيارة الموقع ←",
+      tagline: "نبني، نبدع، نحافظ."
+    },
+
+    hi: {
+      eyebrow: "मेरी वेबसाइटें",
+      title: "मेरे द्वारा बनाई गई वेबसाइटें",
+      subtitle: "मेरी वेबसाइटों और डिजिटल रचनाओं को देखें।",
+      type1: "मस्जिद वेबसाइट",
+      desc1: "नमाज़ के समय और उपयोगी जानकारी दिखाने वाला डिजिटल मस्जिद बोर्ड।",
+      type2: "रेस्तरां वेबसाइट",
+      desc2: "खाने के मेन्यू और ऑनलाइन ऑर्डर की सुविधा वाली कैफेटेरिया वेबसाइट।",
+      type3: "फूड मार्केटप्लेस",
+      desc3: "खाने और रिवॉर्ड ऑफ़र का एक ऑनलाइन मार्केटप्लेस।",
+      type4: "पारदर्शिता प्लेटफ़ॉर्म",
+      desc4: "नागरिकों के लिए वित्तीय पारदर्शिता का एक प्लेटफ़ॉर्म।",
+      visit: "वेबसाइट देखें →",
+      tagline: "बनाएँ, रचें, सुरक्षित रखें।"
+    },
+
+    ur: {
+      eyebrow: "میری ویب سائٹس",
+      title: "میری بنائی ہوئی ویب سائٹس",
+      subtitle: "میری ویب سائٹس اور ڈیجیٹل تخلیقات دیکھیں۔",
+      type1: "مسجد کی ویب سائٹ",
+      desc1: "نماز کے اوقات اور مفید معلومات دکھانے والا ڈیجیٹل مسجد بورڈ۔",
+      type2: "ریسٹورنٹ کی ویب سائٹ",
+      desc2: "کھانے کے مینیو اور آن لائن آرڈر کی سہولت والی کیفے ٹیریا ویب سائٹ۔",
+      type3: "فوڈ مارکیٹ پلیس",
+      desc3: "کھانے اور انعامات کی پیشکشوں پر مشتمل مارکیٹ پلیس۔",
+      type4: "شفافیت کا پلیٹ فارم",
+      desc4: "شہریوں کے لیے مالی شفافیت کا ایک پلیٹ فارم۔",
+      visit: "ویب سائٹ دیکھیں ←",
+      tagline: "بنائیں، تخلیق کریں، محفوظ رکھیں۔"
+    }
+  };
+
+  const toggle = document.getElementById("languageToggle");
+  const menu = document.getElementById("languageMenu");
+
+  function applyPageLanguage(code) {
+    const translations = pageTranslations[code] || pageTranslations.en;
+
+    document.querySelectorAll("[data-page]").forEach(element => {
+      const key = element.dataset.page;
+      if (translations[key]) {
+        element.textContent = translations[key];
+      }
+    });
+
+    toggle.textContent = "🌐 " + code.toUpperCase() + "⌄";
+    document.documentElement.lang = code;
+  }
+
+  function changeLanguage(code) {
+    if (engine && engine.hasLanguage(code)) {
+      engine.setLanguage(code);
+    }
+
+    applyPageLanguage(code);
+    menu.classList.remove("show");
+  }
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+
+  menu.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      changeLanguage(button.dataset.lang);
+    });
+  });
+
+  document.addEventListener("click", event => {
+    if (!event.target.closest(".language")) {
+      menu.classList.remove("show");
+    }
+  });
+
+  if (engine) {
+    engine.init();
+    const savedLanguage = engine.getLanguage() || "en";
+    changeLanguage(savedLanguage);
+  } else {
+    applyPageLanguage("en");
+  }
+</script>
+
+</body>
+</html>
