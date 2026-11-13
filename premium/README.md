@@ -26,7 +26,7 @@ your-website/
     ├── install.html
     ├── language-premium.js
     └── premium-test.html
-
+```
 3. Installation
 
 For step-by-step setup instructions, see install.html⁠.
