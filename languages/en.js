@@ -157,6 +157,17 @@
       copyright: "All rights reserved.",
       contact: "Contact"
     },
+        aboutPage: {
+      eyebrow: "ABOUT ME",
+      title: "Who Is EULLIYAN?",
+      intro: "I’m EULLIYAN, a Web Developer and Digital Creator who believes in learning, creating, and building a better future through technology.",
+      journeyTitle: "My Journey",
+      journeyText: "I started with curiosity and a dream. Step by step, I learned web development and built my first website. That small beginning gave me the confidence to dream bigger.",
+      visionTitle: "My Vision",
+      visionText: "I’m still learning, growing, and creating. My goal is to turn ideas into meaningful digital experiences. With hard work and Allah’s blessings, InshaAllah, I’ll keep moving forward.",
+      motto: "Still Learning. Still Building. Still Dreaming.",
+      tagline: "Build, Create, Preserve."
+    },
     footer: {
       quickLinks: "Quick Links",
       followUs: "Follow Us",
