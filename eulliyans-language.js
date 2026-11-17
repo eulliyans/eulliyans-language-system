@@ -14,11 +14,13 @@
     fallbackLanguage: "en",
     storageKey: "eulliyans_language",
     directionMap: {
-      en: "ltr",
-      bn: "ltr",
-      ar: "rtl",
-      hi: "ltr",
-      ur: "rtl"
+     en: "ltr",
+     bn: "ltr",
+     ar: "rtl",
+     hi: "ltr",
+     ur: "rtl",
+     fr: "ltr"
+   }
     }
   };
 
