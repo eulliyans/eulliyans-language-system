@@ -136,11 +136,11 @@
 show("version", "Version: " + engine.version);
   const registered = engine.getLanguages();
 
-  show(
+    show(
     "languages",
     "Languages: " +
-    supported.filter(code => registered.includes(code)).
- "/6 registered"
+    supported.filter(code => registered.includes(code)).length +
+    "/6 registered"
   );
 
   select.value = engine.getLanguage();
