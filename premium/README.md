@@ -79,14 +79,14 @@ Example configuration for an additional Spanish language:
 EULLIYANS_PREMIUM.init({
   selector: "#languageSelector",
   languages: [
-  {
-    code: "es",
-    name: "Spanish",
-    nativeName: "Español",
-    file: "languages/es.js",
-    direction: "ltr"
-  }
-]
+    {
+      code: "es",
+      name: "Spanish",
+      nativeName: "Español",
+      file: "languages/es.js",
+      direction: "ltr"
+    }
+  ]
 });
 ```
 
