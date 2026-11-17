@@ -1,15 +1,30 @@
+
 # EULLIYAN'S Language Premium
+
 ## Easy Language Expansion
-Version: 1.0.0
+
+**Version:** 1.0.0  
+**Product:** EULLIYAN'S Universal Language System
+
 EULLIYAN'S Language Premium is an optional extension for the EULLIYAN'S Universal Language System.
-It helps developers add new languages to their websites without modifying the Core Engine.
+
+It allows developers to add additional website languages without modifying the Core Engine.
+
 ## 1. Requirements
-Before using the Premium Module, make sure you have:
-- EULLIYAN'S Core Engine
-- At least one registered language dictionary
-- A language dictionary file for each additional language
+
+Before installing the Premium Module, make sure you have:
+
+- EULLIYAN'S Universal Language Core Engine.
+- At least one registered language dictionary.
+- A dictionary file for every additional language.
+- A valid Premium License where required.
+
+**Note:** English, Bengali, Arabic, Hindi, Urdu and French are already included in the Core Language System.
 
 ## 2. Project Structure
+
+Example website structure:
+
 ```text
 your-website/
 │
@@ -18,145 +33,208 @@ your-website/
 ├── languages/
 │   ├── en.js
 │   ├── bn.js
-│   └── fr.js
+│   └── es.js
 │
 └── premium/
-    ├── README.md
-    ├── config.example.js
-    ├── install.html
     ├── language-premium.js
-    └── premium-test.html
+    └── config.example.js
 ```
-3. Installation
 
-For step-by-step setup instructions, see install.html⁠.
+The `es.js` file represents an additional language dictionary supplied by the developer.
 
-Use config.example.js⁠ as the starting template for Premium configuration.
+## 3. Installation
 
-4. Add a Language Selector
+1. Add the authorized Core Engine to your website.
+2. Load your existing Core language dictionaries.
+3. Initialize the Core Engine.
+4. Load the Premium Module.
+5. Configure the additional languages.
 
+For detailed installation instructions, see:
+
+`install.html`
+
+For configuration examples, see:
+
+`config.example.js`
+
+## 4. Add a Language Selector
+
+Add a language selector to your website:
+
+```html
 <select id="languageSelector">
   <option value="en">English</option>
+  <option value="bn">বাংলা</option>
 </select>
+```
 
-5. Configure Premium
+The Premium Module can add configured languages to this selector.
 
+## 5. Configure Premium
+
+Example configuration for an additional Spanish language:
+
+```javascript
 EULLIYANS_PREMIUM.init({
   selector: "#languageSelector",
   languages: [
     {
-      code: "fr",
-      name: "French",
-      nativeName: "Français",
-      file: "languages/fr.js",
+      code: "es",
+      name: "Spanish",
+      nativeName: "Español",
+      file: "languages/es.js",
       direction: "ltr"
     }
   ]
 });
+```
 
-The Premium Module loads the dictionary, registers the language through the Core Engine, and adds it to the language selector.
+The Premium Module:
 
-6. Create a Language Dictionary
+- Loads the configured dictionary.
+- Checks whether the dictionary registered successfully.
+- Adds the language to the selector.
+- Supports language direction settings.
+- Restores a previously saved language when available.
 
-Each language requires its own dictionary file.
+## 6. Create a Language Dictionary
 
-Example: languages/fr.js
+Each additional language requires its own dictionary file.
 
+Example: `languages/es.js`
+
+```javascript
 (function (window) {
   "use strict";
-  const french = {
+
+  const spanish = {
     meta: {
-      code: "fr",
-      name: "French",
-      nativeName: "Français",
+      code: "es",
+      name: "Spanish",
+      nativeName: "Español",
       direction: "ltr"
     },
+
     common: {
-      welcome: "Bienvenue"
+      welcome: "Bienvenido"
     }
   };
-  window.EULLIYANS_LANG.register("fr", french);
+
+  window.EULLIYANS_LANG.register("es", spanish);
+
 })(window);
+```
 
-7. RTL and LTR Support
+Make sure the dictionary uses the same language code as the Premium configuration.
 
-Set the direction in the language configuration.
+## 7. RTL and LTR Support
 
-LTR examples:
+Set the appropriate direction in the language configuration.
 
-* English
-* Bengali
-* French
-* Hindi
+**LTR examples:**
+- English
+- Bengali
+- French
+- Hindi
+- Spanish
 
-RTL examples:
-
-* Arabic
-* Urdu
+**RTL examples:**
+- Arabic
+- Urdu
 
 Use:
 
+```javascript
 direction: "ltr"
+```
 
 or:
 
+```javascript
 direction: "rtl"
+```
 
-8. Translation Example
+Your website CSS should also support RTL layouts where necessary.
+
+## 8. Translation Example
 
 Add a translation key to your HTML:
 
+```html
 <p data-i18n="common.welcome">Welcome</p>
+```
 
-When French is selected, the text becomes:
+When the corresponding Spanish dictionary is loaded and Spanish is selected, the translated text becomes:
 
-Bienvenue
+**Bienvenido**
 
-9. Language Persistence
+Make sure the required translation keys exist in the dictionary.
 
-The Premium Module restores a previously selected language after the dictionaries have loaded.
+## 9. Language Persistence
+
+The Premium Module attempts to restore a previously selected language after the configured dictionaries have loaded.
 
 The default storage key is:
 
+```text
 eulliyans_language
+```
 
-10. Error Handling
+Developers can configure a different storage key when initializing the Premium Module.
+
+Use a unique storage key for each website.
+
+## 10. Error Handling
 
 The Premium Module reports errors when:
 
-* A dictionary file cannot be loaded.
-* A language configuration is invalid.
-* A dictionary does not register successfully.
-* A language is configured more than once.
+- A dictionary file cannot be loaded.
+- A language configuration is invalid.
+- A dictionary does not register successfully.
+- A language is configured more than once.
 
-11. Important Notes
+Developers should check the browser console when troubleshooting loading errors.
 
-* The Core Engine remains separate from the Premium Module.
-* The Premium Module does not replace the Core Engine.
-* Existing language dictionaries remain compatible.
-* New languages can be added through dictionary files and configuration.
-* Developers should verify translation completeness before production use.
+## 11. Important Notes
 
-12. Testing
+- The Core Engine remains separate from the Premium Module.
+- The Premium Module does not replace the Core Engine.
+- Existing Core language dictionaries remain compatible.
+- Additional languages require their own dictionary files.
+- Language codes must match between configuration and dictionaries.
+- Developers should verify translation completeness before production use.
+
+## 12. Testing
 
 A Premium test page is available:
 
-premium/premium-test.html
+`premium/premium-test.html`
 
-It can be used to test dictionary loading, language selection, translation, and persistence.
+Use it to test:
 
-13. Licensing
+- Premium Module loading.
+- Dictionary loading.
+- Language registration.
+- Language selection.
+- Translation output.
+- Language persistence.
+- Error handling.
 
-EULLIYAN’S Universal Language System and its Premium Module are proprietary products of EULLIYAN’S.
+## 13. Licensing
 
-Use, modification, distribution, and commercial licensing are subject to the applicable license terms.
+EULLIYAN'S Universal Language System and its Premium Module are proprietary products of EULLIYAN'S.
 
-For licensing information:
+Use, modification, distribution and commercial licensing are subject to the applicable license terms.
 
-https://eulliyans.github.io/⁠￼
+For licensing information, visit:
 
-Contact:
+https://eulliyans.github.io/eulliyans-language-system/
 
-eulliyans02@gmail.com
+**Contact:**  
+EULLIYAN'S  
+Email: eulliyans02@gmail.com
 
-Copyright © EULLIYAN’S. All rights reserved.
+---
+
+Copyright © EULLIYAN'S. All rights reserved.
