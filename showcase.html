@@ -238,6 +238,7 @@
       <option value="ar">العربية</option>
       <option value="hi">हिन्दी</option>
       <option value="ur">اردو</option>
+      <option value="fr">Français</option>
     </select>
   </div>
 </header>
@@ -276,9 +277,9 @@
   <section class="grid">
 
     <div class="card">
-      <h3 data-i18n="showcase.feature1Title">01. Five Languages</h3>
+      <h3 data-i18n="showcase.feature1Title">01. Six Languages</h3>
       <p data-i18n="showcase.feature1Text">
-        English, Bengali, Arabic, Hindi and Urdu support.
+        English, Bengali, Arabic, Hindi, Urdu and French support.
       </p>
     </div>
 
@@ -308,7 +309,7 @@
   <section class="section-title">
     <h2 data-i18n="showcase.languagesTitle">Supported Languages</h2>
     <p data-i18n="showcase.languagesSubtitle">
-      Five languages, two writing directions.
+      Six languages, two writing directions.
     </p>
   </section>
 
@@ -318,6 +319,7 @@
     <div class="language-item">العربية · RTL</div>
     <div class="language-item">हिन्दी · LTR</div>
     <div class="language-item">اردو · RTL</div>
+    <div class="language-item">Français · LTR</div>
   </section>
 
   <section class="test-panel">
@@ -401,13 +403,13 @@
 <script src="languages/ar.js"></script>
 <script src="languages/hi.js"></script>
 <script src="languages/ur.js"></script>
-
+<script src="languages/fr.js"></script>
 <script>
 (function () {
   const engine = window.EULLIYANS_LANG;
   const selector = document.getElementById("languageSelector");
 
-  const supported = ["en", "bn", "ar", "hi", "ur"];
+  const supported = ["en", "bn", "ar", "hi", "ur", "fr"];
 
   function showStatus(id, message) {
     document.getElementById(id).textContent = message;
@@ -442,7 +444,7 @@ showStatus(
       "languageStatus",
       engine.t("showcase.languagesRegistered") + ": " +
       supported.filter(code => registered.includes(code)).length +
-      "/5"
+      "/6"
     );
 
     showStatus(
