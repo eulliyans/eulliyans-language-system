@@ -19,14 +19,14 @@
     selector: "#languageSelector",
 
     languages: [
-      {
-        code: "fr",
-        name: "French",
-        nativeName: "Français",
-        file: "languages/fr.js",
-        direction: "ltr"
-      }
-    ]
+  {
+    code: "es",
+    name: "Spanish",
+    nativeName: "Español",
+    file: "languages/es.js",
+    direction: "ltr"
+  }
+]
 
   }).then(function (results) {
 
