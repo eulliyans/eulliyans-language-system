@@ -1,6 +1,6 @@
 
 # EULLIYAN’S Universal Language System
-## Developer & Commercial License v1.0
+## Developer & Commercial License v1.1
 
 Copyright © 2026 EULLIYAN’S. All rights reserved.
 
@@ -11,126 +11,115 @@ Official Email: eulliyans02@gmail.com
 
 ## 1. Purpose
 
-This license allows authorized developers, freelancers, agencies, and companies to integrate the EULLIYAN’S Universal Language System into approved commercial website projects.
+This license framework defines the general usage rights and restrictions for developers, freelancers, agencies, and companies integrating the EULLIYAN’S Universal Language System into website projects.
 
-EULLIYAN’S remains the owner of the original Core Engine.
+The Core Engine is developed and owned by EULLIYAN’S.
 
-## 2. License Ownership
+## 2. Ownership and Intellectual Property
 
-Purchasing this license grants usage rights only.
+EULLIYAN’S retains all ownership and intellectual property rights to:
 
-It does not transfer ownership of:
+- The original Core Engine and source code.
+- The system architecture and official components.
+- Original documentation and materials.
+- Official updates and improvements.
 
-- The original Core Engine.
-- Original source code and architecture.
-- Official system components.
-- Original documentation.
-- EULLIYAN’S intellectual property.
+Purchasing a license grants usage rights only. It does not transfer ownership of the Core Engine or EULLIYAN’S intellectual property.
 
-## 3. Authorized Usage
+## 3. Included Core Languages
 
-Subject to the purchased license agreement, the license holder may:
+The Basic Core System supports six standard languages:
 
-- Integrate the system into authorized client websites.
-- Use it in commercial website development projects.
-- Configure supported languages.
-- Edit translation text and language settings.
+- English (en)
+- Bengali (bn)
+- Arabic (ar)
+- Hindi (hi)
+- Urdu (ur)
+- French (fr)
+
+Arabic and Urdu support right-to-left (RTL) direction. English, Bengali, Hindi, and French use left-to-right (LTR) direction.
+
+Additional languages may be available through separate Premium functionality.
+
+## 4. Authorized Developer Usage
+
+Subject to the purchased license and written agreement, an authorized developer may:
+
+- Integrate the system into approved client websites.
+- Use it in authorized commercial website projects.
+- Configure supported languages and default language settings.
+- Edit translation content and language configurations.
 - Customize the website-specific implementation.
 - Charge clients for website development and integration services.
 
-## 4. Commercial License Options
+The permitted number of websites, projects, and clients depends on the purchased license plan.
+
+## 5. Commercial License Options
 
 EULLIYAN’S may offer different commercial license plans, including:
 
 ### A. Single Website License
-
-Permission to use the system in one approved website project.
+Permission to integrate the system into one approved website project.
 
 ### B. Multi-Website License
-
 Permission to use the system in a specified number of approved website projects.
 
 ### C. Agency License
-
 Permission for an agency or company to integrate the system into client projects within the limits of its written agreement.
 
-Prices, project limits, duration, and permitted usage must be confirmed before purchase.
-
-## 5. Restrictions
-
-Without separate written permission from EULLIYAN’S, the license holder may not:
-
-- Resell the Core Engine as a standalone product.
-- Redistribute or publish the original engine source code.
-- Sublicense the Core Engine independently.
-- Claim ownership of the original technology.
-- Remove applicable copyright or ownership notices.
-- Use the license beyond its agreed project or website limits.
+Pricing, project limits, duration, and permitted usage must be confirmed in the applicable commercial agreement.
 
 ## 6. Client Website Delivery
 
-The developer may deliver a completed website containing the integrated Language System to their client.
+An authorized developer may deliver a completed website containing the Core Engine and its required files as integrated components of that website.
 
-The end client receives permission to use the system only as part of that delivered website, subject to the applicable license terms.
+The end client may use the system only as part of the delivered website and within the applicable license scope.
 
-The developer must not provide the Core Engine separately as an independently resellable product.
-### Permitted Integrated Website Delivery
+The developer must not provide the Core Engine as a separate product or grant independent redistribution or resale rights.
 
-An authorized developer may provide the Core Engine and the files required for its operation as integrated components of an approved client website.
+## 7. Restrictions
 
-The end client may use these components only as part of that delivered website.
+Without prior written permission from EULLIYAN’S, the license holder may not:
 
-Neither the developer nor the end client may extract, sell, redistribute, sublicense, publish, or distribute the Core Engine as a separate product without prior written permission from EULLIYAN’S.
-
-No ownership of the Core Engine is transferred to the developer or end client.
-## 7. Customization
-
-The developer may customize translation content, configuration, and website-specific implementation.
-
-Custom modifications do not transfer ownership of the original Core Engine.
+- Sell the Core Engine as a standalone product.
+- Redistribute or publish the original engine source code separately.
+- Sublicense or commercially distribute the Core Engine independently.
+- Claim ownership of EULLIYAN’S original technology.
+- Remove applicable copyright or ownership notices.
+- Use the system beyond the agreed project or website limits.
 
 ## 8. Premium Features
 
-Premium features require a separate purchase or written agreement where applicable.
+Premium functionality and additional language expansion may require a separate purchase or written agreement.
 
-A Basic Developer License does not automatically include Premium functionality.
+A Basic Developer License does not automatically include Premium features.
+
+Premium access, pricing, usage limits, and related rights are governed by the applicable Premium License and purchase agreement.
 
 ## 9. Updates and Support
 
-Updates, technical support, maintenance, hosting, and integration assistance are not automatically included.
+Technical support, maintenance, hosting, updates, and integration assistance are not automatically included.
 
-Any such services must be agreed separately.
+These services must be agreed separately in writing.
 
-## 10. Third-Party Components
+## 10. Termination
 
-Third-party components remain subject to their own licenses and terms.
+Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the relevant agreement.
 
-The license holder is responsible for respecting applicable third-party requirements.
+## 11. Commercial Agreement and Governing Law
 
-## 11. Suspension and Termination
+Each commercial purchase should specify:
 
-Material license violations may result in suspension or termination after written notice and a reasonable opportunity to correct the issue where appropriate.
-
-All actions remain subject to applicable law and the signed agreement.
-
-## 12. Commercial Agreement
-
-Each commercial purchase should identify:
-
-- License plan.
-- Number of permitted websites or projects.
-- License duration, if limited.
+- License plan and permitted usage.
+- Number of authorized websites or projects.
+- License duration, if applicable.
 - Purchase price and payment terms.
 - Premium features, if included.
 - Support and update arrangements, if included.
 
-The signed commercial agreement takes precedence for its specific commercial terms.
+The governing law and jurisdiction must be specified in the applicable agreement.
 
-## 13. Governing Law
-
-The governing law and jurisdiction must be stated in the applicable commercial agreement after legal review.
-
-## 14. Contact
+## 12. Contact
 
 For developer licensing, agency licensing, commercial pricing, and permissions:
 
@@ -142,7 +131,9 @@ Website: https://eulliyans.github.io/
 
 ---
 
-This document is a licensing template and is not legal advice.
+## Important Notice
+
+This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed agreement.
 
 EULLIYAN’S Universal Language System
-Developer & Commercial License v1.0
+Developer & Commercial License v1.1
