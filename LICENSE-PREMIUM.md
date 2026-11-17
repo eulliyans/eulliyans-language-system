@@ -1,6 +1,6 @@
 
 # EULLIYAN’S Universal Language System
-## Premium License v1.0
+## Premium Commercial License v1.1
 
 Copyright © 2026 EULLIYAN’S. All rights reserved.
 
@@ -11,117 +11,162 @@ Official Email: eulliyans02@gmail.com
 
 ## 1. Introduction
 
-The EULLIYAN’S Premium License provides additional usage rights for premium features of the Universal Language System.
+This license defines the general terms for purchasing and using Premium features of the EULLIYAN’S Universal Language System.
 
-The Premium License is intended for clients, developers, agencies, and companies that purchase premium functionality.
+Premium functionality is an optional extension of the Basic Core System.
 
-## 2. Ownership
+This license is intended for individual website owners, developers, freelancers, agencies, and companies.
 
-EULLIYAN’S retains ownership of the original Core Engine, source code, architecture, and official system components.
+## 2. Ownership and Intellectual Property
 
-Purchasing Premium access does not transfer ownership of the Core Engine or any EULLIYAN’S intellectual property.
+EULLIYAN’S retains all ownership and intellectual property rights to:
 
-## 3. Premium Access
+- The original Core Engine and source code.
+- The Premium Module and its original source code.
+- System architecture and official components.
+- Original documentation and materials.
+- Official updates and improvements.
 
-Premium access may include features such as:
+Purchasing a Premium License grants usage rights only. It does not transfer ownership of EULLIYAN’S technology or intellectual property.
 
-- Advanced multilingual configuration.
-- Additional language-management capabilities.
+## 3. Basic Core and Premium Access
+
+The Basic Core System supports six standard languages:
+
+- English (en)
+- Bengali (bn)
+- Arabic (ar)
+- Hindi (hi)
+- Urdu (ur)
+- French (fr)
+
+Premium functionality is separate from the six standard Core languages.
+
+Depending on the purchased plan, Premium features may include:
+
+- Additional language expansion.
+- Advanced language management.
+- Extended configuration options.
 - Advanced website integrations.
-- Extended customization options.
-- Other premium features announced by EULLIYAN’S.
+- Additional customization capabilities.
+- Other features officially offered by EULLIYAN’S.
 
-Only features expressly listed in the applicable purchase agreement are included.
+For example, Spanish (es) may be configured as an additional Premium language. It is not one of the six standard Core languages.
 
-## 4. License Types
+Only features expressly included in the applicable purchase agreement are licensed.
 
-EULLIYAN’S may offer Premium licenses for:
+## 4. Premium License Types
 
-### A. Individual Website
+EULLIYAN’S may offer the following Premium license options:
+
+### A. Individual Website License
 
 Premium functionality for one approved website.
 
-### B. Developer
+### B. Developer License
 
 Premium functionality for authorized developer projects within the agreed project limits.
 
-### C. Agency or Company
+### C. Agency or Company License
 
-Premium functionality for approved agency or company projects under a separate commercial agreement.
+Premium functionality for approved agency or company projects under a separate written agreement.
 
-The applicable license type, website limits, project limits, and permitted users must be confirmed in writing.
+The license type, number of websites, project limits, authorized users, and usage conditions must be confirmed in writing.
 
-## 5. Premium Usage Rights
+## 5. Authorized Premium Usage
 
 Subject to the purchased plan, the license holder may:
 
-- Activate the purchased Premium features.
+- Activate and use the purchased Premium features.
 - Configure available Premium settings.
-- Use Premium functionality within authorized projects.
+- Add supported additional languages.
 - Customize website-specific translation and configuration.
-- Provide authorized website development services.
+- Integrate Premium functionality into approved websites.
+- Provide authorized website development services to clients.
 
-## 6. Restrictions
+All usage must remain within the purchased license scope.
 
-Premium access does not permit the license holder to:
+## 6. Client Website Delivery
 
-- Sell the Core Engine separately.
-- Redistribute the original engine source code.
+An authorized developer may deliver a completed client website containing the Premium Module and required files as integrated components of that website.
+
+The end client may use those components only as part of the approved delivered website and within the applicable license terms.
+
+The developer must ensure that the client does not receive independent resale, redistribution, or ownership rights to the Core Engine or Premium Module.
+
+Any broader client usage rights must be expressly authorized in a separate written agreement with EULLIYAN’S.
+
+## 7. Restrictions
+
+Without prior written permission from EULLIYAN’S, the license holder may not:
+
+- Sell the Core Engine or Premium Module as a standalone product.
+- Redistribute or publish the original source code separately.
 - Share paid Premium access outside the authorized license scope.
-- Sublicense Premium functionality independently without permission.
-- Claim ownership of EULLIYAN’S technology.
-- Bypass agreed license limits or payment requirements.
-### Permitted Integrated Website Delivery
+- Sublicense Premium functionality independently.
+- Claim ownership of EULLIYAN’S original technology.
+- Remove applicable copyright or ownership notices.
+- Bypass payment requirements or agreed license limits.
+- Use Premium features beyond the purchased project or website limits.
 
-An authorized developer or license holder may deliver Premium functionality and the files required for its operation as integrated components of an approved client website, only within the purchased Premium license scope.
+## 8. Pricing and Payment
 
-The end client may use those Premium components only as part of that delivered website and only for the duration and within the limits stated in the applicable purchase agreement.
+Premium pricing, payment schedules, applicable taxes, and renewal fees must be stated in the relevant purchase agreement.
 
-Neither the developer nor the end client may extract, sell, redistribute, sublicense, publish, or distribute the Core Engine or paid Premium components as a separate product without prior written permission from EULLIYAN’S.
+No price, feature, or commercial right is guaranteed unless confirmed by EULLIYAN’S in writing.
 
-No ownership of the Core Engine or Premium components is transferred.
-## 7. Pricing and Payment
+## 9. License Duration and Renewal
 
-Premium pricing, payment schedules, renewal conditions, and applicable taxes must be stated in the relevant purchase agreement.
+Premium access may be offered under different commercial arrangements, including:
 
-No price or feature is guaranteed unless confirmed by EULLIYAN’S in writing.
+- One-time purchase.
+- Monthly subscription.
+- Annual subscription.
+- Time-limited license.
+- Another mutually agreed arrangement.
 
-## 8. License Duration and Renewal
+The actual license duration, renewal conditions, and expiration consequences must be specified before purchase.
 
-The Premium License may be:
+## 10. Updates and Support
 
-- A one-time purchase.
-- A subscription.
-- A time-limited license.
-- Another agreed commercial arrangement.
+Premium updates, technical support, maintenance, and integration assistance are included only when expressly stated in the applicable purchase agreement.
 
-The actual duration and renewal conditions must be specified at purchase.
+## 11. Third-Party Services
 
-## 9. Updates and Support
-
-Premium updates, technical support, maintenance, and assistance are included only when expressly stated in the purchase agreement.
-
-## 10. Third-Party Services
-
-Some Premium features may depend on external services or third-party software.
+Some Premium functionality may depend on external services, third-party software, or independently maintained language resources.
 
 Their availability and use remain subject to the relevant third-party terms and conditions.
 
-## 11. Suspension and Termination
+EULLIYAN’S does not claim ownership of third-party materials.
 
-Material violations of this license may result in suspension or termination after written notice and a reasonable opportunity to correct the issue where appropriate.
+## 12. Suspension and Termination
 
-Any action remains subject to applicable law and the purchase agreement.
+Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the purchase agreement.
 
-## 12. Refunds and Cancellation
+Any outstanding payment obligations and continuing restrictions must be handled according to the applicable agreement and law.
 
-Refund, cancellation, and subscription policies must be provided separately before purchase and must comply with applicable consumer protection laws.
+## 13. Refunds and Cancellation
 
-## 13. Governing Law
+Refund, cancellation, and subscription policies must be communicated before purchase.
 
-The governing law and jurisdiction must be specified in the applicable commercial agreement after legal review.
+All refund and cancellation terms must comply with applicable consumer protection laws.
 
-## 14. Contact
+## 14. Commercial Agreement and Governing Law
+
+Each Premium purchase should clearly specify:
+
+- Purchased Premium features.
+- License type and permitted usage.
+- Authorized websites and project limits.
+- License duration and renewal conditions.
+- Price and payment terms.
+- Update and support arrangements.
+- Refund and cancellation conditions.
+- Governing law and jurisdiction.
+
+These terms should be confirmed in a separate written commercial agreement.
+
+## 15. Contact
 
 For Premium licensing, pricing, upgrades, and commercial permissions:
 
@@ -133,7 +178,9 @@ Website: https://eulliyans.github.io/
 
 ---
 
-This document is a licensing template and is not legal advice.
+## Important Notice
+
+This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed commercial agreement.
 
 EULLIYAN’S Universal Language System
-Premium License v1.0
+Premium Commercial License v1.1
