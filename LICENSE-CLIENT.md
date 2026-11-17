@@ -43,17 +43,21 @@ Arabic and Urdu support right-to-left (RTL) direction. The other four languages 
 
 Additional languages may be offered through separate Premium functionality.
 
+
 ## 4. Basic Client Usage Rights
 
-When the Basic Language System is included in a website purchased from EULLIYAN’S, the client may:
+When the Basic Language System is included in a website purchased directly from EULLIYAN’S or delivered by an authorized developer under a valid license, the client may:
 
-- Use the system within the purchased website.
+- Use the system within the website covered by the applicable agreement.
 - Select and configure supported languages.
 - Set the default website language.
 - Edit translation text and language settings.
 - Make reasonable website-specific customizations.
 
-These permissions apply only to the website covered by the purchase agreement.
+These permissions apply only to the website and usage scope covered by the applicable purchase or license agreement.
+
+The client does not receive ownership of the Core Engine or independent rights to sell, redistribute, or sublicense it.
+
 
 ## 5. Restrictions
 
