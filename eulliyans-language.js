@@ -19,9 +19,8 @@
      ar: "rtl",
      hi: "ltr",
      ur: "rtl",
-     fr: "ltr"
+          fr: "ltr"
    }
-    }
   };
 
   let currentLanguage = config.defaultLanguage;
