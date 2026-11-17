@@ -76,6 +76,7 @@
       <option value="ar">العربية</option>
       <option value="hi">हिन्दी</option>
       <option value="ur">اردو</option>
+      <option value="fr">Français</option>
     </select>
 
     <p data-i18n="messages.welcome">Welcome to our website!</p>
@@ -107,13 +108,14 @@
 <script src="languages/ar.js"></script>
 <script src="languages/hi.js"></script>
 <script src="languages/ur.js"></script>
+  <script src="languages/fr.js"></script>
 
 <script>
   const engine = window.EULLIYANS_LANG;
 
   const select = document.getElementById("language");
 
-  const supported = ["en", "bn", "ar", "hi", "ur"];
+  const supported = ["en", "bn", "ar", "hi", "ur", "fr"];
 
   function show(id, message) {
     document.getElementById(id).textContent = message;
@@ -137,8 +139,8 @@ show("version", "Version: " + engine.version);
   show(
     "languages",
     "Languages: " +
-    supported.filter(code => registered.includes(code)).length +
-    "/5 registered"
+    supported.filter(code => registered.includes(code)).
+ "/6 registered"
   );
 
   select.value = engine.getLanguage();
