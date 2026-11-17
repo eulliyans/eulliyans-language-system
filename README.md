@@ -106,6 +106,7 @@ Make sure the language selector element exists in the page before running its in
   <option value="ar">العربية</option>
   <option value="hi">हिन्दी</option>
   <option value="ur">اردو</option>
+<option value="fr">Français</option>
 </select>
 
 <script>
