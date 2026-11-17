@@ -1,6 +1,6 @@
 
 # EULLIYAN’S Universal Language System
-## Commercial Licensing Framework v2.0
+## Client License Agreement Framework v2.1
 
 Copyright © 2026 EULLIYAN’S. All rights reserved.
 
@@ -9,128 +9,98 @@ Official Email: eulliyans02@gmail.com
 
 ---
 
-## 1. Introduction
+## 1. Purpose
 
-EULLIYAN’S Universal Language System is a multilingual software system developed and owned by EULLIYAN’S.
+This document defines the general terms for clients using the EULLIYAN’S Universal Language System as part of a website.
 
-This licensing framework defines how individuals, clients, developers, and companies may use the system.
+The Core Engine is developed and owned by EULLIYAN’S.
 
-The Core Engine remains the intellectual property of EULLIYAN’S.
+## 2. Ownership
 
-## 2. Ownership and Intellectual Property
+EULLIYAN’S retains all ownership and intellectual property rights to:
 
-EULLIYAN’S retains ownership of:
+- The original Core Engine and source code.
+- The system architecture and official components.
+- Official documentation and original materials.
+- Future official updates and improvements.
 
-- The original Core Engine.
-- Original source code and architecture.
-- Official language-system components.
-- Original documentation and related materials.
-- Future official improvements and versions.
-
-Purchasing a license does not transfer ownership of the Core Engine.
+Purchasing or receiving a website license does not transfer ownership of the Core Engine.
 
 Clients retain ownership of their own website content, branding, images, and original materials.
 
-## 3. EULLIYAN’S Internal Use
+## 3. Included Core Languages
 
-EULLIYAN’S may use the Basic and Premium versions in its own websites and projects without purchasing a third-party license.
+The Basic Core System supports six standard languages:
 
-EULLIYAN’S retains the right to develop, modify, distribute, and commercially license its own Language System.
+- English (en)
+- Bengali (bn)
+- Arabic (ar)
+- Hindi (hi)
+- Urdu (ur)
+- French (fr)
 
-## 4. Basic Client Website License
+Arabic and Urdu support right-to-left (RTL) direction. The other four languages use left-to-right (LTR) direction.
 
-When the Basic Language System is included in a website sold by EULLIYAN’S, the client receives permission to:
+Additional languages may be offered through separate Premium functionality.
+
+## 4. Basic Client Usage Rights
+
+When the Basic Language System is included in a website purchased from EULLIYAN’S, the client may:
 
 - Use the system within the purchased website.
-- Configure supported languages.
-- Select a default language.
+- Select and configure supported languages.
+- Set the default website language.
 - Edit translation text and language settings.
 - Make reasonable website-specific customizations.
 
-This permission does not allow separate resale or redistribution of the Core Engine.
+These permissions apply only to the website covered by the purchase agreement.
 
-## 5. Developer and Commercial License
+## 5. Restrictions
 
-Developers and companies may purchase a separate commercial license from EULLIYAN’S.
+Without prior written permission from EULLIYAN’S, the client may not:
 
-Subject to the purchased license agreement, they may:
+- Sell the Core Engine as a separate product.
+- Redistribute or publish the original engine source code separately.
+- Sublicense or commercially distribute the Core Engine.
+- Claim ownership of EULLIYAN’S original technology.
+- Remove applicable copyright or ownership notices.
+- Extract and reuse the Core Engine outside the permitted license scope.
 
-- Integrate the Language System into authorized client websites.
-- Use it for their own commercial website projects.
-- Configure languages and translation content.
-- Provide website-specific customization services.
+## 6. Premium Features
 
-The license does not automatically permit:
+Premium features and additional language expansion may require a separate purchase or written agreement.
 
-- Reselling the Core Engine as a standalone product.
-- Redistributing the original source code.
-- Sublicensing the Core Engine independently.
-- Claiming ownership of EULLIYAN’S technology.
+Premium access, pricing, usage limits, updates, and support are subject to the applicable Premium License and purchase agreement.
 
-The number of permitted websites, projects, users, and distribution rights must be stated in the individual commercial agreement.
+A Basic Client License does not automatically include Premium functionality.
 
-## 6. Premium License
+## 7. Website Delivery
 
-Premium features may be offered for an additional price.
+An authorized developer may deliver a completed website containing the Core Engine and its required files as integrated components of that website.
 
-Premium licensing may include:
+The client may use those components only as part of the delivered website and within the agreed license scope.
 
-- Advanced multilingual features.
-- Additional integrations.
-- Extended configuration options.
-- Commercial support or other agreed services.
+No separate resale, redistribution, or transfer of ownership of the Core Engine is permitted.
 
-Premium functionality, pricing, updates, and usage limits must be defined in a separate written agreement.
+## 8. Updates and Support
 
-## 7. Customization Rights
+Maintenance, hosting, technical support, updates, and future development are not automatically included.
 
-Authorized license holders may customize translation text, language settings, and website-specific implementation.
+Any such services must be agreed separately in writing.
 
-Such customization does not transfer ownership of the original Core Engine.
+## 9. Termination
 
-## 8. Restrictions
+Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the relevant agreement.
 
-Without written permission from EULLIYAN’S, no license holder may:
+## 10. Commercial Terms and Governing Law
 
-- Sell the Core Engine separately.
-- Publish or distribute the Core Engine as a standalone package.
-- Remove ownership or copyright notices.
-- Claim the original Core Engine as their own.
-- Create a competing standalone product by redistributing EULLIYAN’S original engine.
+Any additional commercial rights, fees, project limits, duration, and obligations must be stated in the applicable written agreement.
 
-## 9. Third-Party Components
+The governing law and jurisdiction must also be specified in that agreement.
 
-Third-party libraries, tools, and services remain subject to their respective licenses and terms.
+## 11. Contact
 
-This framework does not override third-party rights.
-**Permitted Integrated Website Delivery**
-
-An authorized developer or license holder may deliver a completed website containing the Core Engine and the files required for its operation, solely as integrated components of that approved website.
-
-The end client may use these components only as part of the delivered website. This permission does not allow the client or developer to extract, sell, redistribute, sublicense, publish, or distribute the Core Engine as a separate product.
-
-No ownership of the Core Engine is transferred. Any broader rights require prior written permission from EULLIYAN’S.
-## 10. Support, Maintenance and Updates
-
-Support, hosting, maintenance, updates, and future development are not automatically included.
-
-These services are provided only when specified in a separate written agreement.
-
-## 11. Termination
-
-Material violations may result in suspension or termination of the applicable license after written notice and a reasonable opportunity to correct the violation where appropriate.
-
-Termination remains subject to applicable law and the relevant agreement.
-
-## 12. Governing Law
-
-The governing law and jurisdiction must be specified in the applicable commercial agreement.
-
-This framework requires legal review before being used as a binding commercial contract.
-
-## 13. Contact and Commercial Licensing
-
-For commercial licensing, premium features, permissions, and partnership inquiries:
+For licensing, permissions, Premium features, and commercial inquiries:
 
 EULLIYAN’S
 
@@ -138,15 +108,11 @@ Email: eulliyans02@gmail.com
 
 Website: https://eulliyans.github.io/
 
-## 14. Important Notice
-
-This document describes the general licensing framework of EULLIYAN’S Universal Language System.
-
-Specific commercial rights, prices, project limits, and obligations must be confirmed in a separate written agreement.
-
-This document is a licensing template and is not legal advice.
-
 ---
 
+## Important Notice
+
+This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed agreement.
+
 EULLIYAN’S Universal Language System
-Commercial Licensing Framework v2.0
+Client License Framework v2.1
