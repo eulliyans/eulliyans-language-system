@@ -20,6 +20,7 @@ It uses language dictionaries for dictionary-based text translation, supports RT
 - Arabic (ar) — RTL
 - Hindi (hi) — LTR
 - Urdu (ur) — RTL
+- French (fr) — LTR
 
 ## 2. Live Demos
 
@@ -35,7 +36,7 @@ It uses language dictionaries for dictionary-based text translation, supports RT
 - `languages/ar.js` — Arabic dictionary.
 - `languages/hi.js` — Hindi dictionary.
 - `languages/ur.js` — Urdu dictionary.
-
+- `languages/fr.js` — French dictionary.
 ## 4. Integration Guide
 
 ### Step 1 — Add the Core Engine
@@ -59,6 +60,7 @@ Add the scripts before the closing `</body>` tag:
 <script src="languages/ar.js"></script>
 <script src="languages/hi.js"></script>
 <script src="languages/ur.js"></script>
+<script src="languages/fr.js"></script>
 ```
 
 Adjust file paths if your folder structure is different.
@@ -121,7 +123,7 @@ Make sure the language selector element exists in the page before running its in
 
 The engine updates the document language and text direction when a language is selected.
 
-- English, Bengali and Hindi use LTR.
+- English, Bengali, Hindi and French use LTR.
 - Arabic and Urdu use RTL.
 
 Developers should also ensure that their website CSS supports RTL layouts where necessary.
