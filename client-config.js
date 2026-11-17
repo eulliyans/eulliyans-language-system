@@ -13,13 +13,7 @@ window.EULLIYANS_CLIENT_CONFIG = {
   defaultLanguage: "en",
 
   // Enabled languages
-  enabledLanguages: [
-  "en",
-  "bn",
-  "ar",
-  "hi",
-  "ur"
-],
+  enabledLanguages: ["en", "bn", "ar", "hi", "ur", "fr"],
 
   // Language selection
   showLanguageSelector: true,
