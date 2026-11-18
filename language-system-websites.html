@@ -4,275 +4,277 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Websites | EULLIYAN'S</title>
 
-  
-<style>
-  :root {
-    --green: #123b2b;
-    --deep-green: #064e3b;
-    --teal: #e0f2f1;
-    --border: #80cbc4;
-    --red: #e8a0a0;
-    --accent: #b45d68;
-    --text: #111827;
-    --muted: #374151;
-    --white: #ffffff;
-  }
+  <title>Websites Powered by EULLIYAN'S</title>
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  <style>
+    :root {
+      --dark: #073d38;
+      --green: #08796c;
+      --heading: #075b52;
+      --bg: #f4f8f7;
+      --text: #173b37;
+      --muted: #607c76;
+      --border: #d5e9e2;
+      --mint: #baf5e9;
+      --soft: #e5f4ef;
+      --white: #ffffff;
+    }
 
-  html {
-    width: 100%;
-    overflow-x: hidden;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    font-family: Arial, sans-serif;
-    background: var(--white);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-  }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-  header {
-    background: var(--green);
-    color: white;
-    padding: 15px 5%;
-    border-bottom: 4px solid var(--red);
-  }
-
-  .header-inner {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    font-size: 21px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-  }
-
-  nav a:hover,
-  nav a.active {
-    color: var(--red);
-  }
-
-  .language {
-    position: relative;
-  }
-
-  .language-toggle {
-    background: transparent;
-    color: white;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 6px 9px;
-    font-size: 12px;
-    cursor: pointer;
-  }
-
-  .language-menu {
-    display: none;
-    position: absolute;
-    inset-inline-end: 0;
-    top: 38px;
-    z-index: 10;
-    min-width: 125px;
-    max-width: calc(100vw - 24px);
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px #0002;
-  }
-
-  .language-menu.show {
-    display: block;
-  }
-
-  .language-menu button {
-    display: block;
-    width: 100%;
-    padding: 9px 12px;
-    border: none;
-    background: white;
-    color: var(--text);
-    text-align: start;
-    cursor: pointer;
-    font-size: 13px;
-  }
-
-  .language-menu button:hover {
-    background: var(--teal);
-  }
-
-  main {
-    flex: 1;
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 25px 22px 30px;
-  }
-
-  .intro {
-    text-align: center;
-    margin-bottom: 18px;
-  }
-
-  .eyebrow {
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  h1 {
-    color: var(--green);
-    font-size: 24px;
-    margin: 5px 0;
-  }
-
-  .subtitle {
-    color: var(--muted);
-    font-size: 14px;
-  }
-
-  .websites-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 17px;
-  }
-
-  .website-card {
-    min-width: 0;
-    background: var(--teal);
-    border: 2px solid var(--border);
-    border-inline-start: 7px solid var(--deep-green);
-    border-radius: 9px;
-    padding: 14px;
-  }
-
-  .website-card h2 {
-    color: var(--green);
-    font-size: 17px;
-    margin-bottom: 5px;
-    overflow-wrap: anywhere;
-  }
-
-  .website-card p {
-    color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-
-  .website-type {
-    display: inline-block;
-    color: var(--accent);
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 7px;
-  }
-
-  .visit-link {
-    display: inline-block;
-    margin-top: 5px;
-    color: var(--deep-green);
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .visit-link:hover {
-    color: var(--accent);
-  }
-
-  footer {
-    background: var(--green);
-    color: white;
-    text-align: center;
-    padding: 14px 10px;
-    border-top: 4px solid var(--red);
-    font-size: 12px;
-  }
-
-  @media (max-width: 600px) {
     header {
-      padding: 13px 12px;
+      background: var(--dark);
+      color: var(--white);
+      padding: 15px 5%;
+      border-bottom: 3px solid var(--green);
     }
 
     .header-inner {
-      justify-content: center;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     nav {
-      gap: 11px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--mint);
+    }
+
+    .language {
+      position: relative;
+    }
+
+    .language-toggle {
+      background: transparent;
+      color: white;
+      border: 1px solid #80bdb0;
+      border-radius: 6px;
+      padding: 6px 10px;
       font-size: 12px;
+      cursor: pointer;
+    }
+
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 38px;
+      inset-inline-end: 0;
+      z-index: 10;
+      min-width: 125px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px #0002;
+    }
+
+    .language-menu.show {
+      display: block;
+    }
+
+    .language-menu button {
+      display: block;
+      width: 100%;
+      padding: 9px 12px;
+      border: none;
+      background: white;
+      color: var(--text);
+      text-align: start;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .language-menu button:hover {
+      background: var(--soft);
     }
 
     main {
-      padding: 20px 12px 25px;
+      flex: 1;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 55px 20px;
     }
 
-    .websites-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    .website-card {
-      padding: 13px 10px;
-    }
-
-    .website-card h2 {
-      font-size: 14px;
-    }
-
-    .website-card p {
-      font-size: 11px;
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
     }
 
     h1 {
-      font-size: 21px;
+      color: var(--heading);
+      font-size: 30px;
+      line-height: 1.3;
+      margin-bottom: 10px;
     }
 
     .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .showcase-box {
+      max-width: 700px;
+      margin: 35px auto 0;
+      padding: 35px 25px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 6px 22px #073d380c;
+    }
+
+    .showcase-icon {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft);
+      color: var(--green);
+      border-radius: 50%;
+      font-size: 29px;
+    }
+
+    .showcase-box h2 {
+      color: var(--heading);
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .showcase-box p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 520px;
+      margin: 0 auto 15px;
+    }
+
+    .verification-note {
+      display: inline-block;
+      color: var(--green);
+      background: var(--soft);
+      border-radius: 20px;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 10px 21px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .home-link:hover {
+      background: var(--dark);
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      border-top: 3px solid var(--green);
       font-size: 12px;
     }
-  }
-</style>
 
+    @media (max-width: 600px) {
+      header {
+        padding: 13px 12px;
+      }
+
+      .header-inner {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 11px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      main {
+        padding: 38px 14px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .showcase-box {
+        padding: 28px 17px;
+        margin-top: 25px;
+      }
+
+      .showcase-box h2 {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -283,10 +285,11 @@
     <a href="index.html" class="logo">EULLIYAN’S</a>
 
     <nav>
-      <a href="index.html" data-i18n="navigation.home">Home</a>
-      <a href="about.html" data-i18n="navigation.about">About Us</a>
-      <a href="projects.html" data-i18n="navigation.projects">Our Projects</a>
-      <a href="language-system-websites.html" class="active" data-i18n="navigation.websites">Websites</a>
+      <a href="index.html" data-page="home">Home</a>
+      <a href="about.html" data-page="about">About Us</a>
+      <a href="projects.html" data-page="projects">Our Projects</a>
+      <a href="language-system-websites.html"
+         class="active" data-page="websites">Websites</a>
     </nav>
 
     <div class="language">
@@ -310,69 +313,50 @@
 <main>
 
   <section class="intro">
-    <div class="eyebrow" data-page="eyebrow">MY WEBSITES</div>
-    <h1 data-page="title">Websites I've Built</h1>
+    <div class="eyebrow" data-page="eyebrow">
+      INTEGRATION SHOWCASE
+    </div>
+
+    <h1 data-page="title">
+      Websites Powered by EULLIYAN'S
+    </h1>
+
     <p class="subtitle" data-page="subtitle">
-      Explore my websites and digital creations.
+      Discover websites using EULLIYAN'S Universal Language System
+      to create multilingual experiences.
     </p>
   </section>
 
-  <section class="websites-grid">
+  <section class="showcase-box">
 
-    <article class="website-card">
-      <span class="website-type" data-page="type1">MOSQUE WEBSITE</span>
-      <h2>PRAYER BOARD</h2>
-      <p data-page="desc1">
-        A digital mosque prayer board displaying prayer times and useful information.
-      </p>
-      <a class="visit-link"
-         href="https://eulliyans.github.io/masjid-prayer-board/"
-         target="_blank" rel="noopener"
-         data-page="visit">Visit Website →</a>
-    </article>
+    <div class="showcase-icon">🌐</div>
 
-    <article class="website-card">
-      <span class="website-type" data-page="type2">RESTAURANT WEBSITE</span>
-      <h2>FAWAZ CAFETERIA</h2>
-      <p data-page="desc2">
-        A cafeteria website with food menus and online ordering features.
-      </p>
-      <a class="visit-link"
-         href="https://eulliyans.github.io/Fawaz-Cafeteria/"
-         target="_blank" rel="noopener"
-         data-page="visit">Visit Website →</a>
-    </article>
+    <h2 data-page="emptyTitle">
+      Integrations Coming Soon
+    </h2>
 
-    <article class="website-card">
-      <span class="website-type" data-page="type3">FOOD MARKETPLACE</span>
-      <h2>BUFIA ZAMZAM</h2>
-      <p data-page="desc3">
-        A food and rewards marketplace connecting customers with offers.
-      </p>
-      <a class="visit-link"
-         href="https://eulliyans.github.io/Bufia-Zamzam/"
-         target="_blank" rel="noopener"
-         data-page="visit">Visit Website →</a>
-    </article>
+    <p data-page="emptyText">
+      This space will feature websites where EULLIYAN'S Universal
+      Language System has been integrated and tested.
+    </p>
 
-    <article class="website-card">
-      <span class="website-type" data-page="type4">TRANSPARENCY PLATFORM</span>
-      <h2>ARTHIK SWACHCHHOTA</h2>
-      <p data-page="desc4">
-        A citizen-focused platform for financial transparency.
-      </p>
-      <a class="visit-link"
-         href="https://arthikswachchhota.github.io/Artik-cwachchhota-/"
-         target="_blank" rel="noopener"
-         data-page="visit">Visit Website →</a>
-    </article>
+    <span class="verification-note" data-page="note">
+      Only verified integrations will be listed here.
+    </span>
+
+    <br>
+
+    <a href="index.html" class="home-link" data-page="homeLink">
+      Explore Language System
+    </a>
 
   </section>
 
 </main>
 
 <footer>
-  © EULLIYAN’S · <span data-page="tagline">Build, Create, Preserve.</span>
+  © EULLIYAN’S ·
+  <span data-page="tagline">Build, Create, Preserve.</span>
 </footer>
 
 <script src="https://eulliyans.github.io/eulliyans-language-system/eulliyans-language.js"></script>
@@ -382,104 +366,98 @@
 <script src="https://eulliyans.github.io/eulliyans-language-system/languages/hi.js"></script>
 <script src="https://eulliyans.github.io/eulliyans-language-system/languages/ur.js"></script>
 <script src="https://eulliyans.github.io/eulliyans-language-system/languages/fr.js"></script>
+
 <script>
   const engine = window.EULLIYANS_LANG;
 
   const pageTranslations = {
     en: {
-      eyebrow: "MY WEBSITES",
-      title: "Websites I've Built",
-      subtitle: "Explore my websites and digital creations.",
-      type1: "MOSQUE WEBSITE",
-      desc1: "A digital mosque prayer board displaying prayer times and useful information.",
-      type2: "RESTAURANT WEBSITE",
-      desc2: "A cafeteria website with food menus and online ordering features.",
-      type3: "FOOD MARKETPLACE",
-      desc3: "A food and rewards marketplace connecting customers with offers.",
-      type4: "TRANSPARENCY PLATFORM",
-      desc4: "A citizen-focused platform for financial transparency.",
-      visit: "Visit Website →",
+      home: "Home",
+      about: "About Us",
+      projects: "Our Projects",
+      websites: "Websites",
+      eyebrow: "INTEGRATION SHOWCASE",
+      title: "Websites Powered by EULLIYAN'S",
+      subtitle: "Discover websites using EULLIYAN'S Universal Language System to create multilingual experiences.",
+      emptyTitle: "Integrations Coming Soon",
+      emptyText: "This space will feature websites where EULLIYAN'S Universal Language System has been integrated and tested.",
+      note: "Only verified integrations will be listed here.",
+      homeLink: "Explore Language System",
       tagline: "Build, Create, Preserve."
     },
 
     bn: {
-      eyebrow: "আমার ওয়েবসাইট",
-      title: "আমার তৈরি ওয়েবসাইট",
-      subtitle: "আমার ওয়েবসাইট ও ডিজিটাল কাজগুলো দেখুন।",
-      type1: "মসজিদ ওয়েবসাইট",
-      desc1: "নামাজের সময় ও প্রয়োজনীয় তথ্য প্রদর্শনের একটি ডিজিটাল মসজিদ বোর্ড।",
-      type2: "রেস্টুরেন্ট ওয়েবসাইট",
-      desc2: "খাবারের মেনু ও অনলাইন অর্ডার সুবিধাসহ একটি ক্যাফেটেরিয়া ওয়েবসাইট।",
-      type3: "ফুড মার্কেটপ্লেস",
-      desc3: "খাবার ও পুরস্কারের অফার নিয়ে তৈরি একটি মার্কেটপ্লেস।",
-      type4: "আর্থিক স্বচ্ছতা প্ল্যাটফর্ম",
-      desc4: "নাগরিকদের জন্য আর্থিক স্বচ্ছতা বিষয়ক একটি প্ল্যাটফর্ম।",
-      visit: "ওয়েবসাইট দেখুন →",
+      home: "হোম",
+      about: "আমাদের সম্পর্কে",
+      projects: "আমাদের প্রজেক্ট",
+      websites: "ওয়েবসাইট",
+      eyebrow: "ইন্টিগ্রেশন শোকেস",
+      title: "EULLIYAN’S দ্বারা পরিচালিত ওয়েবসাইট",
+      subtitle: "EULLIYAN’S Universal Language System ব্যবহার করে তৈরি বহুভাষিক ওয়েবসাইটগুলো দেখুন।",
+      emptyTitle: "ইন্টিগ্রেশন শীঘ্রই আসছে",
+      emptyText: "এখানে সেই ওয়েবসাইটগুলো দেখানো হবে, যেখানে EULLIYAN’S Universal Language System যুক্ত করে পরীক্ষা করা হয়েছে।",
+      note: "শুধু যাচাইকৃত ইন্টিগ্রেশন এখানে দেখানো হবে।",
+      homeLink: "ল্যাঙ্গুয়েজ সিস্টেম দেখুন",
       tagline: "তৈরি করি, গড়ি, সংরক্ষণ করি।"
     },
 
     ar: {
-      eyebrow: "مواقعي الإلكترونية",
-      title: "المواقع التي أنشأتها",
-      subtitle: "استكشف مواقعي وإبداعاتي الرقمية.",
-      type1: "موقع مسجد",
-      desc1: "لوحة رقمية للمسجد تعرض أوقات الصلاة والمعلومات المفيدة.",
-      type2: "موقع مطعم",
-      desc2: "موقع كافتيريا يعرض قوائم الطعام ويوفر الطلب عبر الإنترنت.",
-      type3: "سوق للأطعمة",
-      desc3: "سوق للأطعمة والمكافآت يقدم عروضًا للعملاء.",
-      type4: "منصة الشفافية",
-      desc4: "منصة تهدف إلى تعزيز الشفافية المالية للمواطنين.",
-      visit: "زيارة الموقع ←",
+      home: "الرئيسية",
+      about: "من نحن",
+      projects: "مشاريعنا",
+      websites: "المواقع",
+      eyebrow: "عرض التكامل",
+      title: "مواقع تعمل بنظام EULLIYAN’S",
+      subtitle: "اكتشف المواقع التي تستخدم نظام EULLIYAN’S للغات المتعددة.",
+      emptyTitle: "التكاملات قريباً",
+      emptyText: "سيتم عرض المواقع التي تم دمج نظام EULLIYAN’S واختباره فيها.",
+      note: "سيتم عرض عمليات التكامل التي تم التحقق منها فقط.",
+      homeLink: "استكشف نظام اللغات",
       tagline: "نبني، نبدع، نحافظ."
     },
 
     hi: {
-      eyebrow: "मेरी वेबसाइटें",
-      title: "मेरे द्वारा बनाई गई वेबसाइटें",
-      subtitle: "मेरी वेबसाइटों और डिजिटल रचनाओं को देखें।",
-      type1: "मस्जिद वेबसाइट",
-      desc1: "नमाज़ के समय और उपयोगी जानकारी दिखाने वाला डिजिटल मस्जिद बोर्ड।",
-      type2: "रेस्तरां वेबसाइट",
-      desc2: "खाने के मेन्यू और ऑनलाइन ऑर्डर की सुविधा वाली कैफेटेरिया वेबसाइट।",
-      type3: "फूड मार्केटप्लेस",
-      desc3: "खाने और रिवॉर्ड ऑफ़र का एक ऑनलाइन मार्केटप्लेस।",
-      type4: "पारदर्शिता प्लेटफ़ॉर्म",
-      desc4: "नागरिकों के लिए वित्तीय पारदर्शिता का एक प्लेटफ़ॉर्म।",
-      visit: "वेबसाइट देखें →",
+      home: "होम",
+      about: "हमारे बारे में",
+      projects: "हमारी परियोजनाएँ",
+      websites: "वेबसाइटें",
+      eyebrow: "इंटीग्रेशन शोकेस",
+      title: "EULLIYAN'S द्वारा संचालित वेबसाइटें",
+      subtitle: "EULLIYAN'S यूनिवर्सल लैंग्वेज सिस्टम का उपयोग करने वाली वेबसाइटें देखें।",
+      emptyTitle: "इंटीग्रेशन जल्द आ रहे हैं",
+      emptyText: "यहाँ उन वेबसाइटों को दिखाया जाएगा जिनमें EULLIYAN'S सिस्टम जोड़ा और परीक्षण किया गया है।",
+      note: "यहाँ केवल सत्यापित इंटीग्रेशन दिखाए जाएँगे।",
+      homeLink: "लैंग्वेज सिस्टम देखें",
       tagline: "बनाएँ, रचें, सुरक्षित रखें।"
     },
 
     ur: {
-      eyebrow: "میری ویب سائٹس",
-      title: "میری بنائی ہوئی ویب سائٹس",
-      subtitle: "میری ویب سائٹس اور ڈیجیٹل تخلیقات دیکھیں۔",
-      type1: "مسجد کی ویب سائٹ",
-      desc1: "نماز کے اوقات اور مفید معلومات دکھانے والا ڈیجیٹل مسجد بورڈ۔",
-      type2: "ریسٹورنٹ کی ویب سائٹ",
-      desc2: "کھانے کے مینیو اور آن لائن آرڈر کی سہولت والی کیفے ٹیریا ویب سائٹ۔",
-      type3: "فوڈ مارکیٹ پلیس",
-      desc3: "کھانے اور انعامات کی پیشکشوں پر مشتمل مارکیٹ پلیس۔",
-      type4: "شفافیت کا پلیٹ فارم",
-      desc4: "شہریوں کے لیے مالی شفافیت کا ایک پلیٹ فارم۔",
-      visit: "ویب سائٹ دیکھیں ←",
+      home: "ہوم",
+      about: "ہمارے بارے میں",
+      projects: "ہمارے منصوبے",
+      websites: "ویب سائٹس",
+      eyebrow: "انٹیگریشن شوکیس",
+      title: "EULLIYAN’S سے چلنے والی ویب سائٹس",
+      subtitle: "EULLIYAN’S یونیورسل لینگویج سسٹم استعمال کرنے والی ویب سائٹس دیکھیں۔",
+      emptyTitle: "انٹیگریشن جلد آرہی ہیں",
+      emptyText: "یہاں وہ ویب سائٹس دکھائی جائیں گی جن میں EULLIYAN’S سسٹم شامل کرکے ٹیسٹ کیا گیا ہے۔",
+      note: "یہاں صرف تصدیق شدہ انٹیگریشن دکھائی جائیں گی۔",
+      homeLink: "لینگویج سسٹم دیکھیں",
       tagline: "بنائیں، تخلیق کریں، محفوظ رکھیں۔"
-},
+    },
 
-
-      fr: {
-      eyebrow: "MES SITES WEB",
-      title: "Les sites web que j'ai créés",
-      subtitle: "Découvrez mes sites web et mes créations numériques.",
-      type1: "SITE WEB DE MOSQUÉE",
-      desc1: "Un tableau numérique de mosquée affichant les horaires de prière et des informations utiles.",
-      type2: "SITE WEB DE RESTAURANT",
-      desc2: "Un site de cafétéria avec des menus et des fonctionnalités de commande en ligne.",
-      type3: "MARCHÉ ALIMENTAIRE",
-      desc3: "Une plateforme alimentaire et de récompenses proposant des offres aux clients.",
-      type4: "PLATEFORME DE TRANSPARENCE",
-      desc4: "Une plateforme dédiée à la transparence financière pour les citoyens.",
-      visit: "Visiter le site →",
+    fr: {
+      home: "Accueil",
+      about: "À propos",
+      projects: "Nos projets",
+      websites: "Sites web",
+      eyebrow: "VITRINE D’INTÉGRATION",
+      title: "Sites web propulsés par EULLIYAN’S",
+      subtitle: "Découvrez les sites web utilisant le système multilingue EULLIYAN’S.",
+      emptyTitle: "Intégrations bientôt disponibles",
+      emptyText: "Cet espace présentera les sites web dans lesquels le système EULLIYAN’S a été intégré et testé.",
+      note: "Seules les intégrations vérifiées seront présentées ici.",
+      homeLink: "Découvrir le système linguistique",
       tagline: "Construire, créer, préserver."
     }
   };
@@ -492,6 +470,7 @@
 
     document.querySelectorAll("[data-page]").forEach(element => {
       const key = element.dataset.page;
+
       if (translations[key]) {
         element.textContent = translations[key];
       }
@@ -499,6 +478,13 @@
 
     toggle.textContent = "🌐 " + code.toUpperCase() + "⌄";
     document.documentElement.lang = code;
+
+    const direction = {
+      ar: "rtl",
+      ur: "rtl"
+    };
+
+    document.documentElement.dir = direction[code] || "ltr";
   }
 
   function changeLanguage(code) {
