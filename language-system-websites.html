@@ -6,271 +6,273 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Websites | EULLIYAN'S</title>
 
-  <style>
-    :root {
-      --green: #123b2b;
-      --deep-green: #064e3b;
-      --teal: #e0f2f1;
-      --border: #80cbc4;
-      --red: #e8a0a0;
-      --accent: #b45d68;
-      --text: #111827;
-      --muted: #374151;
-      --white: #ffffff;
-    }
+  
+<style>
+  :root {
+    --green: #123b2b;
+    --deep-green: #064e3b;
+    --teal: #e0f2f1;
+    --border: #80cbc4;
+    --red: #e8a0a0;
+    --accent: #b45d68;
+    --text: #111827;
+    --muted: #374151;
+    --white: #ffffff;
+  }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    html {
-      width: 100%;
-      overflow-x: hidden;
-    }
+  html {
+    width: 100%;
+    overflow-x: hidden;
+  }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
 
+  header {
+    background: var(--green);
+    color: white;
+    padding: 15px 5%;
+    border-bottom: 4px solid var(--red);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: var(--red);
+  }
+
+  .language {
+    position: relative;
+  }
+
+  .language-toggle {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .language-menu {
+    display: none;
+    position: absolute;
+    inset-inline-end: 0;
+    top: 38px;
+    z-index: 10;
+    min-width: 125px;
+    max-width: calc(100vw - 24px);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #0002;
+  }
+
+  .language-menu.show {
+    display: block;
+  }
+
+  .language-menu button {
+    display: block;
+    width: 100%;
+    padding: 9px 12px;
+    border: none;
+    background: white;
+    color: var(--text);
+    text-align: start;
+    cursor: pointer;
+    font-size: 13px;
+  }
+
+  .language-menu button:hover {
+    background: var(--teal);
+  }
+
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 22px 30px;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    color: var(--green);
+    font-size: 24px;
+    margin: 5px 0;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .websites-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+  }
+
+  .website-card {
+    min-width: 0;
+    background: var(--teal);
+    border: 2px solid var(--border);
+    border-inline-start: 7px solid var(--deep-green);
+    border-radius: 9px;
+    padding: 14px;
+  }
+
+  .website-card h2 {
+    color: var(--green);
+    font-size: 17px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .website-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .website-type {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  .visit-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: var(--deep-green);
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .visit-link:hover {
+    color: var(--accent);
+  }
+
+  footer {
+    background: var(--green);
+    color: white;
+    text-align: center;
+    padding: 14px 10px;
+    border-top: 4px solid var(--red);
+    font-size: 12px;
+  }
+
+  @media (max-width: 600px) {
     header {
-      background: var(--green);
-      color: white;
-      padding: 15px 5%;
-      border-bottom: 4px solid var(--red);
+      padding: 13px 12px;
     }
 
     .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
+      justify-content: center;
     }
 
     nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 11px;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--red);
-    }
-
-    .language {
-      position: relative;
-    }
-
-    .language-toggle {
-      background: transparent;
-      color: white;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 6px 9px;
       font-size: 12px;
-      cursor: pointer;
-    }
-
-    .language-menu {
-      display: none;
-      position: absolute;
-      inset-inline-end: 0;
-      top: 38px;
-      z-index: 10;
-      min-width: 125px;
-      max-width: calc(100vw - 24px);
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px #0002;
-    }
-
-    .language-menu.show {
-      display: block;
-    }
-
-    .language-menu button {
-      display: block;
-      width: 100%;
-      padding: 9px 12px;
-      border: none;
-      background: white;
-      color: var(--text);
-      text-align: start;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .language-menu button:hover {
-      background: var(--teal);
     }
 
     main {
-      flex: 1;
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 38px 22px 45px;
-    }
-
-    .intro {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      color: var(--green);
-      font-size: 29px;
-      margin: 5px 0;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      font-size: 14px;
+      padding: 20px 12px 25px;
     }
 
     .websites-grid {
-      display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 17px;
+      gap: 10px;
     }
 
     .website-card {
-      min-width: 0;
-      background: var(--teal);
-      border: 2px solid var(--border);
-      border-inline-start: 7px solid var(--deep-green);
-      border-radius: 9px;
-      padding: 18px;
+      padding: 13px 10px;
     }
 
     .website-card h2 {
-      color: var(--green);
-      font-size: 17px;
-      margin-bottom: 5px;
-      overflow-wrap: anywhere;
+      font-size: 14px;
     }
 
     .website-card p {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-
-    .website-type {
-      display: inline-block;
-      color: var(--accent);
       font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 7px;
     }
 
-    .visit-link {
-      display: inline-block;
-      margin-top: 5px;
-      color: var(--deep-green);
-      font-size: 12px;
-      font-weight: bold;
-      text-decoration: none;
+    h1 {
+      font-size: 21px;
     }
 
-    .visit-link:hover {
-      color: var(--accent);
-    }
-
-    footer {
-      background: var(--green);
-      color: white;
-      text-align: center;
-      padding: 14px 10px;
-      border-top: 4px solid var(--red);
+    .subtitle {
       font-size: 12px;
     }
+  }
+</style>
 
-    @media (max-width: 600px) {
-      header {
-        padding: 13px 12px;
-      }
-
-      .header-inner {
-        justify-content: center;
-      }
-
-      nav {
-        gap: 11px;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-
-      main {
-        padding: 30px 12px 35px;
-      }
-
-      .websites-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .website-card {
-        padding: 13px 10px;
-      }
-
-      .website-card h2 {
-        font-size: 14px;
-      }
-
-      .website-card p {
-        font-size: 11px;
-      }
-
-      h1 {
-        font-size: 25px;
-      }
-
-      .subtitle {
-        font-size: 12px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -284,7 +286,7 @@
       <a href="index.html" data-i18n="navigation.home">Home</a>
       <a href="about.html" data-i18n="navigation.about">About Us</a>
       <a href="projects.html" data-i18n="navigation.projects">Our Projects</a>
-      <a href="websites.html" class="active" data-i18n="navigation.websites">Websites</a>
+      <a href="language-system-websites.html" class="active" data-i18n="navigation.websites">Websites</a>
     </nav>
 
     <div class="language">
