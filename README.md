@@ -162,7 +162,7 @@ Commercial use, client website integration, developer and agency licensing, and 
 Read the applicable license documents:
 
 
-- [View All Licenses](licenses.html) — Client, Developer, and Premium licenses.
+<a href="https://eulliyans.github.io/eulliyans-language-system/licenses.html">View All Licenses</a>
 
 
 The Core Engine must not be extracted, resold, redistributed, sublicensed, published, or distributed as a separate product without prior written authorization from EULLIYAN’S.
