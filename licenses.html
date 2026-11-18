@@ -1,617 +1,600 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="EULLIYAN'S Universal Language System — Client, Developer and Premium Licenses.">
-<title>Licenses | EULLIYAN'S</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>License Center | EULLIYAN'S</title>
 
 <style>
+:root {
+  --dark: #073d38;
+  --green: #08796c;
+  --heading: #075b52;
+  --background: #f4f8f7;
+  --text: #173b37;
+  --muted: #607c76;
+  --border: #d5e9e2;
+  --mint: #baf5e9;
+  --soft: #e5f4ef;
+  --white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f8f7;
-  color: #173b37;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.7;
 }
 
 header {
-  background: #073d38;
-  color: white;
-  padding: 22px 6%;
-  text-align: center;
-}
-
-.brand {
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.brand span {
-  display: block;
-  font-size: 11px;
-  color: #baf5e9;
-  letter-spacing: 2px;
-}
-
-.back {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 9px 18px;
-  background: #baf5e9;
-  color: #073d38;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.hero {
-  background: linear-gradient(135deg, #073d38, #08796c);
+  background: linear-gradient(135deg, var(--dark), var(--green));
   color: white;
   text-align: center;
-  padding: 55px 20px;
-}
-
-.hero h1 {
-  font-size: clamp(30px, 5vw, 42px);
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #e0f5ef;
-}
-
-main {
-  max-width: 1100px;
-  margin: auto;
   padding: 45px 20px;
 }
 
-.section-title {
+header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+header p {
+  margin: 0;
+  color: var(--mint);
+}
+
+.container {
+  max-width: 950px;
+  margin: 35px auto;
+  padding: 0 18px;
+}
+
+.intro {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
-.section-title h2 {
-  color: #075b52;
-  font-size: 28px;
+.intro h2 {
+  color: var(--heading);
+  margin-bottom: 5px;
 }
 
-.section-title p {
-  color: #607c76;
-  margin-top: 7px;
+.intro p {
+  color: var(--muted);
+  margin-top: 0;
 }
 
-/* Three License Navigation Boxes */
-
-.license-menu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 35px;
-}
-
-.menu-box {
-  display: block;
-  background: #ffffff;
-  border: 1px solid #d5e9e2;
-  border-radius: 14px;
-  padding: 25px 18px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 4px 16px #073d3810;
-  transition: 0.2s;
-}
-
-.menu-box:hover {
-  border-color: #08796c;
-  transform: translateY(-3px);
-  background: #e5f4ef;
-}
-
-.menu-box h3 {
-  color: #075b52;
-  font-size: 19px;
-  margin-bottom: 7px;
-}
-
-.menu-box p {
-  color: #607c76;
-  font-size: 13px;
-}
-
-/* Complete License Cards */
+/* License boxes */
 
 .license-card {
-  background: #ffffff;
-  border: 1px solid #d5e9e2;
-  border-top: 5px solid #08796c;
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 30px;
-  margin-bottom: 35px;
-  box-shadow: 0 4px 16px #073d3810;
-  scroll-margin-top: 20px;
+  margin: 18px 0;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(7,61,56,0.05);
 }
 
-.license-card h2 {
-  color: #075b52;
-  font-size: 25px;
-  margin-bottom: 20px;
+.license-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: var(--white);
 }
 
-.license-card h3 {
-  color: #075b52;
+.license-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.license-card summary:hover {
+  background: var(--soft);
+}
+
+.license-title {
+  color: var(--heading);
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.license-subtitle {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 4px;
+}
+
+.arrow {
+  color: var(--heading);
+  font-size: 23px;
+  transition: transform .2s;
+}
+
+.license-card[open] .arrow {
+  transform: rotate(180deg);
+}
+
+.license-content {
+  padding: 22px;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.license-content h3 {
+  color: var(--heading);
+  margin: 24px 0 8px;
   font-size: 17px;
-  margin-top: 23px;
-  margin-bottom: 7px;
 }
 
-.license-card p {
-  margin-bottom: 10px;
+.license-content h3:first-child {
+  margin-top: 0;
 }
 
-.license-card ul {
-  padding-left: 25px;
-  margin-bottom: 12px;
+.license-content h4 {
+  color: var(--heading);
+  margin-bottom: 5px;
 }
 
-.license-card li {
-  margin-bottom: 4px;
+.license-content p {
+  margin: 8px 0;
+}
+
+.license-content ul {
+  padding-left: 23px;
+}
+
+.license-content li {
+  margin: 5px 0;
 }
 
 .notice {
-  background: #e5f4ef;
-  border: 1px solid #c6e7dc;
-  border-left: 4px solid #08796c;
-  border-radius: 9px;
-  padding: 17px;
-  margin-top: 20px;
+  background: var(--soft);
+  border-left: 4px solid var(--green);
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 22px;
 }
 
-.common-info {
-  background: #e5f4ef;
-  border: 1px solid #c6e7dc;
-  border-radius: 14px;
-  padding: 22px;
-  margin-bottom: 30px;
+.contact {
   text-align: center;
-  overflow-wrap: anywhere;
+  background: var(--dark);
+  color: white;
+  padding: 25px 15px;
+  margin-top: 40px;
 }
 
-.common-info a {
-  color: #075b52;
-  font-weight: bold;
-}
-
-.top-link {
-  display: inline-block;
-  margin-top: 18px;
-  color: #075b52;
-  font-weight: bold;
+.contact a {
+  color: var(--mint);
   text-decoration: none;
 }
 
 footer {
-  background: #073d38;
-  color: #d6eee8;
+  background: var(--dark);
+  color: var(--mint);
   text-align: center;
-  padding: 28px 15px;
+  padding: 14px;
+  border-top: 1px solid rgba(255,255,255,.15);
   font-size: 13px;
 }
 
-footer a {
-  color: #baf5e9;
-}
-
-@media (max-width: 650px) {
-  .license-menu {
-    grid-template-columns: 1fr;
+@media(max-width:600px) {
+  header h1 {
+    font-size: 24px;
   }
 
-  .license-card {
-    padding: 20px;
+  .license-card summary {
+    padding: 18px;
   }
 
-  main {
-    padding: 35px 15px;
+  .license-content {
+    padding: 17px;
   }
 }
 </style>
 </head>
 
-<body id="top">
+<body>
 
 <header>
-  <div class="brand">
-    EULLIYAN'S
-    <span>UNIVERSAL LANGUAGE SYSTEM</span>
-  </div>
-  <a class="back" href="showcase.html">Back to Showcase</a>
+  <h1>EULLIYAN'S</h1>
+  <p>Universal Language System — License Center</p>
 </header>
 
-<section class="hero">
-  <h1>License Center</h1>
-  <p>Choose the license that matches your usage.</p>
-</section>
+<main class="container">
 
-<main>
-
-  <section class="section-title">
-    <h2>Our Licenses</h2>
-    <p>Select a license to view its complete terms and conditions.</p>
-  </section>
-
-  <nav class="license-menu">
-    <a class="menu-box" href="#client">
-      <h3>Client License</h3>
-      <p>Website Client Usage Rights</p>
-    </a>
-
-    <a class="menu-box" href="#developer">
-      <h3>Developer License</h3>
-      <p>Developer, Freelancer & Agency</p>
-    </a>
-
-    <a class="menu-box" href="#premium">
-      <h3>Premium License</h3>
-      <p>Premium Features & Expansion</p>
-    </a>
-  </nav>
-
-  <div class="common-info">
-    <strong>Copyright © 2026 EULLIYAN'S. All rights reserved.</strong>
-    <p>Official Website:
-      <a href="https://eulliyans.github.io/">https://eulliyans.github.io/</a>
-    </p>
-    <p>Official Email: <a href="mailto:eulliyans02@gmail.com">eulliyans02@gmail.com</a></p>
+  <div class="intro">
+    <h2>License Center</h2>
+    <p>Select a license box to view its complete terms.</p>
   </div>
 
-  <!-- CLIENT LICENSE BOX -->
+  <!-- CLIENT LICENSE -->
+  <details class="license-card">
+    <summary>
+      <span>
+        <span class="license-title">Client License</span>
+        <span class="license-subtitle">Website client usage rights · v2.1</span>
+      </span>
+      <span class="arrow">⌄</span>
+    </summary>
 
-  <section class="license-card" id="client">
-    <h2>Client License Agreement Framework v2.1</h2>
+    <div class="license-content">
+      <h2>EULLIYAN’S Universal Language System</h2>
+      <p><strong>Client License Agreement Framework v2.1</strong></p>
+      <p>Copyright © 2026 EULLIYAN’S. All rights reserved.</p>
 
-    <h3>1. Purpose</h3>
-    <p>This document defines the general terms for clients using the EULLIYAN'S Universal Language System as part of a website.</p>
-    <p>The Core Engine is developed and owned by EULLIYAN'S.</p>
+      <h3>1. Purpose</h3>
+      <p>This document defines the general terms for clients using the EULLIYAN’S Universal Language System as part of a website.</p>
+      <p>The Core Engine is developed and owned by EULLIYAN’S.</p>
 
-    <h3>2. Ownership</h3>
-    <p>EULLIYAN'S retains all ownership and intellectual property rights to:</p>
-    <ul>
-      <li>The original Core Engine and source code.</li>
-      <li>The system architecture and official components.</li>
-      <li>Official documentation and original materials.</li>
-      <li>Future official updates and improvements.</li>
-    </ul>
-    <p>Purchasing or receiving a website license does not transfer ownership of the Core Engine.</p>
-    <p>Clients retain ownership of their own website content, branding, images, and original materials.</p>
+      <h3>2. Ownership</h3>
+      <p>EULLIYAN’S retains all ownership and intellectual property rights to:</p>
+      <ul>
+        <li>The original Core Engine and source code.</li>
+        <li>The system architecture and official components.</li>
+        <li>Official documentation and original materials.</li>
+        <li>Future official updates and improvements.</li>
+      </ul>
+      <p>Purchasing or receiving a website license does not transfer ownership of the Core Engine.</p>
+      <p>Clients retain ownership of their own website content, branding, images, and original materials.</p>
 
-    <h3>3. Included Core Languages</h3>
-    <p>The Basic Core System supports six standard languages:</p>
-    <ul>
-      <li>English (en)</li>
-      <li>Bengali (bn)</li>
-      <li>Arabic (ar)</li>
-      <li>Hindi (hi)</li>
-      <li>Urdu (ur)</li>
-      <li>French (fr)</li>
-    </ul>
-    <p>Arabic and Urdu support right-to-left (RTL) direction. The other four languages use left-to-right (LTR) direction.</p>
-    <p>Additional languages may be offered through separate Premium functionality.</p>
+      <h3>3. Included Core Languages</h3>
+      <p>The Basic Core System supports six standard languages:</p>
+      <ul>
+        <li>English (en)</li>
+        <li>Bengali (bn)</li>
+        <li>Arabic (ar)</li>
+        <li>Hindi (hi)</li>
+        <li>Urdu (ur)</li>
+        <li>French (fr)</li>
+      </ul>
+      <p>Arabic and Urdu support right-to-left (RTL) direction. The other four languages use left-to-right (LTR) direction.</p>
+      <p>Additional languages may be offered through separate Premium functionality.</p>
 
-    <h3>4. Basic Client Usage Rights</h3>
-    <p>When the Basic Language System is included in a website purchased directly from EULLIYAN'S or delivered by an authorized developer under a valid license, the client may:</p>
-    <ul>
-      <li>Use the system within the website covered by the applicable agreement.</li>
-      <li>Select and configure supported languages.</li>
-      <li>Set the default website language.</li>
-      <li>Edit translation text and language settings.</li>
-      <li>Make reasonable website-specific customizations.</li>
-    </ul>
-    <p>These permissions apply only to the website and usage scope covered by the applicable purchase or license agreement.</p>
-    <p>The client does not receive ownership of the Core Engine or independent rights to sell, redistribute, or sublicense it.</p>
+      <h3>4. Basic Client Usage Rights</h3>
+      <p>When the Basic Language System is included in a website purchased directly from EULLIYAN’S or delivered by an authorized developer under a valid license, the client may:</p>
+      <ul>
+        <li>Use the system within the website covered by the applicable agreement.</li>
+        <li>Select and configure supported languages.</li>
+        <li>Set the default website language.</li>
+        <li>Edit translation text and language settings.</li>
+        <li>Make reasonable website-specific customizations.</li>
+      </ul>
+      <p>These permissions apply only to the website and usage scope covered by the applicable purchase or license agreement.</p>
+      <p>The client does not receive ownership of the Core Engine or independent rights to sell, redistribute, or sublicense it.</p>
 
-    <h3>5. Restrictions</h3>
-    <p>Without prior written permission from EULLIYAN'S, the client may not:</p>
-    <ul>
-      <li>Sell the Core Engine as a separate product.</li>
-      <li>Redistribute or publish the original engine source code separately.</li>
-      <li>Sublicense or commercially distribute the Core Engine.</li>
-      <li>Claim ownership of EULLIYAN'S original technology.</li>
-      <li>Remove applicable copyright or ownership notices.</li>
-      <li>Extract and reuse the Core Engine outside the permitted license scope.</li>
-    </ul>
+      <h3>5. Restrictions</h3>
+      <p>Without prior written permission from EULLIYAN’S, the client may not:</p>
+      <ul>
+        <li>Sell the Core Engine as a separate product.</li>
+        <li>Redistribute or publish the original engine source code separately.</li>
+        <li>Sublicense or commercially distribute the Core Engine.</li>
+        <li>Claim ownership of EULLIYAN’S original technology.</li>
+        <li>Remove applicable copyright or ownership notices.</li>
+        <li>Extract and reuse the Core Engine outside the permitted license scope.</li>
+      </ul>
 
-    <h3>6. Premium Features</h3>
-    <p>Premium features and additional language expansion may require a separate purchase or written agreement.</p>
-    <p>Premium access, pricing, usage limits, updates, and support are subject to the applicable Premium License and purchase agreement.</p>
-    <p>A Basic Client License does not automatically include Premium functionality.</p>
+      <h3>6. Premium Features</h3>
+      <p>Premium features and additional language expansion may require a separate purchase or written agreement.</p>
+      <p>Premium access, pricing, usage limits, updates, and support are subject to the applicable Premium License and purchase agreement.</p>
+      <p>A Basic Client License does not automatically include Premium functionality.</p>
 
-    <h3>7. Website Delivery</h3>
-    <p>An authorized developer may deliver a completed website containing the Core Engine and its required files as integrated components of that website.</p>
-    <p>The client may use those components only as part of the delivered website and within the agreed license scope.</p>
-    <p>No separate resale, redistribution, or transfer of ownership of the Core Engine is permitted.</p>
+      <h3>7. Website Delivery</h3>
+      <p>An authorized developer may deliver a completed website containing the Core Engine and its required files as integrated components of that website.</p>
+      <p>The client may use those components only as part of the delivered website and within the agreed license scope.</p>
+      <p>No separate resale, redistribution, or transfer of ownership of the Core Engine is permitted.</p>
 
-    <h3>8. Updates and Support</h3>
-    <p>Maintenance, hosting, technical support, updates, and future development are not automatically included.</p>
-    <p>Any such services must be agreed separately in writing.</p>
+      <h3>8. Updates and Support</h3>
+      <p>Maintenance, hosting, technical support, updates, and future development are not automatically included.</p>
+      <p>Any such services must be agreed separately in writing.</p>
 
-    <h3>9. Termination</h3>
-    <p>Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the relevant agreement.</p>
+      <h3>9. Termination</h3>
+      <p>Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the relevant agreement.</p>
 
-    <h3>10. Commercial Terms and Governing Law</h3>
-    <p>Any additional commercial rights, fees, project limits, duration, and obligations must be stated in the applicable written agreement.</p>
-    <p>The governing law and jurisdiction must also be specified in that agreement.</p>
+      <h3>10. Commercial Terms and Governing Law</h3>
+      <p>Any additional commercial rights, fees, project limits, duration, and obligations must be stated in the applicable written agreement.</p>
+      <p>The governing law and jurisdiction must also be specified in that agreement.</p>
 
-    <h3>11. Contact</h3>
-    <p>For licensing, permissions, Premium features, and commercial inquiries, contact EULLIYAN'S using the official contact details above.</p>
+      <h3>11. Contact</h3>
+      <p>For licensing, permissions, Premium features, and commercial inquiries, contact EULLIYAN’S using the official contact details below.</p>
 
-    <div class="notice">
-      <h3>Important Notice</h3>
-      <p>This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed agreement.</p>
-      <strong>EULLIYAN'S Universal Language System — Client License Framework v2.1</strong>
+      <div class="notice">
+        <strong>Important Notice</strong>
+        <p>This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed agreement.</p>
+        <p>EULLIYAN’S Universal Language System — Client License Framework v2.1</p>
+      </div>
     </div>
+  </details>
 
-    <a class="top-link" href="#top">Back to top ↑</a>
-  </section>
+  <!-- DEVELOPER LICENSE -->
+  <details class="license-card">
+    <summary>
+      <span>
+        <span class="license-title">Developer License</span>
+        <span class="license-subtitle">Developer, freelancer and agency commercial usage · v1.1</span>
+      </span>
+      <span class="arrow">⌄</span>
+    </summary>
 
-  <!-- DEVELOPER LICENSE BOX -->
+    <div class="license-content">
+      <h2>EULLIYAN’S Universal Language System</h2>
+      <p><strong>Developer &amp; Commercial License v1.1</strong></p>
+      <p>Copyright © 2026 EULLIYAN’S. All rights reserved.</p>
 
-  <section class="license-card" id="developer">
-    <h2>Developer & Commercial License v1.1</h2>
+      <h3>1. Purpose</h3>
+      <p>This license framework defines the general usage rights and restrictions for developers, freelancers, agencies, and companies integrating the EULLIYAN’S Universal Language System into website projects.</p>
+      <p>The Core Engine is developed and owned by EULLIYAN’S.</p>
 
-    <h3>1. Purpose</h3>
-    <p>This license framework defines the general usage rights and restrictions for developers, freelancers, agencies, and companies integrating the EULLIYAN'S Universal Language System into website projects.</p>
-    <p>The Core Engine is developed and owned by EULLIYAN'S.</p>
+      <h3>2. Ownership and Intellectual Property</h3>
+      <p>EULLIYAN’S retains all ownership and intellectual property rights to:</p>
+      <ul>
+        <li>The original Core Engine and source code.</li>
+        <li>The system architecture and official components.</li>
+        <li>Original documentation and materials.</li>
+        <li>Official updates and improvements.</li>
+      </ul>
+      <p>Purchasing a license grants usage rights only. It does not transfer ownership of the Core Engine or EULLIYAN’S intellectual property.</p>
 
-    <h3>2. Ownership and Intellectual Property</h3>
-    <p>EULLIYAN'S retains all ownership and intellectual property rights to:</p>
-    <ul>
-      <li>The original Core Engine and source code.</li>
-      <li>The system architecture and official components.</li>
-      <li>Original documentation and materials.</li>
-      <li>Official updates and improvements.</li>
-    </ul>
-    <p>Purchasing a license grants usage rights only. It does not transfer ownership of the Core Engine or EULLIYAN'S intellectual property.</p>
+      <h3>3. Included Core Languages</h3>
+      <p>The Basic Core System supports six standard languages:</p>
+      <ul>
+        <li>English (en)</li>
+        <li>Bengali (bn)</li>
+        <li>Arabic (ar)</li>
+        <li>Hindi (hi)</li>
+        <li>Urdu (ur)</li>
+        <li>French (fr)</li>
+      </ul>
+      <p>Arabic and Urdu support right-to-left (RTL) direction. English, Bengali, Hindi, and French use left-to-right (LTR) direction.</p>
+      <p>Additional languages may be available through separate Premium functionality.</p>
 
-    <h3>3. Included Core Languages</h3>
-    <p>The Basic Core System supports six standard languages:</p>
-    <ul>
-      <li>English (en)</li>
-      <li>Bengali (bn)</li>
-      <li>Arabic (ar)</li>
-      <li>Hindi (hi)</li>
-      <li>Urdu (ur)</li>
-      <li>French (fr)</li>
-    </ul>
-    <p>Arabic and Urdu support right-to-left (RTL) direction. English, Bengali, Hindi, and French use left-to-right (LTR) direction.</p>
-    <p>Additional languages may be available through separate Premium functionality.</p>
+      <h3>4. Authorized Developer Usage</h3>
+      <p>Subject to the purchased license and written agreement, an authorized developer may:</p>
+      <ul>
+        <li>Integrate the system into approved client websites.</li>
+        <li>Use it in authorized commercial website projects.</li>
+        <li>Configure supported languages and default language settings.</li>
+        <li>Edit translation content and language configurations.</li>
+        <li>Customize the website-specific implementation.</li>
+        <li>Charge clients for website development and integration services.</li>
+      </ul>
+      <p>The permitted number of websites, projects, and clients depends on the purchased license plan.</p>
 
-    <h3>4. Authorized Developer Usage</h3>
-    <p>Subject to the purchased license and written agreement, an authorized developer may:</p>
-    <ul>
-      <li>Integrate the system into approved client websites.</li>
-      <li>Use it in authorized commercial website projects.</li>
-      <li>Configure supported languages and default language settings.</li>
-      <li>Edit translation content and language configurations.</li>
-      <li>Customize the website-specific implementation.</li>
-      <li>Charge clients for website development and integration services.</li>
-    </ul>
-    <p>The permitted number of websites, projects, and clients depends on the purchased license plan.</p>
+      <h3>5. Commercial License Options</h3>
+      <p>EULLIYAN’S may offer different commercial license plans, including:</p>
+      <h4>A. Single Website License</h4>
+      <p>Permission to integrate the system into one approved website project.</p>
+      <h4>B. Multi-Website License</h4>
+      <p>Permission to use the system in a specified number of approved website projects.</p>
+      <h4>C. Agency License</h4>
+      <p>Permission for an agency or company to integrate the system into client projects within the limits of its written agreement.</p>
+      <p>Pricing, project limits, duration, and permitted usage must be confirmed in the applicable commercial agreement.</p>
 
-    <h3>5. Commercial License Options</h3>
-    <p>EULLIYAN'S may offer different commercial license plans, including:</p>
-    <p><strong>A. Single Website License</strong><br>Permission to integrate the system into one approved website project.</p>
-    <p><strong>B. Multi-Website License</strong><br>Permission to use the system in a specified number of approved website projects.</p>
-    <p><strong>C. Agency License</strong><br>Permission for an agency or company to integrate the system into client projects within the limits of its written agreement.</p>
-    <p>Pricing, project limits, duration, and permitted usage must be confirmed in the applicable commercial agreement.</p>
+      <h3>6. Client Website Delivery</h3>
+      <p>An authorized developer may deliver a completed website containing the Core Engine and its required files as integrated components of that website.</p>
+      <p>The end client may use the system only as part of the delivered website and within the applicable license scope.</p>
+      <p>The developer must not provide the Core Engine as a separate product or grant independent redistribution or resale rights.</p>
 
-    <h3>6. Client Website Delivery</h3>
-    <p>An authorized developer may deliver a completed website containing the Core Engine and its required files as integrated components of that website.</p>
-    <p>The end client may use the system only as part of the delivered website and within the applicable license scope.</p>
-    <p>The developer must not provide the Core Engine as a separate product or grant independent redistribution or resale rights.</p>
+      <h3>7. Restrictions</h3>
+      <p>Without prior written permission from EULLIYAN’S, the license holder may not:</p>
+      <ul>
+        <li>Sell the Core Engine as a standalone product.</li>
+        <li>Redistribute or publish the original engine source code separately.</li>
+        <li>Sublicense or commercially distribute the Core Engine independently.</li>
+        <li>Claim ownership of EULLIYAN’S original technology.</li>
+        <li>Remove applicable copyright or ownership notices.</li>
+        <li>Use the system beyond the agreed project or website limits.</li>
+      </ul>
 
-    <h3>7. Restrictions</h3>
-    <p>Without prior written permission from EULLIYAN'S, the license holder may not:</p>
-    <ul>
-      <li>Sell the Core Engine as a standalone product.</li>
-      <li>Redistribute or publish the original engine source code separately.</li>
-      <li>Sublicense or commercially distribute the Core Engine independently.</li>
-      <li>Claim ownership of EULLIYAN'S original technology.</li>
-      <li>Remove applicable copyright or ownership notices.</li>
-      <li>Use the system beyond the agreed project or website limits.</li>
-    </ul>
+      <h3>8. Premium Features</h3>
+      <p>Premium functionality and additional language expansion may require a separate purchase or written agreement.</p>
+      <p>A Basic Developer License does not automatically include Premium features.</p>
+      <p>Premium access, pricing, usage limits, and related rights are governed by the applicable Premium License and purchase agreement.</p>
 
-    <h3>8. Premium Features</h3>
-    <p>Premium functionality and additional language expansion may require a separate purchase or written agreement.</p>
-    <p>A Basic Developer License does not automatically include Premium features.</p>
-    <p>Premium access, pricing, usage limits, and related rights are governed by the applicable Premium License and purchase agreement.</p>
+      <h3>9. Updates and Support</h3>
+      <p>Technical support, maintenance, hosting, updates, and integration assistance are not automatically included.</p>
+      <p>These services must be agreed separately in writing.</p>
 
-    <h3>9. Updates and Support</h3>
-    <p>Technical support, maintenance, hosting, updates, and integration assistance are not automatically included.</p>
-    <p>These services must be agreed separately in writing.</p>
+      <h3>10. Termination</h3>
+      <p>Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the relevant agreement.</p>
 
-    <h3>10. Termination</h3>
-    <p>Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the relevant agreement.</p>
+      <h3>11. Commercial Agreement and Governing Law</h3>
+      <p>Each commercial purchase should specify:</p>
+      <ul>
+        <li>License plan and permitted usage.</li>
+        <li>Number of authorized websites or projects.</li>
+        <li>License duration, if applicable.</li>
+        <li>Purchase price and payment terms.</li>
+        <li>Premium features, if included.</li>
+        <li>Support and update arrangements, if included.</li>
+      </ul>
+      <p>The governing law and jurisdiction must be specified in the applicable agreement.</p>
 
-    <h3>11. Commercial Agreement and Governing Law</h3>
-    <p>Each commercial purchase should specify:</p>
-    <ul>
-      <li>License plan and permitted usage.</li>
-      <li>Number of authorized websites or projects.</li>
-      <li>License duration, if applicable.</li>
-      <li>Purchase price and payment terms.</li>
-      <li>Premium features, if included.</li>
-      <li>Support and update arrangements, if included.</li>
-    </ul>
-    <p>The governing law and jurisdiction must be specified in the applicable agreement.</p>
+      <h3>12. Contact</h3>
+      <p>For developer licensing, agency licensing, commercial pricing, and permissions, contact EULLIYAN’S using the official contact details below.</p>
 
-    <h3>12. Contact</h3>
-    <p>For developer licensing, agency licensing, commercial pricing, and permissions, contact EULLIYAN'S using the official contact details above.</p>
-
-    <div class="notice">
-      <h3>Important Notice</h3>
-      <p>This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed agreement.</p>
-      <strong>EULLIYAN'S Universal Language System — Developer & Commercial License v1.1</strong>
+      <div class="notice">
+        <strong>Important Notice</strong>
+        <p>This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed agreement.</p>
+        <p>EULLIYAN’S Universal Language System — Developer &amp; Commercial License v1.1</p>
+      </div>
     </div>
+  </details>
 
-    <a class="top-link" href="#top">Back to top ↑</a>
-  </section>
+  <!-- PREMIUM LICENSE -->
+  <details class="license-card">
+    <summary>
+      <span>
+        <span class="license-title">Premium License</span>
+        <span class="license-subtitle">Premium features and additional language licensing · v1.1</span>
+      </span>
+      <span class="arrow">⌄</span>
+    </summary>
 
-  <!-- PREMIUM LICENSE BOX -->
+    <div class="license-content">
+      <h2>EULLIYAN’S Universal Language System</h2>
+      <p><strong>Premium Commercial License v1.1</strong></p>
+      <p>Copyright © 2026 EULLIYAN’S. All rights reserved.</p>
 
-  <section class="license-card" id="premium">
-    <h2>Premium Commercial License v1.1</h2>
+      <h3>1. Introduction</h3>
+      <p>This license defines the general terms for purchasing and using Premium features of the EULLIYAN’S Universal Language System.</p>
+      <p>Premium functionality is an optional extension of the Basic Core System.</p>
+      <p>This license is intended for individual website owners, developers, freelancers, agencies, and companies.</p>
 
-    <h3>1. Introduction</h3>
-    <p>This license defines the general terms for purchasing and using Premium features of the EULLIYAN'S Universal Language System.</p>
-    <p>Premium functionality is an optional extension of the Basic Core System.</p>
-    <p>This license is intended for individual website owners, developers, freelancers, agencies, and companies.</p>
+      <h3>2. Ownership and Intellectual Property</h3>
+      <p>EULLIYAN’S retains all ownership and intellectual property rights to:</p>
+      <ul>
+        <li>The original Core Engine and source code.</li>
+        <li>The Premium Module and its original source code.</li>
+        <li>System architecture and official components.</li>
+        <li>Original documentation and materials.</li>
+        <li>Official updates and improvements.</li>
+      </ul>
+      <p>Purchasing a Premium License grants usage rights only. It does not transfer ownership of EULLIYAN’S technology or intellectual property.</p>
 
-    <h3>2. Ownership and Intellectual Property</h3>
-    <p>EULLIYAN'S retains all ownership and intellectual property rights to:</p>
-    <ul>
-      <li>The original Core Engine and source code.</li>
-      <li>The Premium Module and its original source code.</li>
-      <li>System architecture and official components.</li>
-      <li>Original documentation and materials.</li>
-      <li>Official updates and improvements.</li>
-    </ul>
-    <p>Purchasing a Premium License grants usage rights only. It does not transfer ownership of EULLIYAN'S technology or intellectual property.</p>
+      <h3>3. Basic Core and Premium Access</h3>
+      <p>The Basic Core System supports six standard languages:</p>
+      <ul>
+        <li>English (en)</li>
+        <li>Bengali (bn)</li>
+        <li>Arabic (ar)</li>
+        <li>Hindi (hi)</li>
+        <li>Urdu (ur)</li>
+        <li>French (fr)</li>
+      </ul>
+      <p>Premium functionality is separate from the six standard Core languages.</p>
+      <p>Depending on the purchased plan, Premium features may include:</p>
+      <ul>
+        <li>Additional language expansion.</li>
+        <li>Advanced language management.</li>
+        <li>Extended configuration options.</li>
+        <li>Advanced website integrations.</li>
+        <li>Additional customization capabilities.</li>
+        <li>Other features officially offered by EULLIYAN’S.</li>
+      </ul>
+      <p>For example, Spanish (es) may be configured as an additional Premium language. It is not one of the six standard Core languages.</p>
+      <p>Only features expressly included in the applicable purchase agreement are licensed.</p>
 
-    <h3>3. Basic Core and Premium Access</h3>
-    <p>The Basic Core System supports six standard languages:</p>
-    <ul>
-      <li>English (en)</li>
-      <li>Bengali (bn)</li>
-      <li>Arabic (ar)</li>
-      <li>Hindi (hi)</li>
-      <li>Urdu (ur)</li>
-      <li>French (fr)</li>
-    </ul>
-    <p>Premium functionality is separate from the six standard Core languages.</p>
-    <p>Depending on the purchased plan, Premium features may include:</p>
-    <ul>
-      <li>Additional language expansion.</li>
-      <li>Advanced language management.</li>
-      <li>Extended configuration options.</li>
-      <li>Advanced website integrations.</li>
-      <li>Additional customization capabilities.</li>
-      <li>Other features officially offered by EULLIYAN'S.</li>
-    </ul>
-    <p>For example, Spanish (es) may be configured as an additional Premium language. It is not one of the six standard Core languages.</p>
-    <p>Only features expressly included in the applicable purchase agreement are licensed.</p>
+      <h3>4. Premium License Types</h3>
+      <p>EULLIYAN’S may offer the following Premium license options:</p>
+      <h4>A. Individual Website License</h4>
+      <p>Premium functionality for one approved website.</p>
+      <h4>B. Developer License</h4>
+      <p>Premium functionality for authorized developer projects within the agreed project limits.</p>
+      <h4>C. Agency or Company License</h4>
+      <p>Premium functionality for approved agency or company projects under a separate written agreement.</p>
+      <p>The license type, number of websites, project limits, authorized users, and usage conditions must be confirmed in writing.</p>
 
-    <h3>4. Premium License Types</h3>
-    <p>EULLIYAN'S may offer the following Premium license options:</p>
-    <p><strong>A. Individual Website License</strong><br>Premium functionality for one approved website.</p>
-    <p><strong>B. Developer License</strong><br>Premium functionality for authorized developer projects within the agreed project limits.</p>
-    <p><strong>C. Agency or Company License</strong><br>Premium functionality for approved agency or company projects under a separate written agreement.</p>
-    <p>The license type, number of websites, project limits, authorized users, and usage conditions must be confirmed in writing.</p>
+      <h3>5. Authorized Premium Usage</h3>
+      <p>Subject to the purchased plan, the license holder may:</p>
+      <ul>
+        <li>Activate and use the purchased Premium features.</li>
+        <li>Configure available Premium settings.</li>
+        <li>Add supported additional languages.</li>
+        <li>Customize website-specific translation and configuration.</li>
+        <li>Integrate Premium functionality into approved websites.</li>
+        <li>Provide authorized website development services to clients.</li>
+      </ul>
+      <p>All usage must remain within the purchased license scope.</p>
 
-    <h3>5. Authorized Premium Usage</h3>
-    <p>Subject to the purchased plan, the license holder may:</p>
-    <ul>
-      <li>Activate and use the purchased Premium features.</li>
-      <li>Configure available Premium settings.</li>
-      <li>Add supported additional languages.</li>
-      <li>Customize website-specific translation and configuration.</li>
-      <li>Integrate Premium functionality into approved websites.</li>
-      <li>Provide authorized website development services to clients.</li>
-    </ul>
-    <p>All usage must remain within the purchased license scope.</p>
+      <h3>6. Client Website Delivery</h3>
+      <p>An authorized developer may deliver a completed client website containing the Premium Module and required files as integrated components of that website.</p>
+      <p>The end client may use those components only as part of the approved delivered website and within the applicable license terms.</p>
+      <p>The developer must ensure that the client does not receive independent resale, redistribution, or ownership rights to the Core Engine or Premium Module.</p>
+      <p>Any broader client usage rights must be expressly authorized in a separate written agreement with EULLIYAN’S.</p>
 
-    <h3>6. Client Website Delivery</h3>
-    <p>An authorized developer may deliver a completed client website containing the Premium Module and required files as integrated components of that website.</p>
-    <p>The end client may use those components only as part of the approved delivered website and within the applicable license terms.</p>
-    <p>The developer must ensure that the client does not receive independent resale, redistribution, or ownership rights to the Core Engine or Premium Module.</p>
-    <p>Any broader client usage rights must be expressly authorized in a separate written agreement with EULLIYAN'S.</p>
+      <h3>7. Restrictions</h3>
+      <p>Without prior written permission from EULLIYAN’S, the license holder may not:</p>
+      <ul>
+        <li>Sell the Core Engine or Premium Module as a standalone product.</li>
+        <li>Redistribute or publish the original source code separately.</li>
+        <li>Share paid Premium access outside the authorized license scope.</li>
+        <li>Sublicense Premium functionality independently.</li>
+        <li>Claim ownership of EULLIYAN’S original technology.</li>
+        <li>Remove applicable copyright or ownership notices.</li>
+        <li>Bypass payment requirements or agreed license limits.</li>
+        <li>Use Premium features beyond the purchased project or website limits.</li>
+      </ul>
 
-    <h3>7. Restrictions</h3>
-    <p>Without prior written permission from EULLIYAN'S, the license holder may not:</p>
-    <ul>
-      <li>Sell the Core Engine or Premium Module as a standalone product.</li>
-      <li>Redistribute or publish the original source code separately.</li>
-      <li>Share paid Premium access outside the authorized license scope.</li>
-      <li>Sublicense Premium functionality independently.</li>
-      <li>Claim ownership of EULLIYAN'S original technology.</li>
-      <li>Remove applicable copyright or ownership notices.</li>
-      <li>Bypass payment requirements or agreed license limits.</li>
-      <li>Use Premium features beyond the purchased project or website limits.</li>
-    </ul>
+      <h3>8. Pricing and Payment</h3>
+      <p>Premium pricing, payment schedules, applicable taxes, and renewal fees must be stated in the relevant purchase agreement.</p>
+      <p>No price, feature, or commercial right is guaranteed unless confirmed by EULLIYAN’S in writing.</p>
 
-    <h3>8. Pricing and Payment</h3>
-    <p>Premium pricing, payment schedules, applicable taxes, and renewal fees must be stated in the relevant purchase agreement.</p>
-    <p>No price, feature, or commercial right is guaranteed unless confirmed by EULLIYAN'S in writing.</p>
+      <h3>9. License Duration and Renewal</h3>
+      <p>Premium access may be offered under different commercial arrangements, including:</p>
+      <ul>
+        <li>One-time purchase.</li>
+        <li>Monthly subscription.</li>
+        <li>Annual subscription.</li>
+        <li>Time-limited license.</li>
+        <li>Another mutually agreed arrangement.</li>
+      </ul>
+      <p>The actual license duration, renewal conditions, and expiration consequences must be specified before purchase.</p>
 
-    <h3>9. License Duration and Renewal</h3>
-    <p>Premium access may be offered under different commercial arrangements, including:</p>
-    <ul>
-      <li>One-time purchase.</li>
-      <li>Monthly subscription.</li>
-      <li>Annual subscription.</li>
-      <li>Time-limited license.</li>
-      <li>Another mutually agreed arrangement.</li>
-    </ul>
-    <p>The actual license duration, renewal conditions, and expiration consequences must be specified before purchase.</p>
+      <h3>10. Updates and Support</h3>
+      <p>Premium updates, technical support, maintenance, and integration assistance are included only when expressly stated in the applicable purchase agreement.</p>
 
-    <h3>10. Updates and Support</h3>
-    <p>Premium updates, technical support, maintenance, and integration assistance are included only when expressly stated in the applicable purchase agreement.</p>
+      <h3>11. Third-Party Services</h3>
+      <p>Some Premium functionality may depend on external services, third-party software, or independently maintained language resources.</p>
+      <p>Their availability and use remain subject to the relevant third-party terms and conditions.</p>
+      <p>EULLIYAN’S does not claim ownership of third-party materials.</p>
 
-    <h3>11. Third-Party Services</h3>
-    <p>Some Premium functionality may depend on external services, third-party software, or independently maintained language resources.</p>
-    <p>Their availability and use remain subject to the relevant third-party terms and conditions.</p>
-    <p>EULLIYAN'S does not claim ownership of third-party materials.</p>
+      <h3>12. Suspension and Termination</h3>
+      <p>Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the purchase agreement.</p>
+      <p>Any outstanding payment obligations and continuing restrictions must be handled according to the applicable agreement and law.</p>
 
-    <h3>12. Suspension and Termination</h3>
-    <p>Material violations of the applicable license terms may result in suspension or termination, subject to written notice, applicable law, and the purchase agreement.</p>
-    <p>Any outstanding payment obligations and continuing restrictions must be handled according to the applicable agreement and law.</p>
+      <h3>13. Refunds and Cancellation</h3>
+      <p>Refund, cancellation, and subscription policies must be communicated before purchase.</p>
+      <p>All refund and cancellation terms must comply with applicable consumer protection laws.</p>
 
-    <h3>13. Refunds and Cancellation</h3>
-    <p>Refund, cancellation, and subscription policies must be communicated before purchase.</p>
-    <p>All refund and cancellation terms must comply with applicable consumer protection laws.</p>
+      <h3>14. Commercial Agreement and Governing Law</h3>
+      <p>Each Premium purchase should clearly specify:</p>
+      <ul>
+        <li>Purchased Premium features.</li>
+        <li>License type and permitted usage.</li>
+        <li>Authorized websites and project limits.</li>
+        <li>License duration and renewal conditions.</li>
+        <li>Price and payment terms.</li>
+        <li>Update and support arrangements.</li>
+        <li>Refund and cancellation conditions.</li>
+        <li>Governing law and jurisdiction.</li>
+      </ul>
+      <p>These terms should be confirmed in a separate written commercial agreement.</p>
 
-    <h3>14. Commercial Agreement and Governing Law</h3>
-    <p>Each Premium purchase should clearly specify:</p>
-    <ul>
-      <li>Purchased Premium features.</li>
-      <li>License type and permitted usage.</li>
-      <li>Authorized websites and project limits.</li>
-      <li>License duration and renewal conditions.</li>
-      <li>Price and payment terms.</li>
-      <li>Update and support arrangements.</li>
-      <li>Refund and cancellation conditions.</li>
-      <li>Governing law and jurisdiction.</li>
-    </ul>
-    <p>These terms should be confirmed in a separate written commercial agreement.</p>
+      <h3>15. Contact</h3>
+      <p>For Premium licensing, pricing, upgrades, and commercial permissions, contact EULLIYAN’S using the official contact details below.</p>
 
-    <h3>15. Contact</h3>
-    <p>For Premium licensing, pricing, upgrades, and commercial permissions, contact EULLIYAN'S using the official contact details above.</p>
-
-    <div class="notice">
-      <h3>Important Notice</h3>
-      <p>This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed commercial agreement.</p>
-      <strong>EULLIYAN'S Universal Language System — Premium Commercial License v1.1</strong>
+      <div class="notice">
+        <strong>Important Notice</strong>
+        <p>This document is a general licensing framework and template. It is not legal advice or a substitute for a legally reviewed and signed commercial agreement.</p>
+        <p>EULLIYAN’S Universal Language System — Premium Commercial License v1.1</p>
+      </div>
     </div>
-
-    <a class="top-link" href="#top">Back to top ↑</a>
-  </section>
+  </details>
 
 </main>
 
+<section class="contact">
+  <strong>EULLIYAN’S</strong>
+  <p>Email: <a href="mailto:eulliyans02@gmail.com">eulliyans02@gmail.com</a></p>
+  <p>Website: <a href="https://eulliyans.github.io/">https://eulliyans.github.io/</a></p>
+</section>
+
 <footer>
-  EULLIYAN'S · Universal Language System
-  <br>
-  © EULLIYAN'S. All rights reserved.
-  <br>
-  <a href="https://eulliyans.github.io/">Official Website</a>
+  Copyright © 2026 EULLIYAN’S. All rights reserved.
 </footer>
 
 </body>
