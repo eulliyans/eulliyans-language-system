@@ -162,9 +162,7 @@ Commercial use, client website integration, developer and agency licensing, and 
 Read the applicable license documents:
 
 
-- [Client License](LICENSE-CLIENT.md) — Website client usage rights.
-- [Developer License](LICENSE-DEVELOPER.md) — Developer, freelancer, and agency commercial usage.
-- [Premium License](LICENSE-PREMIUM.md) — Premium features and additional language licensing.
+- [View All Licenses](licenses.html) — Client, Developer, and Premium licenses.
 
 
 The Core Engine must not be extracted, resold, redistributed, sublicensed, published, or distributed as a separate product without prior written authorization from EULLIYAN’S.
