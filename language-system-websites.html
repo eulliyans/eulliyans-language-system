@@ -2,295 +2,308 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073d38">
 
-  <title>Websites Powered by EULLIYAN'S</title>
+<title>Explore Language System | EULLIYAN'S</title>
 
-  <style>
-    :root {
-      --dark: #073d38;
-      --green: #08796c;
-      --heading: #075b52;
-      --bg: #f4f8f7;
-      --text: #173b37;
-      --muted: #607c76;
-      --border: #d5e9e2;
-      --mint: #baf5e9;
-      --soft: #e5f4ef;
-      --white: #ffffff;
-    }
+<style>
+:root {
+  --dark: #073d38;
+  --green: #08796c;
+  --heading: #075b52;
+  --bg: #f4f8f7;
+  --text: #173b37;
+  --muted: #607c76;
+  --border: #d5e9e2;
+  --mint: #baf5e9;
+  --soft: #e5f4ef;
+  --white: #ffffff;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header {
-      background: var(--dark);
-      color: var(--white);
-      padding: 15px 5%;
-      border-bottom: 3px solid var(--green);
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+header {
+  background: var(--dark);
+  color: white;
+  padding: 16px 5%;
+  border-bottom: 3px solid var(--green);
+}
 
-    .logo {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-    }
+.header-inner {
+  max-width: 1050px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+}
 
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-    }
+.language {
+  position: relative;
+}
 
-    nav a:hover,
-    nav a.active {
-      color: var(--mint);
-    }
+.language-toggle {
+  background: transparent;
+  color: white;
+  border: 1px solid #80bdb0;
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
 
-    .language {
-      position: relative;
-    }
+.language-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 10;
+  min-width: 135px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px #0002;
+}
 
-    .language-toggle {
-      background: transparent;
-      color: white;
-      border: 1px solid #80bdb0;
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-size: 12px;
-      cursor: pointer;
-    }
+.language-menu.show {
+  display: block;
+}
 
-    .language-menu {
-      display: none;
-      position: absolute;
-      top: 38px;
-      inset-inline-end: 0;
-      z-index: 10;
-      min-width: 125px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px #0002;
-    }
+.language-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 13px;
+  border: 0;
+  background: white;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+}
 
-    .language-menu.show {
-      display: block;
-    }
+.language-menu button:hover {
+  background: var(--soft);
+}
 
-    .language-menu button {
-      display: block;
-      width: 100%;
-      padding: 9px 12px;
-      border: none;
-      background: white;
-      color: var(--text);
-      text-align: start;
-      cursor: pointer;
-      font-size: 13px;
-    }
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  padding: 48px 20px 55px;
+}
 
-    .language-menu button:hover {
-      background: var(--soft);
-    }
+.intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
 
-    main {
-      flex: 1;
-      width: 100%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 55px 20px;
-    }
+.eyebrow {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.7px;
+  margin-bottom: 9px;
+}
 
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+h1 {
+  color: var(--heading);
+  font-size: 30px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
 
-    .eyebrow {
-      color: var(--green);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-    }
+.subtitle {
+  max-width: 620px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 14px;
+}
 
-    h1 {
-      color: var(--heading);
-      font-size: 30px;
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
+.section-label {
+  color: var(--heading);
+  font-size: 17px;
+  margin: 0 0 15px;
+}
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 650px;
-      margin: auto;
-    }
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
 
-    .showcase-box {
-      max-width: 700px;
-      margin: 35px auto 0;
-      padding: 35px 25px;
-      text-align: center;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 6px 22px #073d380c;
-    }
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 21px;
+  box-shadow: 0 4px 16px #073d3809;
+  transition: transform .2s, box-shadow .2s;
+}
 
-    .showcase-icon {
-      width: 65px;
-      height: 65px;
-      margin: 0 auto 17px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--soft);
-      color: var(--green);
-      border-radius: 50%;
-      font-size: 29px;
-    }
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px #073d3815;
+}
 
-    .showcase-box h2 {
-      color: var(--heading);
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
 
-    .showcase-box p {
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 520px;
-      margin: 0 auto 15px;
-    }
+.card-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--soft);
+  border-radius: 10px;
+  font-size: 21px;
+}
 
-    .verification-note {
-      display: inline-block;
-      color: var(--green);
-      background: var(--soft);
-      border-radius: 20px;
-      padding: 7px 14px;
-      font-size: 12px;
-      font-weight: bold;
-    }
+.resource-card h3 {
+  color: var(--heading);
+  font-size: 16px;
+}
 
-    .home-link {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 10px 21px;
-      background: var(--green);
-      color: white;
-      text-decoration: none;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: bold;
-    }
+.resource-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 17px;
+}
 
-    .home-link:hover {
-      background: var(--dark);
-    }
+.card-link {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 9px 15px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background .2s;
+}
 
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 15px 10px;
-      border-top: 3px solid var(--green);
-      font-size: 12px;
-    }
+.card-link:hover {
+  background: var(--dark);
+}
 
-    @media (max-width: 600px) {
-      header {
-        padding: 13px 12px;
-      }
+.premium-heading {
+  margin-top: 34px;
+}
 
-      .header-inner {
-        justify-content: center;
-      }
+.premium-card {
+  border-color: #b9dcd2;
+}
 
-      nav {
-        justify-content: center;
-        gap: 11px;
-      }
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 16px 12px;
+  border-top: 3px solid var(--green);
+  font-size: 12px;
+}
 
-      nav a {
-        font-size: 12px;
-      }
+[dir="rtl"] .resource-card {
+  text-align: right;
+}
 
-      main {
-        padding: 38px 14px;
-      }
+[dir="rtl"] .card-link {
+  align-self: flex-start;
+}
 
-      h1 {
-        font-size: 24px;
-      }
+@media (max-width: 600px) {
+  header {
+    padding: 14px 15px;
+  }
 
-      .subtitle {
-        font-size: 13px;
-      }
+  main {
+    padding: 35px 14px 42px;
+  }
 
-      .showcase-box {
-        padding: 28px 17px;
-        margin-top: 25px;
-      }
+  h1 {
+    font-size: 24px;
+  }
 
-      .showcase-box h2 {
-        font-size: 18px;
-      }
-    }
-  </style>
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .resource-card {
+    padding: 17px;
+  }
+
+  .section-label {
+    font-size: 16px;
+  }
+}
+  .logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.header-subtitle {
+  color: #baf5e9;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-inner">
-
-    <a href="index.html" class="logo">EULLIYAN’S</a>
-
-    <nav>
-      <a href="index.html" data-page="home">Home</a>
-      <a href="about.html" data-page="about">About Us</a>
-      <a href="projects.html" data-page="projects">Our Projects</a>
-      <a href="language-system-websites.html"
-         class="active" data-page="websites">Websites</a>
-    </nav>
+  <a href="showcase.html" class="logo">
+  EULLIYAN’S
+  <span class="header-subtitle" data-page="eyebrow">
+    EXPLORE THE SYSTEM
+  </span>
+</a>
 
     <div class="language">
       <button class="language-toggle" id="languageToggle">
@@ -306,49 +319,130 @@
         <button data-lang="fr">Français</button>
       </div>
     </div>
-
   </div>
 </header>
 
 <main>
 
   <section class="intro">
-    <div class="eyebrow" data-page="eyebrow">
-      INTEGRATION SHOWCASE
-    </div>
 
     <h1 data-page="title">
-      Websites Powered by EULLIYAN'S
+      Explore Language System
     </h1>
 
     <p class="subtitle" data-page="subtitle">
-      Discover websites using EULLIYAN'S Universal Language System
-      to create multilingual experiences.
+      Explore demos, test the system, learn integration
+      and discover licensing options.
     </p>
   </section>
 
-  <section class="showcase-box">
+  <h2 class="section-label" data-page="coreHeading">
+    Core System & Resources
+  </h2>
 
-    <div class="showcase-icon">🌐</div>
+  <section class="resource-grid">
 
-    <h2 data-page="emptyTitle">
-      Integrations Coming Soon
-    </h2>
+    <article class="resource-card">
+      <div class="card-top">
+        <div class="card-icon">🌐</div>
+        <h3 data-page="mainDemo">Main Demo</h3>
+      </div>
+      <p data-page="mainDesc">
+        Experience the multilingual engine and test language switching.
+      </p>
+      <a class="card-link" href="demo.html" data-page="openDemo">
+        Open Demo →
+      </a>
+    </article>
 
-    <p data-page="emptyText">
-      This space will feature websites where EULLIYAN'S Universal
-      Language System has been integrated and tested.
-    </p>
+    <article class="resource-card">
+      <div class="card-top">
+        <div class="card-icon">🧪</div>
+        <h3 data-page="clientTest">Client Integration Test</h3>
+      </div>
+      <p data-page="clientDesc">
+        Test translations, language direction and saved language.
+      </p>
+      <a class="card-link" href="client-test.html" data-page="runTest">
+        Run Test →
+      </a>
+    </article>
 
-    <span class="verification-note" data-page="note">
-      Only verified integrations will be listed here.
-    </span>
+    <article class="resource-card">
+      <div class="card-top">
+        <div class="card-icon">✨</div>
+        <h3 data-page="showcase">System Showcase</h3>
+      </div>
+      <p data-page="showcaseDesc">
+        Explore system features, supported languages and capabilities.
+      </p>
+      <a class="card-link" href="showcase.html" data-page="viewShowcase">
+        View Showcase →
+      </a>
+    </article>
 
-    <br>
+    <article class="resource-card">
+      <div class="card-top">
+        <div class="card-icon">📘</div>
+        <h3 data-page="guide">Integration Guide</h3>
+      </div>
+      <p data-page="guideDesc">
+        Read the documentation and learn how to integrate the Core Engine.
+      </p>
+      <a class="card-link"
+         href="https://github.com/eulliyans/eulliyans-language-system/blob/main/README.md"
+         target="_blank" rel="noopener"
+         data-page="readGuide">
+        Read Guide →
+      </a>
+    </article>
 
-    <a href="index.html" class="home-link" data-page="homeLink">
-      Explore Language System
-    </a>
+    <article class="resource-card">
+      <div class="card-top">
+        <div class="card-icon">📄</div>
+        <h3 data-page="licenses">License Center</h3>
+      </div>
+      <p data-page="licensesDesc">
+        Explore Client, Developer and Premium licensing terms.
+      </p>
+      <a class="card-link" href="licenses.html" data-page="viewLicenses">
+        View Licenses →
+      </a>
+    </article>
+
+  </section>
+
+  <h2 class="section-label premium-heading" data-page="premiumHeading">
+    Premium Language Expansion
+  </h2>
+
+  <section class="resource-grid">
+
+    <article class="resource-card premium-card">
+      <div class="card-top">
+        <div class="card-icon">🚀</div>
+        <h3 data-page="premiumDemo">Premium Module Demo</h3>
+      </div>
+      <p data-page="premiumDesc">
+        Test the optional Premium Module and additional language loading.
+      </p>
+      <a class="card-link" href="premium/premium-test.html" data-page="testPremium">
+        Test Premium →
+      </a>
+    </article>
+
+    <article class="resource-card premium-card">
+      <div class="card-top">
+        <div class="card-icon">⚙️</div>
+        <h3 data-page="installGuide">Premium Installation Guide</h3>
+      </div>
+      <p data-page="installDesc">
+        Learn how to install and configure the Premium extension.
+      </p>
+      <a class="card-link" href="premium/install.html" data-page="readInstall">
+        Read Instructions →
+      </a>
+    </article>
 
   </section>
 
@@ -368,157 +462,240 @@
 <script src="https://eulliyans.github.io/eulliyans-language-system/languages/fr.js"></script>
 
 <script>
-  const engine = window.EULLIYANS_LANG;
+const engine = window.EULLIYANS_LANG;
 
-  const pageTranslations = {
-    en: {
-      home: "Home",
-      about: "About Us",
-      projects: "Our Projects",
-      websites: "Websites",
-      eyebrow: "INTEGRATION SHOWCASE",
-      title: "Websites Powered by EULLIYAN'S",
-      subtitle: "Discover websites using EULLIYAN'S Universal Language System to create multilingual experiences.",
-      emptyTitle: "Integrations Coming Soon",
-      emptyText: "This space will feature websites where EULLIYAN'S Universal Language System has been integrated and tested.",
-      note: "Only verified integrations will be listed here.",
-      homeLink: "Explore Language System",
-      tagline: "Build, Create, Preserve."
-    },
+const pageTranslations = {
+  en: {
+    eyebrow: "EXPLORE THE SYSTEM",
+    title: "Explore Language System",
+    subtitle: "Explore demos, test the system, learn integration and discover licensing options.",
+    coreHeading: "Core System & Resources",
+    mainDemo: "Main Demo",
+    mainDesc: "Experience the multilingual engine and test language switching.",
+    openDemo: "Open Demo →",
+    clientTest: "Client Integration Test",
+    clientDesc: "Test translations, language direction and saved language.",
+    runTest: "Run Test →",
+    showcase: "System Showcase",
+    showcaseDesc: "Explore system features, supported languages and capabilities.",
+    viewShowcase: "View Showcase →",
+    guide: "Integration Guide",
+    guideDesc: "Read the documentation and learn how to integrate the Core Engine.",
+    readGuide: "Read Guide →",
+    licenses: "License Center",
+    licensesDesc: "Explore Client, Developer and Premium licensing terms.",
+    viewLicenses: "View Licenses →",
+    premiumHeading: "Premium Language Expansion",
+    premiumDemo: "Premium Module Demo",
+    premiumDesc: "Test the optional Premium Module and additional language loading.",
+    testPremium: "Test Premium →",
+    installGuide: "Premium Installation Guide",
+    installDesc: "Learn how to install and configure the Premium extension.",
+    readInstall: "Read Instructions →",
+    tagline: "Build, Create, Preserve."
+  },
 
-    bn: {
-      home: "হোম",
-      about: "আমাদের সম্পর্কে",
-      projects: "আমাদের প্রজেক্ট",
-      websites: "ওয়েবসাইট",
-      eyebrow: "ইন্টিগ্রেশন শোকেস",
-      title: "EULLIYAN’S দ্বারা পরিচালিত ওয়েবসাইট",
-      subtitle: "EULLIYAN’S Universal Language System ব্যবহার করে তৈরি বহুভাষিক ওয়েবসাইটগুলো দেখুন।",
-      emptyTitle: "ইন্টিগ্রেশন শীঘ্রই আসছে",
-      emptyText: "এখানে সেই ওয়েবসাইটগুলো দেখানো হবে, যেখানে EULLIYAN’S Universal Language System যুক্ত করে পরীক্ষা করা হয়েছে।",
-      note: "শুধু যাচাইকৃত ইন্টিগ্রেশন এখানে দেখানো হবে।",
-      homeLink: "ল্যাঙ্গুয়েজ সিস্টেম দেখুন",
-      tagline: "তৈরি করি, গড়ি, সংরক্ষণ করি।"
-    },
+  bn: {
+    eyebrow: "সিস্টেম এক্সপ্লোর করুন",
+    title: "ল্যাঙ্গুয়েজ সিস্টেম দেখুন",
+    subtitle: "ডেমো দেখুন, সিস্টেম পরীক্ষা করুন, ইন্টিগ্রেশন শিখুন এবং লাইসেন্স সম্পর্কে জানুন।",
+    coreHeading: "কোর সিস্টেম ও রিসোর্স",
+    mainDemo: "মূল ডেমো",
+    mainDesc: "বহুভাষিক ইঞ্জিন ব্যবহার করুন এবং ভাষা পরিবর্তন পরীক্ষা করুন।",
+    openDemo: "ডেমো খুলুন →",
+    clientTest: "ক্লায়েন্ট ইন্টিগ্রেশন টেস্ট",
+    clientDesc: "অনুবাদ, ভাষার দিক এবং সংরক্ষিত ভাষা পরীক্ষা করুন।",
+    runTest: "টেস্ট করুন →",
+    showcase: "সিস্টেম শোকেস",
+    showcaseDesc: "সিস্টেমের ফিচার, সমর্থিত ভাষা ও সক্ষমতা দেখুন।",
+    viewShowcase: "শোকেস দেখুন →",
+    guide: "ইন্টিগ্রেশন গাইড",
+    guideDesc: "ডকুমেন্টেশন পড়ুন এবং Core Engine যুক্ত করার পদ্ধতি জানুন।",
+    readGuide: "গাইড পড়ুন →",
+    licenses: "লাইসেন্স সেন্টার",
+    licensesDesc: "Client, Developer ও Premium লাইসেন্সের শর্তাবলি দেখুন।",
+    viewLicenses: "লাইসেন্স দেখুন →",
+    premiumHeading: "প্রিমিয়াম ভাষা সম্প্রসারণ",
+    premiumDemo: "প্রিমিয়াম মডিউল ডেমো",
+    premiumDesc: "ঐচ্ছিক Premium Module এবং অতিরিক্ত ভাষা লোডিং পরীক্ষা করুন।",
+    testPremium: "প্রিমিয়াম পরীক্ষা →",
+    installGuide: "প্রিমিয়াম ইনস্টলেশন গাইড",
+    installDesc: "Premium Extension ইনস্টল ও কনফিগার করার পদ্ধতি জানুন।",
+    readInstall: "নির্দেশনা পড়ুন →",
+    tagline: "তৈরি করি, গড়ি, সংরক্ষণ করি।"
+  },
 
-    ar: {
-      home: "الرئيسية",
-      about: "من نحن",
-      projects: "مشاريعنا",
-      websites: "المواقع",
-      eyebrow: "عرض التكامل",
-      title: "مواقع تعمل بنظام EULLIYAN’S",
-      subtitle: "اكتشف المواقع التي تستخدم نظام EULLIYAN’S للغات المتعددة.",
-      emptyTitle: "التكاملات قريباً",
-      emptyText: "سيتم عرض المواقع التي تم دمج نظام EULLIYAN’S واختباره فيها.",
-      note: "سيتم عرض عمليات التكامل التي تم التحقق منها فقط.",
-      homeLink: "استكشف نظام اللغات",
-      tagline: "نبني، نبدع، نحافظ."
-    },
+  ar: {
+    eyebrow: "استكشف النظام",
+    title: "استكشف نظام اللغات",
+    subtitle: "جرّب العروض التوضيحية، واختبر النظام، وتعرّف على التكامل والتراخيص.",
+    coreHeading: "النظام الأساسي والموارد",
+    mainDemo: "العرض الرئيسي",
+    mainDesc: "جرّب محرك اللغات المتعددة واختبر تبديل اللغة.",
+    openDemo: "افتح العرض ←",
+    clientTest: "اختبار تكامل العميل",
+    clientDesc: "اختبر الترجمات واتجاه النص واللغة المحفوظة.",
+    runTest: "ابدأ الاختبار ←",
+    showcase: "عرض النظام",
+    showcaseDesc: "اكتشف ميزات النظام واللغات المدعومة.",
+    viewShowcase: "عرض التفاصيل ←",
+    guide: "دليل التكامل",
+    guideDesc: "اقرأ الوثائق وتعرّف على كيفية دمج المحرك الأساسي.",
+    readGuide: "اقرأ الدليل ←",
+    licenses: "مركز التراخيص",
+    licensesDesc: "اطّلع على شروط تراخيص العملاء والمطورين وPremium.",
+    viewLicenses: "عرض التراخيص ←",
+    premiumHeading: "توسيع اللغات Premium",
+    premiumDemo: "عرض وحدة Premium",
+    premiumDesc: "اختبر وحدة Premium الاختيارية وتحميل اللغات الإضافية.",
+    testPremium: "اختبار Premium ←",
+    installGuide: "دليل تثبيت Premium",
+    installDesc: "تعرّف على تثبيت إضافة Premium وإعدادها.",
+    readInstall: "اقرأ التعليمات ←",
+    tagline: "نبني، نبدع، نحافظ."
+  },
 
-    hi: {
-      home: "होम",
-      about: "हमारे बारे में",
-      projects: "हमारी परियोजनाएँ",
-      websites: "वेबसाइटें",
-      eyebrow: "इंटीग्रेशन शोकेस",
-      title: "EULLIYAN'S द्वारा संचालित वेबसाइटें",
-      subtitle: "EULLIYAN'S यूनिवर्सल लैंग्वेज सिस्टम का उपयोग करने वाली वेबसाइटें देखें।",
-      emptyTitle: "इंटीग्रेशन जल्द आ रहे हैं",
-      emptyText: "यहाँ उन वेबसाइटों को दिखाया जाएगा जिनमें EULLIYAN'S सिस्टम जोड़ा और परीक्षण किया गया है।",
-      note: "यहाँ केवल सत्यापित इंटीग्रेशन दिखाए जाएँगे।",
-      homeLink: "लैंग्वेज सिस्टम देखें",
-      tagline: "बनाएँ, रचें, सुरक्षित रखें।"
-    },
+  hi: {
+    eyebrow: "सिस्टम देखें",
+    title: "लैंग्वेज सिस्टम एक्सप्लोर करें",
+    subtitle: "डेमो देखें, सिस्टम का परीक्षण करें और इंटीग्रेशन व लाइसेंस के बारे में जानें।",
+    coreHeading: "कोर सिस्टम और संसाधन",
+    mainDemo: "मुख्य डेमो",
+    mainDesc: "बहुभाषी इंजन का अनुभव करें और भाषा बदलने का परीक्षण करें।",
+    openDemo: "डेमो खोलें →",
+    clientTest: "क्लाइंट इंटीग्रेशन टेस्ट",
+    clientDesc: "अनुवाद, भाषा दिशा और सेव की गई भाषा जाँचें।",
+    runTest: "टेस्ट करें →",
+    showcase: "सिस्टम शोकेस",
+    showcaseDesc: "सिस्टम की सुविधाएँ और समर्थित भाषाएँ देखें।",
+    viewShowcase: "शोकेस देखें →",
+    guide: "इंटीग्रेशन गाइड",
+    guideDesc: "दस्तावेज़ पढ़ें और Core Engine जोड़ना सीखें।",
+    readGuide: "गाइड पढ़ें →",
+    licenses: "लाइसेंस केंद्र",
+    licensesDesc: "Client, Developer और Premium लाइसेंस की शर्तें देखें।",
+    viewLicenses: "लाइसेंस देखें →",
+    premiumHeading: "प्रीमियम भाषा विस्तार",
+    premiumDemo: "प्रीमियम मॉड्यूल डेमो",
+    premiumDesc: "वैकल्पिक Premium Module और अतिरिक्त भाषाओं का परीक्षण करें।",
+    testPremium: "प्रीमियम टेस्ट →",
+    installGuide: "प्रीमियम इंस्टॉलेशन गाइड",
+    installDesc: "Premium Extension इंस्टॉल और कॉन्फ़िगर करना सीखें।",
+    readInstall: "निर्देश पढ़ें →",
+    tagline: "बनाएँ, रचें, सुरक्षित रखें।"
+  },
 
-    ur: {
-      home: "ہوم",
-      about: "ہمارے بارے میں",
-      projects: "ہمارے منصوبے",
-      websites: "ویب سائٹس",
-      eyebrow: "انٹیگریشن شوکیس",
-      title: "EULLIYAN’S سے چلنے والی ویب سائٹس",
-      subtitle: "EULLIYAN’S یونیورسل لینگویج سسٹم استعمال کرنے والی ویب سائٹس دیکھیں۔",
-      emptyTitle: "انٹیگریشن جلد آرہی ہیں",
-      emptyText: "یہاں وہ ویب سائٹس دکھائی جائیں گی جن میں EULLIYAN’S سسٹم شامل کرکے ٹیسٹ کیا گیا ہے۔",
-      note: "یہاں صرف تصدیق شدہ انٹیگریشن دکھائی جائیں گی۔",
-      homeLink: "لینگویج سسٹم دیکھیں",
-      tagline: "بنائیں، تخلیق کریں، محفوظ رکھیں۔"
-    },
+  ur: {
+    eyebrow: "سسٹم دریافت کریں",
+    title: "لینگویج سسٹم دیکھیں",
+    subtitle: "ڈیمو دیکھیں، سسٹم آزمائیں، انٹیگریشن سیکھیں اور لائسنس کے بارے میں جانیں۔",
+    coreHeading: "کور سسٹم اور وسائل",
+    mainDemo: "مین ڈیمو",
+    mainDesc: "کثیر لسانی انجن استعمال کریں اور زبان کی تبدیلی آزمائیں۔",
+    openDemo: "ڈیمو کھولیں ←",
+    clientTest: "کلائنٹ انٹیگریشن ٹیسٹ",
+    clientDesc: "ترجمہ، زبان کی سمت اور محفوظ زبان آزمائیں۔",
+    runTest: "ٹیسٹ کریں ←",
+    showcase: "سسٹم شوکیس",
+    showcaseDesc: "سسٹم کی خصوصیات اور معاون زبانیں دیکھیں۔",
+    viewShowcase: "شوکیس دیکھیں ←",
+    guide: "انٹیگریشن گائیڈ",
+    guideDesc: "دستاویزات پڑھیں اور Core Engine شامل کرنا سیکھیں۔",
+    readGuide: "گائیڈ پڑھیں ←",
+    licenses: "لائسنس سینٹر",
+    licensesDesc: "Client، Developer اور Premium لائسنس کی شرائط دیکھیں۔",
+    viewLicenses: "لائسنس دیکھیں ←",
+    premiumHeading: "پریمیم زبان کی توسیع",
+    premiumDemo: "پریمیم ماڈیول ڈیمو",
+    premiumDesc: "اختیاری Premium Module اور اضافی زبانوں کی جانچ کریں۔",
+    testPremium: "پریمیم ٹیسٹ ←",
+    installGuide: "پریمیم انسٹالیشن گائیڈ",
+    installDesc: "Premium Extension انسٹال اور ترتیب دینا سیکھیں۔",
+    readInstall: "ہدایات پڑھیں ←",
+    tagline: "بنائیں، تخلیق کریں، محفوظ رکھیں۔"
+  },
 
-    fr: {
-      home: "Accueil",
-      about: "À propos",
-      projects: "Nos projets",
-      websites: "Sites web",
-      eyebrow: "VITRINE D’INTÉGRATION",
-      title: "Sites web propulsés par EULLIYAN’S",
-      subtitle: "Découvrez les sites web utilisant le système multilingue EULLIYAN’S.",
-      emptyTitle: "Intégrations bientôt disponibles",
-      emptyText: "Cet espace présentera les sites web dans lesquels le système EULLIYAN’S a été intégré et testé.",
-      note: "Seules les intégrations vérifiées seront présentées ici.",
-      homeLink: "Découvrir le système linguistique",
-      tagline: "Construire, créer, préserver."
+  fr: {
+    eyebrow: "EXPLORER LE SYSTÈME",
+    title: "Explorer le système linguistique",
+    subtitle: "Découvrez les démos, testez le système et consultez les guides et licences.",
+    coreHeading: "Système principal et ressources",
+    mainDemo: "Démo principale",
+    mainDesc: "Découvrez le moteur multilingue et testez le changement de langue.",
+    openDemo: "Ouvrir la démo →",
+    clientTest: "Test d’intégration client",
+    clientDesc: "Testez les traductions, le sens du texte et la langue enregistrée.",
+    runTest: "Lancer le test →",
+    showcase: "Vitrine du système",
+    showcaseDesc: "Découvrez les fonctionnalités et les langues prises en charge.",
+    viewShowcase: "Voir la vitrine →",
+    guide: "Guide d’intégration",
+    guideDesc: "Consultez la documentation et apprenez à intégrer le moteur.",
+    readGuide: "Lire le guide →",
+    licenses: "Centre des licences",
+    licensesDesc: "Consultez les conditions des licences Client, Developer et Premium.",
+    viewLicenses: "Voir les licences →",
+    premiumHeading: "Extension linguistique Premium",
+    premiumDemo: "Démo du module Premium",
+    premiumDesc: "Testez le module Premium optionnel et le chargement de langues.",
+    testPremium: "Tester Premium →",
+    installGuide: "Guide d’installation Premium",
+    installDesc: "Apprenez à installer et configurer l’extension Premium.",
+    readInstall: "Lire les instructions →",
+    tagline: "Construire, créer, préserver."
+  }
+};
+
+const toggle = document.getElementById("languageToggle");
+const menu = document.getElementById("languageMenu");
+
+function applyPageLanguage(code) {
+  const translations = pageTranslations[code] || pageTranslations.en;
+
+  document.querySelectorAll("[data-page]").forEach(element => {
+    const key = element.dataset.page;
+    if (translations[key]) {
+      element.textContent = translations[key];
     }
-  };
+  });
 
-  const toggle = document.getElementById("languageToggle");
-  const menu = document.getElementById("languageMenu");
+  toggle.textContent = "🌐 " + code.toUpperCase() + "⌄";
+  document.documentElement.lang = code;
+  document.documentElement.dir =
+    (code === "ar" || code === "ur") ? "rtl" : "ltr";
+}
 
-  function applyPageLanguage(code) {
-    const translations = pageTranslations[code] || pageTranslations.en;
-
-    document.querySelectorAll("[data-page]").forEach(element => {
-      const key = element.dataset.page;
-
-      if (translations[key]) {
-        element.textContent = translations[key];
-      }
-    });
-
-    toggle.textContent = "🌐 " + code.toUpperCase() + "⌄";
-    document.documentElement.lang = code;
-
-    const direction = {
-      ar: "rtl",
-      ur: "rtl"
-    };
-
-    document.documentElement.dir = direction[code] || "ltr";
+function changeLanguage(code) {
+  if (engine && engine.hasLanguage(code)) {
+    engine.setLanguage(code);
   }
 
-  function changeLanguage(code) {
-    if (engine && engine.hasLanguage(code)) {
-      engine.setLanguage(code);
-    }
+  applyPageLanguage(code);
+  menu.classList.remove("show");
+}
 
-    applyPageLanguage(code);
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("show");
+});
+
+menu.querySelectorAll("button").forEach(button => {
+  button.addEventListener("click", () => {
+    changeLanguage(button.dataset.lang);
+  });
+});
+
+document.addEventListener("click", event => {
+  if (!event.target.closest(".language")) {
     menu.classList.remove("show");
   }
+});
 
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("show");
-  });
-
-  menu.querySelectorAll("button").forEach(button => {
-    button.addEventListener("click", () => {
-      changeLanguage(button.dataset.lang);
-    });
-  });
-
-  document.addEventListener("click", event => {
-    if (!event.target.closest(".language")) {
-      menu.classList.remove("show");
-    }
-  });
-
-  if (engine) {
-    engine.init();
-    const savedLanguage = engine.getLanguage() || "en";
-    changeLanguage(savedLanguage);
-  } else {
-    applyPageLanguage("en");
-  }
+if (engine) {
+  engine.init();
+  changeLanguage(engine.getLanguage() || "en");
+} else {
+  applyPageLanguage("en");
+}
 </script>
 
 </body>
