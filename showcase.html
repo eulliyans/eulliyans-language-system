@@ -6,221 +6,314 @@
   <meta name="description" content="EULLIYAN'S Universal Language System — multilingual website technology for developers and businesses.">
   <title>EULLIYAN'S | Universal Language System</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f8f7;
-      color: #173b37;
-      line-height: 1.7;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f7;
+    color: #173b37;
+    line-height: 1.7;
+  }
 
+  header {
+    background: #073d38;
+    color: white;
+    padding: 15px 6%;
+    box-shadow: 0 3px 15px #073d3818;
+  }
+
+  .nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  .brand span {
+    display: block;
+    font-size: 10px;
+    color: #baf5e9;
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+
+  select {
+    padding: 9px 13px;
+    border: 1px solid #baf5e9;
+    border-radius: 9px;
+    background: white;
+    color: #073d38;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #073d38 0%, #08796c 100%);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+    margin: auto;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1px solid #baf5e9;
+    color: #baf5e9;
+    border-radius: 30px;
+    padding: 5px 15px;
+    font-size: 12px;
+    margin-bottom: 17px;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: clamp(27px, 4.5vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero p {
+    max-width: 600px;
+    margin: auto;
+    color: #e0f5ef;
+    font-size: 15px;
+  }
+
+  .button {
+    display: inline-block;
+    background: #baf5e9;
+    color: #073d38;
+    padding: 11px 23px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 23px;
+    transition: 0.2s ease;
+  }
+
+  .button:hover {
+    background: white;
+    transform: translateY(-2px);
+  }
+
+  main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 27px;
+  }
+
+  .section-title h2 {
+    color: #075b52;
+    font-size: clamp(22px, 3vw, 27px);
+    line-height: 1.3;
+  }
+
+  .section-title p {
+    color: #607c76;
+    margin-top: 7px;
+    font-size: 14px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 17px;
+    margin-bottom: 48px;
+  }
+
+  .card {
+    background: white;
+    padding: 23px;
+    border-radius: 13px;
+    box-shadow: 0 5px 18px #073d380b;
+    border: 1px solid #e0ece8;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 24px #073d3815;
+  }
+
+  .card h3 {
+    color: #075b52;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    color: #607c76;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .language-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px;
+    margin-bottom: 48px;
+  }
+
+  .language-item {
+    background: white;
+    border: 1px solid #d5e9e2;
+    border-radius: 10px;
+    padding: 11px 19px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #075b52;
+    box-shadow: 0 3px 10px #073d3808;
+  }
+
+  .test-panel {
+    background: white;
+    border: 1px solid #d5e9e2;
+    border-left: 4px solid #08796c;
+    border-radius: 13px;
+    padding: 23px;
+    margin-bottom: 48px;
+    box-shadow: 0 5px 18px #073d380b;
+    overflow-wrap: anywhere;
+  }
+
+  .test-panel p {
+    margin-top: 7px;
+    color: #607c76;
+    font-size: 14px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .links a {
+    display: inline-block;
+    color: #075b52;
+    background: white;
+    border: 1px solid #d5e9e2;
+    border-radius: 8px;
+    padding: 9px 15px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .links a:hover {
+    background: #e5f4ef;
+    border-color: #08796c;
+  }
+
+  footer {
+    background: #073d38;
+    color: #d6eee8;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  [dir="rtl"] .section-title,
+  [dir="rtl"] .hero {
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
     header {
-      background: #073d38;
-      color: white;
-      padding: 18px 6%;
+      padding: 13px 15px;
     }
 
     .nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
     }
 
     .brand {
-      font-size: 21px;
-      font-weight: bold;
-    }
-
-    .brand span {
-      display: block;
-      font-size: 11px;
-      color: #baf5e9;
-      letter-spacing: 2px;
-    }
-
-    select {
-      padding: 10px 14px;
-      border: 1px solid #baf5e9;
-      border-radius: 8px;
-      background: white;
-      color: #073d38;
-      font-size: 15px;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #073d38, #08796c);
-      color: white;
-      text-align: center;
-      padding: 85px 20px;
-    }
-
-    .hero-inner {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .tag {
-      display: inline-block;
-      border: 1px solid #baf5e9;
-      color: #baf5e9;
-      border-radius: 30px;
-      padding: 5px 15px;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(32px, 6vw, 54px);
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: #e0f5ef;
       font-size: 17px;
     }
 
-    .button {
-      display: inline-block;
-      background: #baf5e9;
-      color: #073d38;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 25px;
+    .hero {
+      padding: 48px 18px;
     }
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 55px 20px;
+    h1 {
+      font-size: clamp(25px, 7vw, 32px);
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-      color: #075b52;
-      font-size: 29px;
-    }
-
-    .section-title p {
-      color: #607c76;
-      margin-top: 8px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-bottom: 55px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px #073d3810;
-      border: 1px solid #e0ece8;
-    }
-
-    .card h3 {
-      color: #075b52;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #607c76;
+    .hero p {
       font-size: 14px;
     }
 
+    main {
+      padding: 38px 15px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 13px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      padding: 20px;
+    }
+
     .language-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 55px;
+      gap: 9px;
+      margin-bottom: 40px;
     }
 
     .language-item {
-      background: white;
-      border: 1px solid #d5e9e2;
-      border-radius: 10px;
-      padding: 13px 20px;
-      font-weight: bold;
-    }
-
-    .test-panel {
-      background: #e5f4ef;
-      border: 1px solid #c6e7dc;
-      border-radius: 14px;
-      padding: 25px;
-      margin-bottom: 55px;
-      overflow-wrap: anywhere;
-    }
-
-    .test-panel p {
-      margin-top: 8px;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .links a {
-      color: #075b52;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #073d38;
-      color: #d6eee8;
-      text-align: center;
-      padding: 28px 15px;
+      padding: 10px 14px;
       font-size: 13px;
     }
 
-    [dir="rtl"] {
-      text-align: right;
+    .test-panel {
+      padding: 19px;
+      margin-bottom: 40px;
     }
 
-    [dir="rtl"] .section-title,
-    [dir="rtl"] .hero {
-      text-align: center;
+    .links {
+      gap: 9px;
     }
+  }
+</style>
 
-    @media (max-width: 600px) {
-      .hero {
-        padding: 65px 18px;
-      }
-
-      main {
-        padding: 40px 15px;
-      }
-
-      .nav {
-        justify-content: center;
-      }
-    }
-  </style>
 </head>
 
 <body>
