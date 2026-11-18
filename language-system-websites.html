@@ -9,6 +9,7 @@
 <title>Explore Language System | EULLIYAN'S</title>
 
 <style>
+
 :root {
   --dark: #073d38;
   --green: #08796c;
@@ -40,33 +41,56 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
+
+/* HEADER */
 
 header {
   background: var(--dark);
   color: white;
-  padding: 16px 5%;
+  padding: 20px 15px;
   border-bottom: 3px solid var(--green);
+  text-align: center;
 }
 
 .header-inner {
   max-width: 1050px;
+  width: 100%;
   margin: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 15px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
   text-decoration: none;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
 }
+
+.header-subtitle {
+  color: var(--mint);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* LANGUAGE SELECTOR */
 
 .language {
   position: relative;
+  margin: 0 auto;
 }
 
 .language-toggle {
@@ -74,7 +98,7 @@ header {
   color: white;
   border: 1px solid #80bdb0;
   border-radius: 7px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   font-size: 13px;
   cursor: pointer;
 }
@@ -83,7 +107,9 @@ header {
   display: none;
   position: absolute;
   top: 40px;
-  right: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
   z-index: 10;
   min-width: 135px;
   background: white;
@@ -104,7 +130,7 @@ header {
   border: 0;
   background: white;
   color: var(--text);
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   font-size: 13px;
 }
@@ -113,25 +139,20 @@ header {
   background: var(--soft);
 }
 
+/* MAIN CONTENT */
+
 main {
   flex: 1;
   width: 100%;
   max-width: 1050px;
-  margin: auto;
+  margin: 0 auto;
   padding: 48px 20px 55px;
+  text-align: center;
 }
 
 .intro {
   text-align: center;
-  margin-bottom: 32px;
-}
-
-.eyebrow {
-  color: var(--green);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1.7px;
-  margin-bottom: 9px;
+  margin: 0 auto 36px;
 }
 
 h1 {
@@ -139,35 +160,47 @@ h1 {
   font-size: 30px;
   line-height: 1.3;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .subtitle {
   max-width: 620px;
-  margin: auto;
+  margin: 0 auto;
   color: var(--muted);
   font-size: 14px;
+  text-align: center;
 }
 
 .section-label {
   color: var(--heading);
-  font-size: 17px;
-  margin: 0 0 15px;
+  font-size: 18px;
+  margin: 0 auto 18px;
+  text-align: center;
 }
+
+/* RESOURCE CARDS */
 
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .resource-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   background: white;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 21px;
+  border-radius: 13px;
+  padding: 23px;
   box-shadow: 0 4px 16px #073d3809;
+  text-align: center;
   transition: transform .2s, box-shadow .2s;
 }
 
@@ -178,26 +211,30 @@ h1 {
 
 .card-top {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 12px;
+  width: 100%;
 }
 
 .card-icon {
-  width: 43px;
-  height: 43px;
+  width: 45px;
+  height: 45px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--soft);
-  border-radius: 10px;
-  font-size: 21px;
+  border-radius: 11px;
+  font-size: 22px;
 }
 
 .resource-card h3 {
   color: var(--heading);
   font-size: 16px;
+  text-align: center;
 }
 
 .resource-card p {
@@ -206,18 +243,21 @@ h1 {
   line-height: 1.7;
   flex: 1;
   margin-bottom: 17px;
+  text-align: center;
+  max-width: 100%;
 }
 
 .card-link {
   display: inline-block;
-  align-self: flex-start;
-  padding: 9px 15px;
+  align-self: center;
+  padding: 9px 17px;
   background: var(--green);
   color: white;
   text-decoration: none;
   border-radius: 7px;
   font-size: 12px;
   font-weight: bold;
+  text-align: center;
   transition: background .2s;
 }
 
@@ -225,38 +265,55 @@ h1 {
   background: var(--dark);
 }
 
+/* PREMIUM SECTION */
+
 .premium-heading {
-  margin-top: 34px;
+  margin-top: 38px;
 }
 
 .premium-card {
   border-color: #b9dcd2;
 }
 
+/* FOOTER */
+
 footer {
   background: var(--dark);
   color: white;
   text-align: center;
-  padding: 16px 12px;
+  padding: 17px 12px;
   border-top: 3px solid var(--green);
   font-size: 12px;
 }
 
+/* RTL SUPPORT */
+
 [dir="rtl"] .resource-card {
-  text-align: right;
+  text-align: center;
+}
+
+[dir="rtl"] .resource-card p,
+[dir="rtl"] .resource-card h3 {
+  text-align: center;
 }
 
 [dir="rtl"] .card-link {
-  align-self: flex-start;
+  align-self: center;
 }
+
+/* MOBILE RESPONSIVE */
 
 @media (max-width: 600px) {
   header {
-    padding: 14px 15px;
+    padding: 17px 14px;
   }
 
   main {
-    padding: 35px 14px 42px;
+    padding: 35px 15px 42px;
+  }
+
+  .logo {
+    font-size: 19px;
   }
 
   h1 {
@@ -267,38 +324,20 @@ footer {
     font-size: 13px;
   }
 
-  .resource-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .resource-card {
-    padding: 17px;
-  }
-
   .section-label {
     font-size: 16px;
   }
-}
-  .logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.4;
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .resource-card {
+    padding: 20px 16px;
+  }
 }
 
-.header-subtitle {
-  color: #baf5e9;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  font-weight: normal;
-}
-  .header-inner {
-  direction: ltr;
-}
-
-.logo {
-  text-align: left;
-}
 </style>
 </head>
 
