@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -6,7 +7,6 @@
   <meta name="description" content="EULLIYAN'S Universal Language System — multilingual website technology for developers and businesses.">
   <title>EULLIYAN'S | Universal Language System</title>
 
-  
 <style>
   * {
     box-sizing: border-box;
@@ -115,6 +115,12 @@
   .button:hover {
     background: white;
     transform: translateY(-2px);
+  }
+
+  .hero-language-selector {
+    display: block;
+    margin: 14px auto 0;
+    min-width: 125px;
   }
 
   main {
@@ -324,15 +330,6 @@
       EULLIYAN'S
       <span>UNIVERSAL LANGUAGE SYSTEM</span>
     </div>
-
-    <select id="languageSelector" aria-label="Select language">
-      <option value="en">English</option>
-      <option value="bn">বাংলা</option>
-      <option value="ar">العربية</option>
-      <option value="hi">हिन्दी</option>
-      <option value="ur">اردو</option>
-      <option value="fr">Français</option>
-    </select>
   </div>
 </header>
 
@@ -354,6 +351,15 @@
     <a href="#features" class="button" data-i18n="actions.getStarted">
       Get Started
     </a>
+
+    <select id="languageSelector" class="hero-language-selector" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="bn">বাংলা</option>
+      <option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ur">اردو</option>
+      <option value="fr">Français</option>
+    </select>
 
   </div>
 </section>
@@ -419,7 +425,7 @@
     <h2 data-i18n="showcase.systemTitle">System Information</h2>
 
     <p id="engineStatus">Checking engine...</p>
-   <p id="versionStatus">Version: Checking...</p>
+    <p id="versionStatus">Version: Checking...</p>
     <p id="languageStatus">Checking languages...</p>
     <p id="directionStatus">Checking direction...</p>
     <p id="savedStatus">Checking saved language...</p>
@@ -527,10 +533,12 @@
       "engineStatus",
       engine.t("showcase.engine") + ": PASS"
     );
-showStatus(
-  "versionStatus",
-  "Version: " + engine.version
-);
+
+    showStatus(
+      "versionStatus",
+      "Version: " + engine.version
+    );
+
     showStatus(
       "languageStatus",
       engine.t("showcase.languagesRegistered") + ": " +
