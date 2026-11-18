@@ -63,6 +63,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  direction: ltr;
 }
 
 .logo {
@@ -343,13 +344,16 @@ footer {
 
 <body>
 
+
 <header>
-  <a href="showcase.html" class="logo">
-  EULLIYAN’S
-  <span class="header-subtitle" data-page="eyebrow">
-    EXPLORE THE SYSTEM
-  </span>
-</a>
+  <div class="header-inner">
+
+    <a href="showcase.html" class="logo">
+      EULLIYAN’S
+      <span class="header-subtitle" data-page="eyebrow">
+        EXPLORE THE SYSTEM
+      </span>
+    </a>
 
     <div class="language">
       <button class="language-toggle" id="languageToggle">
@@ -365,8 +369,10 @@ footer {
         <button data-lang="fr">Français</button>
       </div>
     </div>
+
   </div>
 </header>
+
 
 <main>
 
